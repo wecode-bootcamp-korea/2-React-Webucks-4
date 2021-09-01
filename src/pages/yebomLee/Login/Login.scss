@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+@mixin flexCenter($direction: row) {
+  display: flex;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin marginTandB($top, $bottom) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+.Login {
+  @include flexCenter();
+  background-color: #eeefef;
+
+  .backgroundBox {
+    @include flexCenter(column);
+    @include marginTandB(20vh, 20vh);
+    background-color: white;
+    border: {
+      width: 3px;
+      style: solid;
+      color: #dddddd;
+    }
+  }
+
+  .mainLogo {
+    align-self: center;
+    @include marginTandB(70px, 20px);
+    font: {
+      family: 'Dancing Script', cursive;
+      size: 70px;
+    }
+  }
+
+  .inputWrap {
+    @include flexCenter(column);
+    width: 350px;
+    margin: 70px;
+    @include marginTandB(40px, 130px);
+
+    #userId,
+    #userPassword {
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 7px;
+      border: 2px solid #dddddd;
+      outline: none;
+      background-color: #f7f7f7;
+      font-weight: bold;
+    }
+
+    .loginButton {
+      padding: 15px;
+      color: white;
+      background-color: #61aded;
+      border-radius: 7px;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      opacity: 0.5;
+
+      .link {
+        text-decoration: none;
+        color: white;
+      }
+
+      .active {
+        opacity: 1;
+      }
+    }
+  }
+
+  //  .loginButton.active {
+  //   opacity: 1;
+  //  }
+
+  .forgotPassword {
+    align-self: center;
+    margin-bottom: 50px;
+    color: #739ab4;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

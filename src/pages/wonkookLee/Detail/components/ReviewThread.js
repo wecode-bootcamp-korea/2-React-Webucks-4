@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ReviewThread.scss';
 
 class ReviewThread extends Component {
   render() {

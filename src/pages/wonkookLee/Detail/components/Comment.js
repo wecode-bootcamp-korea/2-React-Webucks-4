@@ -1,7 +1,41 @@
 import React, { Component } from 'react';
+// import { Comments } from './commentData';
+import ReviewThread from './ReviewThread';
 import './Comment.scss';
 
 class Comment extends Component {
+  constructor() {
+    super();
+    this.state = {
+      comments: [
+        {
+          commentId: 1,
+          userId: 'coffee_lover',
+          userComment: '너무 맛있어요!',
+        },
+        {
+          commentId: 2,
+          userId: 'CHOCO7',
+          userComment: '오늘도 제주 비자림 콜드 브루를 마시러 제주도에 갑니다.',
+        },
+        {
+          commentId: 3,
+          userId: 'legend_dev',
+          userComment:
+            '진짜 제주 비자림 콜드 브루는 전설이다. 진짜 제주 비자림 콜드 브루는 전설이다. 진짜 제주 비자림 콜드 브루는 전설이다.',
+        },
+      ],
+    };
+    this.addComment = this.addComment.bind(this);
+  }
+
+  addComment(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      console.log(this.state);
+    }
+  }
+
   render() {
     return (
       <section className='review_wrap'>
@@ -11,26 +45,15 @@ class Comment extends Component {
           </dt>
           <dd className='review_container'>
             <ul id='RvTarget'>
-              <li className='review_thread'>
-                <span className='id'>coffee_lover</span>
-                <span className='comment'>너무 맛있어요!</span>
-                <div id='closeBtn'>X</div>
-              </li>
-              <li className='review_thread'>
-                <span className='id'>CHOCO7</span>
-                <span className='comment'>
-                  오늘도 제주 비자림 콜드 브루를 마시러 제주도에 갑니다.
-                </span>
-                <div id='closeBtn'>X</div>
-              </li>
-              <li className='review_thread'>
-                <span className='id'>legend_dev</span>
-                <span className='comment'>
-                  진짜 제주 비자림 콜드 브루는 전설이다. 진짜 제주 비자림 콜드
-                  브루는 전설이다. 진짜 제주 비자림 콜드 브루는 전설이다.
-                </span>
-                <div id='closeBtn'>X</div>
-              </li>
+              {this.state.comments.map(comment => {
+                return (
+                  <ReviewThread
+                    key={comment.commentId}
+                    userId={comment.userId}
+                    userComment={comment.userComment}
+                  />
+                );
+              })}
             </ul>
           </dd>
         </dl>
@@ -40,9 +63,10 @@ class Comment extends Component {
             id='review_field'
             type='text'
             placeholder='리뷰를 입력해주세요'
-            spellcheck='false'
+            spellCheck='false'
+            onKeyDown={this.addComment}
           />
-          <label for='review_field' title='리뷰입력기'></label>
+          <label title='리뷰입력기'></label>
         </form>
       </section>
     );

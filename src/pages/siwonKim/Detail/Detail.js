@@ -3,11 +3,7 @@ import './Detail.scss';
 
 class Detail extends Component {
   render() {
-    return (
-      <div>
-        
-      </div>
-    )
+    return <div></div>;
   }
 }
 

@@ -3,11 +3,7 @@ import './Login.scss';
 
 class Login extends Component {
   render() {
-    return (
-      <div>
-        
-      </div>
-    )
+    return <div></div>;
   }
 }
 

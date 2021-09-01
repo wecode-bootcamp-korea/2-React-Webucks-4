@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
-import '../.prettierrc';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // 휘민's 컴포넌트
 import LoginHM from './pages/hwiminKim/Login/Login';
@@ -33,7 +28,7 @@ import DetailWK from './pages/wonkookLee/Detail/Detail';
 
 class Routes extends React.Component {
   render() {
-		return (
+    return (
       <Router>
         <Switch>
           <Route exact path='/login-hwiminKim' component={LoginHM} />
@@ -53,8 +48,8 @@ class Routes extends React.Component {
           <Route exact path='/detail-wonkookLee' component={DetailWK} />
         </Switch>
       </Router>
-    )
-	}
+    );
+  }
 }
 
 export default Routes;

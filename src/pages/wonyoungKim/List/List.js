@@ -3,11 +3,7 @@ import './List.scss';
 
 class List extends Component {
   render() {
-    return (
-      <div>
-        
-      </div>
-    )
+    return <div></div>;
   }
 }
 

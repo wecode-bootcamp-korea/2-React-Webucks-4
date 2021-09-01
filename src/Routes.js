@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import '../.prettierrc';
 
 // 휘민's 컴포넌트
 import LoginHM from './pages/hwiminKim/Login/Login';

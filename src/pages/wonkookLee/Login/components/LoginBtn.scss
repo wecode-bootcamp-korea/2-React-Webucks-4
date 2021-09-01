@@ -1,0 +1,15 @@
+@import '../../../../styles/variables';
+
+.LoginForm {
+  .btn_login {
+    display: block;
+    margin-top: 15px;
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    color: $white-color;
+    background-color: $btn-active;
+    cursor: pointer;
+  }
+}

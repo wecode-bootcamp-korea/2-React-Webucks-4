@@ -1,0 +1,12 @@
+@import '../../../../styles/variables';
+
+.Login {
+  .login_logo {
+    position: relative;
+    margin: 37px 0 37px 0;
+    font-family: $font-family;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+}

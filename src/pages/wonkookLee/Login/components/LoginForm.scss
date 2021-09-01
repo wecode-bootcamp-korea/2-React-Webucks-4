@@ -1,0 +1,16 @@
+@import '../../../../styles/variables';
+
+.Login {
+  section.login {
+    margin-bottom: 10px;
+    border: $input-border;
+    text-align: center;
+    background-color: $white-color;
+
+    form.auth {
+      position: relative;
+      margin: 0 auto;
+      width: 250px;
+    }
+  }
+}

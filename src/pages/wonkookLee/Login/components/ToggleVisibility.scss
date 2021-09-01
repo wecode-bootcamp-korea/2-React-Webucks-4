@@ -1,0 +1,37 @@
+@import '../../../../styles/variables';
+
+.Login {
+  #icon {
+    position: absolute;
+    top: 52px;
+    right: 6px;
+    height: 20px;
+    width: 20px;
+    opacity: 0;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  #icon:hover + .login_icon,
+  #icon:hover + .login_icon + .login_icon {
+    opacity: 0.5;
+  }
+
+  .login_icon {
+    position: absolute;
+    top: 57px;
+    right: 10px;
+    font-size: 16px;
+    opacity: 0.2;
+    transition: opacity 0.3s;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .btn_login:disabled {
+    background-color: $btn-inactive;
+    cursor: default;
+  }
+}

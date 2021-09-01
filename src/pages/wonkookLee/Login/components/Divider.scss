@@ -1,0 +1,27 @@
+@import '../../../../styles/variables';
+
+.Login {
+  .divider {
+    position: relative;
+    margin-top: 20px;
+    font-size: 13px;
+
+    hr {
+      margin: 0;
+      height: 1px;
+      border: 0;
+      border-top: $input-border;
+    }
+
+    span {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      color: $hr-line;
+      background-color: $white-color;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../../../styles/variables';
+
+.Login {
+  section.signup {
+    margin-bottom: 10px;
+    padding: 25px 0;
+    height: 63px;
+    text-align: center;
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    a {
+      color: $sign-up-link;
+      font-weight: 600;
+    }
+  }
+}

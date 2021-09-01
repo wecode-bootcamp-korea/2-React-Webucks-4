@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* GLOBAL */
+
+body.Detail_body {
+  padding-top: 120px;
+  background-color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
+
+  .wrap {
+    height: 100vh;
+    position: relative;
+  }
+
+  /* SUB TITLE */
+
+  #container {
+    width: 100%;
+    min-height: 880px;
+  }
+
+  div.sub_tit_wrap {
+    height: 98px;
+    width: 100%;
+    background-color: #ffffff;
+  }
+
+  div.sub_tit_inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+    height: 91px;
+    width: 1100px;
+  }
+
+  div.sub_tit_inner h2 {
+    position: relative;
+    padding-top: 30px;
+  }
+
+  /* SUB TITLE end */
+
+  /* BREADCRUMB */
+
+  .smap strong {
+    font-weight: 500;
+  }
+
+  div.sub_tit_wrap .sub_tit_inner ul.smap {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  div.sub_tit_wrap .sub_tit_inner ul.smap li {
+    font-size: 13px;
+  }
+
+  div.sub_tit_wrap .sub_tit_inner ul.smap li:first-child {
+    position: relative;
+    top: 3px;
+    width: 15px;
+    height: 15px;
+    background-image: url(https://image.istarbucks.co.kr/common/img/common/icon_home.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  div.sub_tit_wrap .sub_tit_inner ul.smap li:nth-child(2n) {
+    width: 7px;
+    height: 12px;
+    position: relative;
+    top: 1px;
+    background-image: url(https://image.istarbucks.co.kr/common/img/common/icon_arrow.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* BREADCRUMB end */
+
+  /* CONTENTS */
+
+  .content {
+    margin: 0 auto;
+    padding-bottom: 120px;
+    width: 1100px;
+    background: transparent;
+  }
+
+  div.product_view_wrap1 {
+    position: relative;
+    padding-top: 30px;
+  }
+}

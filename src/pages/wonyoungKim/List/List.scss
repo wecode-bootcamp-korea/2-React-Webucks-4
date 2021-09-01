@@ -1,0 +1,146 @@
+* {
+  Box-sizing : border-box; 
+}
+
+body {
+  margin : 0px;
+  padding-left : 50px;
+  padding-right: 50px;
+}
+
+.navbar {
+  width : 1100px;
+  height: 60px;
+  padding : 0 30px;
+  margin : 0 auto;
+  background-color: rgb(241, 238, 238);
+
+    #logo {
+      line-height: 50px;
+    }
+    
+    img{
+      vertical-align: middle;
+      height: 35px;
+    }
+    
+    #navMenu {
+      float: right;
+      margin : 0;
+      list-style: none;
+    }
+    
+    li {
+      float: left;
+      margin-left: 40px;
+      line-height: 60px;
+      color : darkgray;
+      font-size: 15px;
+      text-decoration: none;
+    }
+    
+    a{
+      color : darkgray;
+      font-size: 15px;
+      text-decoration: none;
+    }
+}
+
+.menubar1  {
+  width : 1100px;
+  height: 60px;
+  margin : 20px auto;
+  padding : 0 30px;
+  background-color : rgb(241, 238, 238);
+ 
+    .subMenu {
+      margin : 0;
+      font-weight: bold;
+      font-size: 14px;
+      color: #545454;
+    }
+
+    .coffeeIcon {
+      height: 35px;
+    }
+
+    .subTitle{
+      line-height: 60px;
+      font-size: 18px;
+      font-weight: bold;
+      margin : 0px;
+      color: #545454;
+    }
+}
+
+.menuList {
+  width: 1120px;
+  margin-left : auto;
+  margin-right: auto;
+
+    #menu {
+      text-align: center;
+      margin : 0px 10px 40px 10px;
+      display: block;
+      float: left;
+      text-decoration: none;
+    }
+    
+    .fit{
+      width: 260px;
+      height: 270px;
+      overflow: hidden;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit:cover;     
+      transform:scale(1.0);        
+      transition: .4s; 
+    }
+    
+    .Name {
+      margin-top : 10px;
+      margin-bottom: 4px;
+      text-align: center;
+      font-weight: bold;
+      color : #545454;
+      display: block;
+    }
+    
+    img:hover {
+      transform: scale(1.1);
+      transition: all 0.4s linear;
+    }  
+}
+
+
+.menubar2  {
+  background-color : rgb(241, 238, 238);
+  width : 1100px;
+  height: 60px;
+  margin : 20px auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  clear: left;
+
+  .subMenu {
+    margin : 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #545454;
+  }
+
+  .coffeeIcon {
+    height: 35px;
+  }
+
+  .subTitle{
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    margin : 0px;
+    color: #545454;
+  }
+}

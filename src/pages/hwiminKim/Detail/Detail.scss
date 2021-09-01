@@ -1,0 +1,188 @@
+.Detail {
+  $headerColor: #f6f5ef;
+  $heartAndNavColor: #999696;
+  width: 1110px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  background-color: #ffffff;
+
+  .iconColorRed {
+    color: red;
+  }
+
+  /* sub-header */
+  .subHeader {
+    margin-bottom: 20px;
+    h1 {
+      font-size: 36px;
+    }
+    .subHeaderItems {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      font-size: 14px;
+      li {
+        a {
+          margin-left: 3px;
+          text-decoration: none;
+          color: $heartAndNavColor;
+          &:visited {
+            color: $heartAndNavColor;
+          }
+          &:hover {
+            color: $heartAndNavColor;
+          }
+        }
+
+        i {
+          margin-left: 3px;
+          color: $heartAndNavColor;
+        }
+      }
+    }
+  }
+  /* coffee-info */
+  .coffeeInfoContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    .coffeeInfoImage {
+      width: 500px;
+      height: 500px;
+    }
+    .infoContainer {
+      width: 575px;
+      .infoHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: solid 3px black;
+        i {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .headerHeart {
+          color: lightgray;
+        }
+      }
+      .coffeeDescripton {
+        margin-bottom: 30px;
+      }
+      .nutritionTitle {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding: 20px 0 20px 0;
+        border {
+          top: solid 2px lightgrey;
+          bottom: solid 2px lightgrey;
+        }
+        h3 {
+          margin-left: 20px;
+          font-size: 22px;
+          font-weight: 400;
+        }
+        p {
+          margin-right: 20px;
+          font-size: 22px;
+        }
+      }
+      .nutritionContainer {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 15px;
+        .nutritionLeft {
+          padding-right: 30px;
+          border-right: dashed 1px lightgrey;
+          .nutritionItembox {
+            display: flex;
+            justify-content: space-between;
+            width: 250px;
+            margin-bottom: 20px;
+          }
+        }
+        .nutritionRight {
+          .nutritionItembox {
+            display: flex;
+            justify-content: space-between;
+            width: 250px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+      .allergyCause {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        margin-bottom: 40px;
+        border-radius: 3px;
+        background-color: #efefef;
+        p {
+          margin-left: 15px;
+          font-weight: 700;
+        }
+      }
+      .reviewContainer {
+        h3 {
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+          border-bottom: solid 1px $heartAndNavColor;
+          font-size: 22px;
+        }
+        ul {
+          list-style: none;
+          li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+            .contentBox {
+              p {
+                margin-left: 10px;
+              }
+            }
+            .btnBox {
+              button {
+                margin-right: 20px;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+      .reviewInput {
+        width: 100%;
+        height: 30px;
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #efefef;
+      }
+    }
+  }
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 0 30px 0;
+  background-color: #333333;
+  ul {
+    color: #d7d7d7;
+    font-size: 14px;
+    list-style: none;
+    li {
+      margin-bottom: 10px;
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

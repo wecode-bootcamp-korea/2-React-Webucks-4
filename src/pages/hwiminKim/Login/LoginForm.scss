@@ -1,0 +1,30 @@
+.loginForm {
+  $borderColor: #dedede;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  width: 400px;
+  margin-bottom: 150px;
+
+  .idForm {
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 3px $borderColor;
+    font-size: 16px;
+    &::placeholder {
+      color: $borderColor;
+    }
+  }
+
+  .passwordForm {
+    height: 50px;
+    padding: 10px;
+    border: solid 3px $borderColor;
+    border-radius: 5px;
+    font-size: 16px;
+    &::placeholder {
+      color: $borderColor;
+    }
+  }
+}

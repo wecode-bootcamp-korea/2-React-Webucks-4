@@ -1,92 +1,25 @@
 .Login {
-  $borderColor: #dedede;
-  $loginButtonActivate: #58b2eb;
-  background-color: #eeefef;
-  font-weight: 700;
   font-family: sans-serif;
-
+  $borderColor: #dedede;
+  padding-top: 150px;
+  background-color: #fafafa;
+  font-weight: 700;
   .loginBox {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 540px;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 70px;
     border-radius: 5px;
     border: solid 3px $borderColor;
-    background-color: white;
-
+    background-color: #ffffff;
     .webucksLogo {
       width: 300px;
       margin {
         bottom: 30px;
         left: 20px;
       }
-    }
-
-    .loginForm {
-      display: flex;
-      flex-direction: column;
-      row-gap: 25px;
-      width: 400px;
-      margin-bottom: 150px;
-
-      .idForm {
-        height: 50px;
-        padding: 10px;
-        border-radius: 5px;
-        border: solid 3px $borderColor;
-        font-size: 16px;
-        &::placeholder {
-          color: $borderColor;
-        }
-      }
-
-      .passwordForm {
-        height: 50px;
-        padding: 10px;
-        border: solid 3px $borderColor;
-        border-radius: 5px;
-        font-size: 16px;
-        &::placeholder {
-          color: $borderColor;
-        }
-      }
-
-      .loginBtnDeactivate {
-        height: 50px;
-        padding: 10px;
-        background-color: #add3eb;
-        border: none;
-        border-radius: 8px;
-        font-size: 20px;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      .loginBtnActivate {
-        height: 50px;
-        padding: 10px;
-        background-color: $loginButtonActivate;
-        border: none;
-        border-radius: 8px;
-        font-size: 20px;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      a {
-        text-decoration: none;
-        color: white;
-        font-size: 20;
-        font-weight: 700;
-      }
-    }
-
-    .findPassword a:link {
-      color: #8eacc1;
-      font-size: 18px;
-      text-decoration: none;
     }
   }
 }

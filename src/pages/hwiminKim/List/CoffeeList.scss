@@ -1,0 +1,10 @@
+.coffeeList {
+  .coffeeListItems {
+    display: grid;
+    grid-template-columns: repeat(4, 260px);
+    row-gap: 55px;
+    column-gap: 25px;
+    margin-bottom: 40px;
+    list-style: none;
+  }
+}

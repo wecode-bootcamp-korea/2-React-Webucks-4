@@ -1,0 +1,54 @@
+.nutritionTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 20px 0 20px 0;
+  border {
+    top: solid 2px lightgrey;
+    bottom: solid 2px lightgrey;
+  }
+  h3 {
+    margin-left: 20px;
+    font-size: 22px;
+    font-weight: 400;
+  }
+  p {
+    margin-right: 20px;
+    font-size: 22px;
+  }
+}
+.nutritionContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  .nutritionLeft {
+    padding-right: 30px;
+    border-right: dashed 1px lightgrey;
+    .nutritionItembox {
+      display: flex;
+      justify-content: space-between;
+      width: 250px;
+      margin-bottom: 20px;
+    }
+  }
+  .nutritionRight {
+    .nutritionItembox {
+      display: flex;
+      justify-content: space-between;
+      width: 250px;
+      margin-bottom: 20px;
+    }
+  }
+}
+.allergyCause {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 40px;
+  border-radius: 3px;
+  background-color: #efefef;
+  p {
+    margin-left: 15px;
+    font-weight: 700;
+  }
+}

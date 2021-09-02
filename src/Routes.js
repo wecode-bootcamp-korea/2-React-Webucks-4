@@ -25,14 +25,12 @@ import DetailYB from './pages/yebomLee/Detail/Detail';
 import LoginWK from './pages/wonkookLee/Login/Login';
 import ListWK from './pages/wonkookLee/List/List';
 import DetailWK from './pages/wonkookLee/Detail/Detail';
-import Breakpoints from './styles/Breakpoints';
 
 class Routes extends React.Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route exact path='/Break' component={Breakpoints} />
           <Route exact path='/login-hwiminKim' component={LoginHM} />
           <Route exact path='/list-hwiminKim' component={ListHM} />
           <Route exact path='/detail-hwiminKim' component={DetailHM} />

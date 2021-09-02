@@ -13,14 +13,14 @@ class LoginForm extends Component {
     this.validation = this.validation.bind(this);
     this.viewPassword = this.viewPassword.bind(this);
     this.activateBtn = this.activateBtn.bind(this);
-  }
 
-  state = {
-    isValidId: false,
-    isValidPw: false,
-    isPwVisible: false,
-    isBtnActive: false,
-  };
+    this.state = {
+      isValidId: false,
+      isValidPw: false,
+      isPwVisible: false,
+      isBtnActive: false,
+    };
+  }
 
   validation(e) {
     if (e.target.classList.contains('id')) {

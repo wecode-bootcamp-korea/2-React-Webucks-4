@@ -6,8 +6,11 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import './Review.scss';
 
 class Review extends Component {
+  handleChange = () => {
+    const { data, onRemove } = this.props;
+    onRemove(data.id);
+  };
   render() {
-    console.log(this.props.review);
     return (
       <li className='item'>
         <div className='contentBox'>
@@ -17,7 +20,12 @@ class Review extends Component {
         </div>
         <div className='btnBox'>
           <button>
-            <FontAwesomeIcon className='trashIcon' icon={faTrash} size='1x' />
+            <FontAwesomeIcon
+              className='trashIcon'
+              icon={faTrash}
+              size='1x'
+              onClick={this.handleChange}
+            />
           </button>
           <button>
             <FontAwesomeIcon className='heartIcon' icon={faHeart} size='1x' />

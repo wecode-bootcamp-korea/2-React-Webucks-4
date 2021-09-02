@@ -30,7 +30,6 @@ class CoffeeCard extends Component {
             <Link to='/detail-hwiminKim'>{title}</Link>
             <FontAwesomeIcon
               icon={faHeart}
-              // size='1x'
               className={this.state.isToggleOn ? 'iconColorRed' : 'heartIcon'}
               onClick={this.changeHeartBtnColor}
             />

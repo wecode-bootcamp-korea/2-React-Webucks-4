@@ -14,8 +14,14 @@ class ReviewList extends Component {
     });
   };
 
+  handleRemove = id => {
+    const { reviews } = this.state;
+    this.setState({
+      reviews: reviews.filter(info => info.id !== id),
+    });
+  };
+
   createReview = e => {
-    // const { newReview } = this.state.newReview;
     if (e.key === 'Enter') {
       this.setState({
         reviews: this.state.reviews.concat({
@@ -23,8 +29,8 @@ class ReviewList extends Component {
           id: this.id++,
         }),
       });
+      console.log(this.state);
     }
-    // console.log(this.state);
   };
   render() {
     const { reviews } = this.state;
@@ -35,9 +41,15 @@ class ReviewList extends Component {
           <h3 className='reviewHeader'>리뷰</h3>
           <ul className='items'>
             {reviews.map(review => {
-              return <Review key={review.id} review={review.userReview} />;
+              return (
+                <Review
+                  key={review.id}
+                  review={review.userReview}
+                  onRemove={this.handleRemove}
+                  data={review}
+                />
+              );
             })}
-            {/* {JSON.stringify(this.state.reviews)} */}
           </ul>
         </div>
         <input

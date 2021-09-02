@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Beverages } from './items';
+import { BEVERAGES } from './ITEMS';
 import ProductsHeader from './ProductsHeader';
 import CoffeeCard from './CoffeeCard';
 
@@ -8,10 +8,10 @@ class ProductList extends Component {
     return (
       <div className='product_list'>
         <dl>
-          <ProductsHeader category={Beverages.coldBrews[0].category} />
+          <ProductsHeader category={BEVERAGES.coldBrews[0].category} />
           <dd>
             <ul className='product_cold_brew clearfix'>
-              {Beverages.coldBrews.map(beverage => {
+              {BEVERAGES.coldBrews.map(beverage => {
                 return (
                   <CoffeeCard
                     key={beverage.id}
@@ -22,10 +22,10 @@ class ProductList extends Component {
               })}
             </ul>
           </dd>
-          <ProductsHeader category={Beverages.breweds[0].category} />
+          <ProductsHeader category={BEVERAGES.breweds[0].category} />
           <dd>
             <ul className='product_brood clearfix'>
-              {Beverages.breweds.map(beverage => {
+              {BEVERAGES.breweds.map(beverage => {
                 return (
                   <CoffeeCard
                     key={beverage.id}

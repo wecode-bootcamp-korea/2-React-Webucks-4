@@ -5,6 +5,7 @@ import Footer from '../../../components/Footer/Footer';
 import MainImgFrame from './components/MainImgFrame';
 import ProdDesc from './components/ProdDesc';
 import Comment from './components/Comment';
+import BreadCrumb from './components/BreadCrumb';
 import './Detail.scss';
 
 class Detail extends Component {
@@ -22,7 +23,6 @@ class Detail extends Component {
         <TopNav />
 
         <div id='container'>
-          {/* 서브 타이틀 */}
           <div className='sub_tit_wrap'>
             <div className='sub_tit_inner'>
               <h2>
@@ -31,32 +31,9 @@ class Detail extends Component {
                   alt='콜드 브루'
                 />
               </h2>
-              <ul className='smap'>
-                <li>
-                  <a href='http://localhost:3000'>.</a>
-                </li>
-                <li></li>
-                <li>
-                  <a href='http://localhost:3000'>MENU</a>
-                </li>
-                <li></li>
-                <li>
-                  <a href='http://localhost:3000'>음료</a>
-                </li>
-                <li></li>
-                <li>
-                  <a href='http://localhost:3000'>콜드 브루</a>
-                </li>
-                <li></li>
-                <li>
-                  <a href='http://localhost:3000'>
-                    <strong>제주 비자림 콜드 브루</strong>
-                  </a>
-                </li>
-              </ul>
+              <BreadCrumb />
             </div>
           </div>
-          {/* 서브 타이틀 end */}
 
           <div className='content'>
             <div className='product_view_wrap1 clearfix'>

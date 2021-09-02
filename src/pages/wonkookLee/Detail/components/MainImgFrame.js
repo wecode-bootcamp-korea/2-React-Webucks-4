@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { DETAILS } from './PRODUCT_INFO';
 import './MainImgFrame.scss';
+
+const Prod = DETAILS[2];
 
 class MainImgFrame extends Component {
   render() {
@@ -8,10 +11,7 @@ class MainImgFrame extends Component {
         <div className='product_big_pic'>
           <div className='zoomFrame'>
             <div className='zoomLens'></div>
-            <img
-              src='https://image.istarbucks.co.kr/upload/store/skuimg/2020/09/[9200000002672]_20200921171223958.jpg'
-              alt='커피사진'
-            />
+            <img src={Prod.imgUrl} alt={Prod.name} />
           </div>
           <div className='zoomWindowContainer'>
             <div className='zoomWindow'></div>

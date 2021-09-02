@@ -10,13 +10,13 @@
   text-overflow: ellipsis;
   overflow: hidden;
 
-  section.review_wrap > dl > dd.review_container .review_thread .id {
+  .id {
     margin-right: 5px;
     font-weight: bold;
     color: #333333;
   }
 
-  section.review_wrap > dl > dd.review_container .review_thread .comment {
+  .comment {
     color: #555555;
   }
 

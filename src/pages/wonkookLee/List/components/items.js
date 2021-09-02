@@ -1,46 +1,46 @@
-export const Beverages = {
+export const BEVERAGES = {
   coldBrews: [
     {
       id: 101,
+      category: '콜드 브루 커피',
+      name: '시그니처 더 블랙 콜드 브루',
+      imgUrl:
+        'https://image.istarbucks.co.kr/upload/store/skuimg/2021/08/[9200000003661]_20210819094346176.jpg',
+    },
+    {
+      id: 102,
       category: '콜드 브루 커피',
       name: '아이스크림 블렌딩 콜드 브루',
       imgUrl:
         'https://image.istarbucks.co.kr/upload/store/skuimg/2021/02/[9200000001635]_20210225092236748.jpg',
     },
     {
-      id: 102,
+      id: 103,
       category: '콜드 브루 커피',
       name: '니이트로 바닐라 크림',
       imgUrl:
         'https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000002487]_20210426091745467.jpg',
     },
     {
-      id: 103,
+      id: 104,
       category: '콜드 브루 커피',
       name: '나이트로 콜드 브루',
       imgUrl:
         'https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000000479]_20210426091843897.jpg',
     },
     {
-      id: 104,
+      id: 105,
       category: '콜드 브루 커피',
       name: '돌체 콜드 브루',
       imgUrl:
         'https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000002081]_20210415133656839.jpg',
     },
     {
-      id: 105,
+      id: 106,
       category: '콜드 브루 커피',
       name: '바닐라 크림 콜드 브루',
       imgUrl:
         'https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000000487]_20210430112319040.jpg',
-    },
-    {
-      id: 106,
-      category: '콜드 브루 커피',
-      name: '아이스크림 블렌딩 콜드 브루',
-      imgUrl:
-        'https://image.istarbucks.co.kr/upload/store/skuimg/2021/02/[9200000001635]_20210225092236748.jpg',
     },
     {
       id: 107,

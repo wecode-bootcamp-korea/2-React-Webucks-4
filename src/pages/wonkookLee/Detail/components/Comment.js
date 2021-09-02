@@ -26,6 +26,7 @@ class Comment extends Component {
       ],
     };
     this.addComment = this.addComment.bind(this);
+    this.removeComment = this.removeComment.bind(this);
   }
 
   addComment(e) {
@@ -45,6 +46,13 @@ class Comment extends Component {
     e.target.value = '';
   }
 
+  removeComment(id) {
+    const { comments } = this.state;
+    this.setState({
+      comments: [...comments].filter(e => e.commentId !== id),
+    });
+  }
+
   render() {
     return (
       <section className='review_wrap'>
@@ -58,8 +66,10 @@ class Comment extends Component {
                 return (
                   <ReviewThread
                     key={comment.commentId}
+                    commentId={comment.commentId}
                     userId={comment.userId}
                     userComment={comment.userComment}
+                    deleteThread={this.removeComment.bind(this)}
                   />
                 );
               })}

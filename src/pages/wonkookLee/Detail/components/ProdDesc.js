@@ -3,8 +3,8 @@ import { DETAILS } from './PRODUCT_INFO';
 import AlergenDesc from './AlergenDesc';
 import './ProdDesc.scss';
 
-const Prod = DETAILS[2];
-const NutFact = DETAILS[2].nutritionFacts;
+const Prod = DETAILS[1];
+const NutFact = DETAILS[1].nutritionFacts;
 
 class ProdDesc extends Component {
   render() {
@@ -17,12 +17,12 @@ class ProdDesc extends Component {
             <span>{Prod.engName}</span>
           </h4>
           <p className='t1'>
-            {Prod.summary.split('\n').map(line => {
+            {Prod.summary.split('\n').map((line, i) => {
               return (
-                <>
+                <span key={i}>
                   {line}
                   <br />
-                </>
+                </span>
               );
             })}
           </p>
@@ -35,7 +35,6 @@ class ProdDesc extends Component {
 
         <form action='post'>
           <fieldset>
-            {/* NUTRITION FACT HEADER */}
             <legend className='hid'>제품 영양 정보</legend>
             <div className='product_view_info'>
               <div className='product_info_head'>
@@ -46,9 +45,7 @@ class ProdDesc extends Component {
                   </div>
                 </div>
               </div>
-              {/* NUTRITION FACT HEADER end */}
 
-              {/* NUTRITION FACT CONTENT */}
               <div className='product_info_content clearfix'>
                 <ul>
                   <li className='kcal'>
@@ -95,7 +92,6 @@ class ProdDesc extends Component {
                 <AlergenDesc allergen={NutFact.allergen} />
               ) : null}
             </div>
-            {/* NUTRITION FACT CONTENT end*/}
           </fieldset>
         </form>
       </div>

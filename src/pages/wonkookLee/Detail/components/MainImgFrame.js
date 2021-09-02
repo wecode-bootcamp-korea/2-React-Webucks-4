@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { DETAILS } from './PRODUCT_INFO';
 import './MainImgFrame.scss';
 
-const Prod = DETAILS[2];
+const Prod = DETAILS[1];
 
 class MainImgFrame extends Component {
   render() {

@@ -1,0 +1,63 @@
+$breakpoints: (
+  phone: 640px,
+  tablet: 768px,
+  desktop: 1024px,
+) !default;
+
+// @include media('>phone', '<tablet') {
+// }
+
+// @include media('>tablet', '<950px') {
+// }
+
+.testtest {
+  margin-top: 100px;
+  height: 400px;
+  width: 100vw;
+  background-color: dodgerblue;
+}
+
+@media screen and (min-width: 961px) and (max-width: 1099px) {
+  .testtest {
+    margin-top: 100px;
+    height: 400px;
+    width: 100vw;
+    background-color: yellowgreen;
+  }
+}
+
+@media (min-width: 961px) {
+  .testtest {
+    margin-top: 100px;
+    height: 400px;
+    width: 100vw;
+    background-color: dodgerblue;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 960px) {
+  .testtest {
+    margin-top: 100px;
+    height: 400px;
+    width: 100vw;
+    background-color: darkseagreen;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px) {
+  .testtest {
+    margin-top: 100px;
+    height: 400px;
+    width: 100vw;
+    background-color: tomato;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 660px) {
+  .testtest {
+    margin-top: 100px;
+    height: 400px;
+    width: 100vw;
+    background-color: teal;
+  }
+}

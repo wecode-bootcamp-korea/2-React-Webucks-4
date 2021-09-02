@@ -17,6 +17,13 @@ li {
       .trashIcon,
       .heartIcon {
         font-size: 15px;
+        transition: all 0.3s;
+      }
+      .iconColorRed {
+        color: red;
+        font-size: 15px;
+        transform: scale(1.2);
+        transition: all 0.5s;
       }
     }
   }

@@ -6,6 +6,13 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import './Review.scss';
 
 class Review extends Component {
+  state = {
+    isToggleOn: false,
+  };
+  changeHeartBtnColor = () => {
+    const { isToggleOn } = this.state;
+    this.setState({ isToggleOn: !isToggleOn });
+  };
   handleChange = () => {
     const { data, onRemove } = this.props;
     onRemove(data.id);
@@ -28,7 +35,12 @@ class Review extends Component {
             />
           </button>
           <button>
-            <FontAwesomeIcon className='heartIcon' icon={faHeart} size='1x' />
+            <FontAwesomeIcon
+              icon={faHeart}
+              size='1x'
+              className={this.state.isToggleOn ? 'iconColorRed' : 'heartIcon'}
+              onClick={this.changeHeartBtnColor}
+            />
           </button>
         </div>
       </li>

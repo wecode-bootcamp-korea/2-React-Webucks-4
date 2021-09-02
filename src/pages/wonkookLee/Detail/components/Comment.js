@@ -11,22 +11,24 @@ class Comment extends Component {
           commentId: 1,
           userId: 'coffee_lover',
           userComment: '너무 맛있어요!',
+          liked: false,
         },
         {
           commentId: 2,
           userId: 'CHOCO7',
           userComment: '오늘도 제주 비자림 콜드 브루를 마시러 제주도에 갑니다.',
+          liked: false,
         },
         {
           commentId: 3,
           userId: 'legend_dev',
           userComment:
             '진짜 제주 비자림 콜드 브루는 전설이다. 진짜 제주 비자림 콜드 브루는 전설이다. 진짜 제주 비자림 콜드 브루는 전설이다.',
+          liked: false,
         },
       ],
     };
     this.addComment = this.addComment.bind(this);
-    this.removeComment = this.removeComment.bind(this);
   }
 
   addComment(e) {
@@ -53,6 +55,16 @@ class Comment extends Component {
     });
   }
 
+  toggleLikeComment(id) {
+    const { comments } = this.state;
+    const matchIndex = comments.findIndex(e => e.commentId === id);
+    const toggleLiked = comments[matchIndex].liked;
+    comments[matchIndex].liked = !toggleLiked;
+    this.setState({
+      comments: comments,
+    });
+  }
+
   render() {
     return (
       <section className='review_wrap'>
@@ -70,6 +82,7 @@ class Comment extends Component {
                     userId={comment.userId}
                     userComment={comment.userComment}
                     deleteThread={this.removeComment.bind(this)}
+                    toggleLiked={this.toggleLikeComment.bind(this)}
                   />
                 );
               })}

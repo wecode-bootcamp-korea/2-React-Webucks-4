@@ -14,21 +14,21 @@ class LikeBtn extends Component {
 
   render() {
     return (
-      <div id='like_bev_container'>
+      <span id='like_comment_container'>
         <input
           type='checkbox'
-          name='like_bev'
-          id='like_bev'
           className={this.state.liked ? 'liked' : ''}
           onClick={() =>
             this.setState({
               liked: !this.state.liked,
             })
           }
+          name='like_comment'
+          id='like_comment'
         />
-        <FontAwesomeIcon className='far fa-heart login_icon' icon={farHeart} />
-        <FontAwesomeIcon className='fas fa-heart login_icon' icon={fasHeart} />
-      </div>
+        <FontAwesomeIcon className='far fa-heart' icon={farHeart} />
+        <FontAwesomeIcon className='fas fa-heart' icon={fasHeart} />
+      </span>
     );
   }
 }

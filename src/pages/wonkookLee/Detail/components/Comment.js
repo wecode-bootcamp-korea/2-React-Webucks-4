@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Comments } from './commentData';
 import ReviewThread from './ReviewThread';
 import './Comment.scss';
 

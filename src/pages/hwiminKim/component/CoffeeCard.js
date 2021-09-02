@@ -5,6 +5,15 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import './CoffeeCard.scss';
 
 class CoffeeCard extends Component {
+  state = {
+    isToggleOn: false,
+  };
+
+  changeHeartBtnColor = () => {
+    const { isToggleOn } = this.state;
+    this.setState({ isToggleOn: !isToggleOn });
+  };
+
   render() {
     const title = this.props.title;
     const imgURL = this.props.imageURL;
@@ -19,7 +28,12 @@ class CoffeeCard extends Component {
           </div>
           <div className='productTitleBox'>
             <Link to='/detail-hwiminKim'>{title}</Link>
-            <FontAwesomeIcon className='heartIcon' icon={faHeart} size='2x' />
+            <FontAwesomeIcon
+              icon={faHeart}
+              // size='1x'
+              className={this.state.isToggleOn ? 'iconColorRed' : 'heartIcon'}
+              onClick={this.changeHeartBtnColor}
+            />
           </div>
         </li>
       </div>

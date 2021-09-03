@@ -9,7 +9,7 @@
   #like_comment {
     display: inline-block;
     position: relative;
-    margin: 0 5px 0 0;
+    margin: 0 3px 0 0;
     height: 20px;
     width: 20px;
     z-index: 10000;
@@ -19,8 +19,8 @@
 
   .fa-heart {
     position: absolute;
-    font-size: 20px;
-    top: 0;
+    font-size: 16px;
+    top: 2px;
     left: 0;
   }
 

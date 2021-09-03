@@ -6,12 +6,13 @@ import './LikeBtn.scss';
 
 class LikeBtn extends Component {
   render() {
+    const { liked, commentId, toggleLiked } = this.props;
     return (
       <span id='like_comment_container'>
         <input
           type='checkbox'
-          className={this.props.liked ? 'liked' : ''}
-          onClick={() => this.props.toggleLiked(this.props.commentId)}
+          className={liked ? 'liked' : ''}
+          onClick={() => toggleLiked(commentId)}
           name='like_comment'
           id='like_comment'
         />

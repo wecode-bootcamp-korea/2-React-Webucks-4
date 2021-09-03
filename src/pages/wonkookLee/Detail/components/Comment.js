@@ -28,7 +28,6 @@ class Comment extends Component {
         },
       ],
     };
-    this.addComment = this.addComment.bind(this);
   }
 
   addComment(e) {
@@ -75,13 +74,14 @@ class Comment extends Component {
           <dd className='review_container'>
             <ul id='RvTarget'>
               {this.state.comments.map(comment => {
+                const { liked, commentId, userId, userComment } = comment;
                 return (
                   <ReviewThread
-                    liked={comment.liked}
-                    key={comment.commentId}
-                    commentId={comment.commentId}
-                    userId={comment.userId}
-                    userComment={comment.userComment}
+                    liked={liked}
+                    key={commentId}
+                    commentId={commentId}
+                    userId={userId}
+                    userComment={userComment}
                     deleteThread={this.removeComment.bind(this)}
                     toggleLiked={this.toggleLikeComment.bind(this)}
                   />
@@ -93,7 +93,7 @@ class Comment extends Component {
         <div id='validTag'>최소 열 자 이상 입력해주세요</div>
         <form action='submit'>
           <input
-            onKeyPress={this.addComment}
+            onKeyPress={this.addComment.bind(this)}
             id='review_field'
             type='text'
             placeholder='리뷰를 입력해주세요'

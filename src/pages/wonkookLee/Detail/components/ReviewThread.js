@@ -4,19 +4,18 @@ import './ReviewThread.scss';
 
 class ReviewThread extends Component {
   render() {
+    const { liked, commentId, deleteThread, toggleLiked, userId, userComment } =
+      this.props;
     return (
       <li className='review_thread'>
         <LikeBtn
-          liked={this.props.liked}
-          commentId={this.props.commentId}
-          toggleLiked={this.props.toggleLiked}
+          liked={liked}
+          commentId={commentId}
+          toggleLiked={toggleLiked}
         />
-        <span className='id'>{this.props.userId}</span>
-        <span className='comment'>{this.props.userComment}</span>
-        <div
-          id='closeBtn'
-          onClick={() => this.props.deleteThread(this.props.commentId)}
-        >
+        <span className='id'>{userId}</span>
+        <span className='comment'>{userComment}</span>
+        <div id='closeBtn' onClick={() => deleteThread(commentId)}>
           X
         </div>
       </li>

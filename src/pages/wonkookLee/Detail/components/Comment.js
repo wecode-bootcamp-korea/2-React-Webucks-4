@@ -57,7 +57,7 @@ class Comment extends Component {
 
   toggleLikeComment(id) {
     const { comments } = this.state;
-    const matchIndex = comments.findIndex(e => e.commentId === id);
+    const matchIndex = comments.findIndex(cmt => cmt.commentId === id);
     const toggleLiked = comments[matchIndex].liked;
     comments[matchIndex].liked = !toggleLiked;
     this.setState({
@@ -77,6 +77,7 @@ class Comment extends Component {
               {this.state.comments.map(comment => {
                 return (
                   <ReviewThread
+                    liked={comment.liked}
                     key={comment.commentId}
                     commentId={comment.commentId}
                     userId={comment.userId}

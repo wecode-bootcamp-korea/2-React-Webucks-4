@@ -7,7 +7,9 @@ class ReviewThread extends Component {
     return (
       <li className='review_thread'>
         <LikeBtn
-          toggleLiked={this.props.toggleLiked.bind(this, this.props.commentId)}
+          liked={this.props.liked}
+          commentId={this.props.commentId}
+          toggleLiked={this.props.toggleLiked}
         />
         <span className='id'>{this.props.userId}</span>
         <span className='comment'>{this.props.userComment}</span>

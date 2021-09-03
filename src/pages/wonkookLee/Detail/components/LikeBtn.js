@@ -5,24 +5,13 @@ import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons';
 import './LikeBtn.scss';
 
 class LikeBtn extends Component {
-  constructor() {
-    super();
-    this.state = {
-      liked: false,
-    };
-  }
-
   render() {
     return (
       <span id='like_comment_container'>
         <input
           type='checkbox'
-          className={this.state.liked ? 'liked' : ''}
-          onClick={() =>
-            this.setState({
-              liked: !this.state.liked,
-            })
-          }
+          className={this.props.liked ? 'liked' : ''}
+          onClick={() => this.props.toggleLiked(this.props.commentId)}
           name='like_comment'
           id='like_comment'
         />

@@ -58,7 +58,7 @@ class Login extends Component {
             onClick={this.handleSeePw}
           />
           <a className='a' target='blank' href='https://pspace21.tistory.com/'>
-            비밀번호를 잊으셨나요?
+            비밀번호를 잊으셨나요??
           </a>
         </section>
       </div>

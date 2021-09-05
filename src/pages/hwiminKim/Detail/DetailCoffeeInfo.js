@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import DetailCoffeeFeature from './DetailCoffeeFeature';
 import DetailImg from './DetailImg';
+import DetailCoffeeFeature from './DetailCoffeeFeature';
 import './DetailCoffeeInfo.scss';
 
 class DetailCoffeeInfo extends Component {

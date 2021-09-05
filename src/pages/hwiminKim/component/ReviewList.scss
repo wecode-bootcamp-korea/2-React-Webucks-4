@@ -1,11 +1,13 @@
 .reviewContainer {
   $heartAndNavColor: #999696;
+
   .reviewHeader {
     padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: solid 1px $heartAndNavColor;
     font-size: 22px;
   }
+
   .items {
     height: 50px;
     overflow: auto;

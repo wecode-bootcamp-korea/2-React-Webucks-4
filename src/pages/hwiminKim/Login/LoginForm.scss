@@ -12,6 +12,7 @@
     border-radius: 5px;
     border: solid 3px $borderColor;
     font-size: 16px;
+
     &::placeholder {
       color: $borderColor;
     }
@@ -23,6 +24,7 @@
     border: solid 3px $borderColor;
     border-radius: 5px;
     font-size: 16px;
+
     &::placeholder {
       color: $borderColor;
     }

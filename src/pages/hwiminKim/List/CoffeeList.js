@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CoffeeCard from '../component/CoffeeCard';
-
 import './CoffeeList.scss';
 
 class CoffeeList extends Component {

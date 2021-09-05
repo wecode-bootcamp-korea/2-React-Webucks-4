@@ -18,6 +18,7 @@ class Review extends Component {
     onRemove(data.id);
   };
   render() {
+    const isToggleOn = this.state.isToggleOn;
     return (
       <li className='item'>
         <div className='contentBox'>
@@ -38,7 +39,7 @@ class Review extends Component {
             <FontAwesomeIcon
               icon={faHeart}
               size='1x'
-              className={this.state.isToggleOn ? 'iconColorRed' : 'heartIcon'}
+              className={isToggleOn ? 'iconColorRed' : 'heartIcon'}
               onClick={this.changeHeartBtnColor}
             />
           </button>

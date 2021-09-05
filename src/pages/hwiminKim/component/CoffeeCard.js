@@ -17,7 +17,7 @@ class CoffeeCard extends Component {
   render() {
     const title = this.props.title;
     const imgURL = this.props.imageURL;
-    console.log(title, imgURL);
+    const isToggleOn = this.state.isToggleOn;
     return (
       <div className='CoffeeCard'>
         <li className='card'>
@@ -30,7 +30,7 @@ class CoffeeCard extends Component {
             <Link to='/detail-hwiminKim'>{title}</Link>
             <FontAwesomeIcon
               icon={faHeart}
-              className={this.state.isToggleOn ? 'iconColorRed' : 'heartIcon'}
+              className={isToggleOn ? 'iconColorRed' : 'heartIcon'}
               onClick={this.changeHeartBtnColor}
             />
           </div>

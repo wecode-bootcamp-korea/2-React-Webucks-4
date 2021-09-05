@@ -8,10 +8,12 @@
   height: 50px;
   margin-bottom: 30px;
   background-color: $headerColor;
+
   img {
     width: 80px;
     margin-left: 20px;
   }
+
   .nav-menu {
     ul {
       display: flex;
@@ -19,6 +21,7 @@
       color: $heartAndNavColor;
       font-size: 12px;
       list-style: none;
+
       li {
         margin-right: 30px;
       }

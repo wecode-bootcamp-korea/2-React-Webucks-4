@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
-import LoginFrom from './LoginForm';
-import './Login.scss';
+import LoginForm from './LoginForm';
 import LoginFindPw from './LoginFindPw';
+import './Login.scss';
 
 class Login extends Component {
   render() {
@@ -14,7 +13,7 @@ class Login extends Component {
             alt='webucks logo'
             className='webucksLogo'
           />
-          <LoginFrom />
+          <LoginForm />
           <LoginFindPw />
         </section>
       </div>

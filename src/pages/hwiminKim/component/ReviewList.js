@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import './ReviewList.scss';
 import Review from './Review';
+import './ReviewList.scss';
 
 class ReviewList extends Component {
+  inputRef = React.createRef();
   id = 0;
   state = {
     newReview: '',
     reviews: [],
   };
+
   handleChange = e => {
     this.setState({
       newReview: e.target.value,
@@ -29,9 +31,10 @@ class ReviewList extends Component {
           id: this.id++,
         }),
       });
-      console.log(this.state);
+      this.inputRef.current.value = '';
     }
   };
+
   render() {
     const { reviews } = this.state;
 
@@ -59,6 +62,7 @@ class ReviewList extends Component {
           placeholder='리뷰를 입력해주세요.'
           onChange={this.handleChange}
           onKeyPress={this.createReview}
+          ref={this.inputRef}
         />
       </>
     );

@@ -7,11 +7,13 @@ class DetailFeatureHeader extends Component {
   state = {
     isToggleOn: false,
   };
+
   changeHeartBtnColor = () => {
     const { isToggleOn } = this.state;
     this.setState({ isToggleOn: !isToggleOn });
   };
   render() {
+    const isToggleOn = this.state.isToggleOn;
     return (
       <>
         <header className='infoHeader'>
@@ -22,7 +24,7 @@ class DetailFeatureHeader extends Component {
           <FontAwesomeIcon
             icon={faHeart}
             size='2x'
-            className={this.state.isToggleOn ? 'iconColorRed' : 'headerHeart'}
+            className={isToggleOn ? 'iconColorRed' : 'headerHeart'}
             onClick={this.changeHeartBtnColor}
           />
         </header>

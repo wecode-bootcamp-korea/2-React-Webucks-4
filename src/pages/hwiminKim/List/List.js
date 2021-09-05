@@ -11,14 +11,10 @@ class List extends Component {
     const BREW_PRODUCTS = BEVERAGES.breweds;
     return (
       <section className='List'>
-        {/*main header*/}
         <TopsNav />
         <SubHeader category={'콜드 브루 커피'} />
-        {/*coldbrew list*/}
         <CoffeeList productData={COLDBREW_PRODUCTS} />
-        {/* sub header */}
         <SubHeader category={'브루드 커피'} />
-        {/* brewed list */}
         <CoffeeList productData={BREW_PRODUCTS} />
       </section>
     );

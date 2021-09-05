@@ -1,13 +1,15 @@
 .loginBtnDeactivate {
   height: 50px;
   padding: 10px;
-  background-color: #add3eb;
   border: none;
   border-radius: 8px;
+  background-color: #add3eb;
   font-size: 20px;
+
   &:hover {
     cursor: pointer;
   }
+
   .loginBtn {
     text-decoration: none;
     color: white;
@@ -15,6 +17,7 @@
     font-weight: 700;
   }
 }
+
 .loginBtnActivate {
   $loginBtnActivate: #58b2eb;
   height: 50px;
@@ -23,9 +26,11 @@
   border: none;
   border-radius: 8px;
   font-size: 20px;
+
   &:hover {
     cursor: pointer;
   }
+
   .loginBtn {
     text-decoration: none;
     color: white;

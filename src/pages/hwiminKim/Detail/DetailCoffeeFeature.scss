@@ -9,18 +9,22 @@
       border-bottom: solid 1px $heartAndNavColor;
       font-size: 22px;
     }
+
     ul {
       list-style: none;
+
       li {
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
         font-size: 14px;
+
         .contentBox {
           p {
             margin-left: 10px;
           }
         }
+
         .btnBox {
           button {
             margin-right: 20px;

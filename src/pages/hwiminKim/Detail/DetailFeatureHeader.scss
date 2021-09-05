@@ -5,24 +5,29 @@
   margin-bottom: 30px;
   padding-bottom: 10px;
   border-bottom: solid 3px black;
+
   .infoTitle {
     margin-bottom: 15px;
     font-weight: 700;
     font-size: 24px;
   }
+
   .headerHeart {
     color: lightgray;
     font-size: 25px;
     transition: all 0.5s;
+
     &:hover {
       cursor: pointer;
     }
   }
+
   .iconColorRed {
     color: red;
     font-size: 25px;
     transform: scale(1.2);
     transition: all 0.5s;
+
     &:hover {
       cursor: pointer;
     }

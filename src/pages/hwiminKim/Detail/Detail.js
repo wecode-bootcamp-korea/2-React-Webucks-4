@@ -1,31 +1,26 @@
 import React, { Component } from 'react';
 import TopsNav from '../component/TopsNav';
 import DetailSubHeader from './DetailSubHeader';
-import './Detail.scss';
-import Footer from '../component/Footer';
 import DetailCoffeeInfo from './DetailCoffeeInfo';
+import Footer from '../component/Footer';
 import { DETAILS } from '../data/PRODUCT_INFO';
+import './Detail.scss';
 
 class Detail extends Component {
   render() {
-    const productDesc = DETAILS[6];
-    const productNutrition = DETAILS[6].nutritionFacts;
+    const productDesc = DETAILS[4];
+    const productNutrition = DETAILS[4].nutritionFacts;
 
     return (
       <>
-        {/* {console.log(productDesc, productNutrition)} */}
         <section className='Detail'>
-          {/* main header */}
           <TopsNav />
-          {/* sub header */}
           <DetailSubHeader description={productDesc} />
-          {/* coffee info */}
           <DetailCoffeeInfo
             description={productDesc}
             nutrition={productNutrition}
           />
         </section>
-        {/* footer */}
         <Footer />
       </>
     );

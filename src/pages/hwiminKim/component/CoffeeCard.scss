@@ -4,42 +4,50 @@
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
+
     .flowbox {
       width: 270px;
       height: 281.6px;
       overflow: hidden;
+
       .cardImage {
         width: 100%;
         transition: all 1s;
+
         &:hover {
           transform: scale(1.2, 1.2);
         }
       }
     }
+
     .productTitleBox {
       display: flex;
       align-items: center;
+
       a {
         text-decoration: none;
         color: #353434;
         font-size: 18px;
       }
+
       .heartIcon {
         margin-left: 15px;
-        font-size: 15px;
         color: lightgray;
         font-size: 20px;
         transition: all 0.5s;
+
         &:hover {
           cursor: pointer;
         }
       }
+
       .iconColorRed {
         margin-left: 15px;
         color: red;
         font-size: 20px;
         transform: scale(1.2);
         transition: all 0.5s;
+
         &:hover {
           cursor: pointer;
         }

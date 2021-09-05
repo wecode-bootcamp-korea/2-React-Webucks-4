@@ -1,0 +1,17 @@
+@import '../common.scss';
+
+.Review {
+  margin-left: 45px;
+
+  .reviewTitle {
+    padding: 10px 0 10px 5px;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 2px solid lightgrey;
+  }
+
+  ul {
+    padding: 0;
+    width: 500px;
+  }
+}

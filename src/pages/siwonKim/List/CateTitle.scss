@@ -1,0 +1,35 @@
+@import '../common.scss';
+
+.cateTitle {
+  @include flex(row);
+  align-items: center;
+  margin-top: 100px;
+
+  .titleWraper {
+    @include flex(row);
+    justify-content: left;
+    align-items: center;
+    width: 1060px;
+    height: 60px;
+    background-color: #f4f4f2;
+  }
+
+  .coldTitle {
+    margin-left: 25px;
+    font-size: 20px;
+  }
+
+  .coffeei {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    margin-left: 15px;
+  }
+
+  .titleWraper {
+    span {
+      margin-left: 15px;
+      font-size: 15px;
+    }
+  }
+}

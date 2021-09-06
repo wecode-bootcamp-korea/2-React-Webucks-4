@@ -1,6 +1,4 @@
 import React from 'react';
-import { fontawersome } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
 
 class DetailInfo extends React.Component {
   render() {

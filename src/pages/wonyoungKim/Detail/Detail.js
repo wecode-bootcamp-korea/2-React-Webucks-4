@@ -40,9 +40,9 @@ class Detail extends Component {
             <div className='Title'>
               <button onClick={this.btnChangeHandler}>
                 {this.state.btnColor ? (
-                  <img src='/images/heartRed.png' />
+                  <img src='/images/heartRed.png' alt='heartRed' />
                 ) : (
-                  <img src='/images/heart.png' />
+                  <img src='/images/heart.png' alt='heart' />
                 )}
               </button>
               <p className='nameKo'>시그니처 더 블랙 콜드 브루</p>

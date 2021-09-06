@@ -38,7 +38,7 @@ body {
   }
 
   a {
-    color: darkgray;
+    color: #454545;
     font-size: 15px;
     text-decoration: none;
   }
@@ -161,7 +161,7 @@ body {
   .Allergy {
     height: 50px;
     border-radius: 5px;
-    background-color: rgb(241, 238, 238);
+    background-color: rgb(243, 241, 241);
   }
 
   .Allergy p {
@@ -192,19 +192,21 @@ body {
       padding: 5px;
     }
   }
-
   .reviewEnter {
-    background-color: rgb(241, 238, 238);
     height: 40px;
-    border-radius: 5px;
+    width: 90%;
+    padding-left: 10px;
+    border: 1px solid rgb(218, 215, 215);
+    border-radius: 3px;
   }
 
-  .reviewEnter p {
-    padding-left: 10px;
-    color: rgb(175, 173, 173);
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 40px;
+  .reviewAddBtn {
+    height: 40px;
+    width: 52px;
+    background-color: rgb(243, 241, 241);
+    border: 1px solid rgb(218, 215, 215);
+    border-radius: 3px;
+    color: #454545;
   }
 }
 

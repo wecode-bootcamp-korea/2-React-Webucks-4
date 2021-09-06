@@ -6,7 +6,9 @@ class CoffeeCard extends Component {
     return (
       <li className='menuDataSet'>
         <dl>
-          <dt>
+          <dt
+            onClick={e => this.props.goToEachDetailPage(e, this.props.linkId)}
+          >
             <LikeBtn />
             <a href='./detail-wonkooklee'>
               <img src={this.props.imgUrl} alt={this.props.name} />

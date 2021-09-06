@@ -14,7 +14,9 @@ class ProductList extends Component {
               {BEVERAGES.coldBrews.map(beverage => {
                 return (
                   <CoffeeCard
+                    goToEachDetailPage={this.props.goToEachDetailPage}
                     key={beverage.id}
+                    linkId={beverage.id}
                     name={beverage.name}
                     imgUrl={beverage.imgUrl}
                   />
@@ -28,7 +30,9 @@ class ProductList extends Component {
               {BEVERAGES.breweds.map(beverage => {
                 return (
                   <CoffeeCard
+                    goToEachDetailPage={this.props.goToEachDetailPage}
                     key={beverage.id}
+                    linkId={beverage.id}
                     name={beverage.name}
                     imgUrl={beverage.imgUrl}
                   />

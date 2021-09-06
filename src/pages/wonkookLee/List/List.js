@@ -14,7 +14,16 @@ class List extends Component {
     removeListBodyStyle();
   }
 
+  goToEachDetailPage = (e, id) => {
+    e.preventDefault();
+    this.props.history.push({
+      pathname: '/detail-wonkooklee',
+      state: { selectedItem: id },
+    });
+  };
+
   render() {
+    console.log(this.props);
     return (
       <div id='wrap'>
         <TopNav />
@@ -36,7 +45,7 @@ class List extends Component {
                 <dl className='product_view_tab product_view_tab01'>
                   <dt className='dt1'></dt>
                   <dd>
-                    <ProductList />
+                    <ProductList goToEachDetailPage={this.goToEachDetailPage} />
                   </dd>
                 </dl>
               </div>

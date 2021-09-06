@@ -482,9 +482,10 @@ div.product_list > dl > dd > ul li dt img:hover {
 
   nav.tablet_gnb_sep > ul > li > a {
     display: block;
-    left: 18px;
-    overflow: hidden;
     position: absolute;
+    left: 18px;
+    font-size: 0;
+    overflow: hidden;
   }
 
   nav.tablet_gnb_sep > ul > li:first-child > a {

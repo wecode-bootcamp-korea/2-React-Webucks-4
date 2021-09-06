@@ -23,11 +23,14 @@ class Detail extends Component {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(data =>
+      .then(data => {
+        const item = data.find(
+          e => e.id === this.props.location.state.selectedItem
+        );
         this.setState({
-          products: data[5],
-        })
-      );
+          products: item,
+        });
+      });
   }
 
   componentWillUnmount() {

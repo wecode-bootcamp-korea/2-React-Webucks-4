@@ -12,7 +12,7 @@ const BEVERAGES = {
       category: '콜드 브루 커피',
       name: '아이스크림 블렌딩 콜드 브루',
       imgUrl:
-        'https://image.istarbucks.co.kr/upload/store/skuimg/2021/02/[9200000001635]_20210225092236748.jpg',
+        'https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg',
     },
     {
       id: 103,

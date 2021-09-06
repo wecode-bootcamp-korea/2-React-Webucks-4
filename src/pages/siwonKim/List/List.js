@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import TopNav from '../TopNav';
 import CateTitle from './CateTitle';
 import ProductList from './ProductList';
-
 import DATA from '../ITEMS';
-
 import '../List/List.scss';
 
 class List extends Component {

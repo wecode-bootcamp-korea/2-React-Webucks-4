@@ -11,13 +11,33 @@
     align-items: center;
   }
 
+  .productImg {
+    margin-right: 0px;
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+
+    .boxElements {
+      display: block;
+      width: 240px;
+      height: 240px;
+      transition-property: all;
+      transition-duration: 1s;
+
+      &:hover {
+        transform: scale(1.1, 1.1);
+      }
+    }
+  }
+
   .likeOn {
     position: relative;
     top: -230px;
     right: -95px;
-    font-size: 20px;
     color: red;
+    font-size: 20px;
     transition: all 0.5s linear;
+
     &:hover {
       animation: likeOnRotate 1s 1;
       transform-origin: 50% 50%;
@@ -27,6 +47,13 @@
   .likeOff {
     @extend .likeOn;
     color: grey;
+  }
+
+  .caption {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 18px;
   }
 
   @keyframes likeOnRotate {

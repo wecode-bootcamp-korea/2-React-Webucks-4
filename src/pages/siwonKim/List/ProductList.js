@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Caption from './Caption';
-import ProductImg from './ProductImg';
-
-import './ProductList.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import './ProductList.scss';
 
 class ProductList extends Component {
   constructor(props) {
@@ -32,24 +29,26 @@ class ProductList extends Component {
   };
 
   render() {
-    const data = this.props.data;
-    // console.log(data);
+    const { id, name, imgUrl } = this.props.data;
+    const { likeOn } = this.state;
+
     return (
       <div className='product'>
         <Link
           to={{
-            pathname: `/Detail-siwonkim/${data.id}`,
-            paramas: data.id,
+            pathname: `/Detail-siwonkim/${id}`,
+            paramas: id,
           }}
+          className='productImg'
         >
-          <ProductImg key={data.id} name={data.name} Url={data.imgUrl} />
+          <img src={imgUrl} alt={name} className='boxElements' />
         </Link>
         <FontAwesomeIcon
           icon={faHeart}
-          className={this.state.likeOn ? 'likeOn' : 'likeOff'}
+          className={likeOn ? 'likeOn' : 'likeOff'}
           onClick={this.togleLike}
         />
-        <Caption key={data.id} name={data.name} />
+        <span class='caption'>{name}</span>
       </div>
     );
   }

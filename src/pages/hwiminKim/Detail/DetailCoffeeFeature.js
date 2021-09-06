@@ -8,8 +8,8 @@ class DetailCoffeeFeature extends Component {
   render() {
     return (
       <section className='infoContainer'>
-        <DetailFeatureHeader description={this.props.description} />
-        <DetailNutritionInfo nutrition={this.props.nutrition} />
+        <DetailFeatureHeader description={this.props?.description} />
+        <DetailNutritionInfo nutrition={this.props?.nutrition} />
         <ReveiwList />
       </section>
     );

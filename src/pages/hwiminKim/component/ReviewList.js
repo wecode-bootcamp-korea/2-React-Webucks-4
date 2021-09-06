@@ -19,7 +19,7 @@ class ReviewList extends Component {
   handleRemove = id => {
     const { reviews } = this.state;
     this.setState({
-      reviews: reviews.filter(info => info.id !== id),
+      reviews: reviews.filter(review => review.id !== id),
     });
   };
 
@@ -37,7 +37,6 @@ class ReviewList extends Component {
 
   render() {
     const { reviews } = this.state;
-
     return (
       <>
         <div className='reviewContainer'>

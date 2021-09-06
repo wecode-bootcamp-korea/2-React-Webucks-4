@@ -7,10 +7,10 @@ class DetailSubHeader extends Component {
   render() {
     return (
       <header className='DetailSubHeader'>
-        <h1>{this.props.description.category}</h1>
+        <h1>{this.props?.category}</h1>
         <ul className='subHeaderItems'>
           <li>
-            <a href='#'>홈</a>
+            <a>홈</a>
           </li>
           <li>
             <FontAwesomeIcon
@@ -20,7 +20,7 @@ class DetailSubHeader extends Component {
             />
           </li>
           <li>
-            <a href='#'>MENU</a>
+            <a>MENU</a>
           </li>
           <li>
             <FontAwesomeIcon
@@ -30,7 +30,7 @@ class DetailSubHeader extends Component {
             />
           </li>
           <li>
-            <a href='#'>음료</a>
+            <a>음료</a>
           </li>
           <li>
             <FontAwesomeIcon
@@ -40,7 +40,7 @@ class DetailSubHeader extends Component {
             />
           </li>
           <li>
-            <a href='#'>에스프레소</a>
+            <a>에스프레소</a>
           </li>
           <li>
             <FontAwesomeIcon
@@ -50,7 +50,7 @@ class DetailSubHeader extends Component {
             />
           </li>
           <li>
-            <a href='#'>나이트로 바닐라 크림</a>
+            <a>나이트로 바닐라 크림</a>
           </li>
         </ul>
       </header>

@@ -6,7 +6,11 @@ class TopsNav extends Component {
     return (
       <header className='main-header'>
         <div className='logo-container'>
-          <img alt='webucks logo' src='../image/logo1.png' className='logo' />
+          <img
+            alt='webucks logo'
+            src='/img/hwiminKim/logo-removedbg.png'
+            className='logo'
+          />
         </div>
         <nav className='nav-menu'>
           <ul className='nav-menu__items'>

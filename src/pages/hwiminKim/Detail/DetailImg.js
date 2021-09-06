@@ -6,8 +6,8 @@ class DetailImg extends Component {
     return (
       <section className='imgContainer'>
         <img
-          alt={this.props.description.title}
-          src={this.props.description.imgUrl}
+          alt={this.props.description?.title}
+          src={this.props.description?.imgUrl}
           className='coffeeInfoImage'
         />
       </section>

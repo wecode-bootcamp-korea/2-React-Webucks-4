@@ -1,4 +1,4 @@
-.nutritionTitle {
+.nutritionTitleBox {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -8,13 +8,13 @@
     bottom: solid 2px lightgrey;
   }
 
-  h3 {
+  .nutritionTitle {
     margin-left: 20px;
     font-size: 22px;
     font-weight: 400;
   }
 
-  p {
+  .nutiritionServingSize {
     margin-right: 20px;
     font-size: 22px;
   }

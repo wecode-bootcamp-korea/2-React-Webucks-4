@@ -9,8 +9,8 @@ class DetailCoffeeInfo extends Component {
       <article className='coffeeInfoContainer'>
         <DetailImg description={this.props.description} />
         <DetailCoffeeFeature
-          description={this.props.description}
-          nutrition={this.props.nutrition}
+          description={this.props?.description}
+          nutrition={this.props?.nutrition}
         />
       </article>
     );

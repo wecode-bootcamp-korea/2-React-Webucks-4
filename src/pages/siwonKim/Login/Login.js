@@ -12,14 +12,15 @@ class Login extends Component {
     this.state = {
       idInput: '',
       pwInput: '',
-      seePw: false,
       isIdValid: false,
       isPwValid: false,
+      seePw: false,
     };
   }
 
   handleIdInput = e => {
-    this.setState({ idInput: e.target.value }, () => {
+    const { value } = e.target;
+    this.setState({ idInput: value }, () => {
       this.state.idInput.includes('@')
         ? this.setState({ isIdValid: true })
         : this.setState({ isIdValid: false });
@@ -27,7 +28,8 @@ class Login extends Component {
   };
 
   handlePwInput = e => {
-    this.setState({ pwInput: e.target.value }, () => {
+    const { value } = e.target;
+    this.setState({ pwInput: value }, () => {
       this.state.pwInput.length >= 5
         ? this.setState({ isPwValid: true })
         : this.setState({ isPwValid: false });
@@ -39,19 +41,21 @@ class Login extends Component {
   };
 
   render() {
+    const { isIdValid, isPwValid, seePw } = this.state;
+
     return (
       <div className='Login'>
         <section className='backBoard'>
           <img className='logo' alt='webucks logo' src={logo} />
           <FormBox
-            changeId={this.handleIdInput}
-            changePw={this.handlePwInput}
-            isIdValid={this.state.isIdValid}
-            isPwValid={this.state.isPwValid}
-            seePw={this.state.seePw}
+            handleIdInput={this.handleIdInput}
+            handlePwInput={this.handlePwInput}
+            isIdValid={isIdValid}
+            isPwValid={isPwValid}
+            seePw={seePw}
           />
           <FontAwesomeIcon
-            icon={this.state.seePw ? faEye : faEyeSlash}
+            icon={seePw ? faEye : faEyeSlash}
             className='eye'
             onClick={this.handleSeePw}
           />

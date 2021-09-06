@@ -10,16 +10,19 @@ class FormBox extends Component {
   };
 
   render() {
+    const { handleIdInput, handlePwInput, isIdValid, isPwValid, seePw } =
+      this.props;
+
     return (
       <form className='FormBox'>
-        <IdInput changeId={this.props.changeId} idOn={this.props.idOn} />
+        <IdInput handleIdInput={handleIdInput} isIdValid={isIdValid} />
         <PwInput
-          changePw={this.props.changePw}
-          idOn={this.props.idOn}
-          pwOn={this.props.pwOn}
-          seePw={this.props.seePw}
+          handlePwInput={handlePwInput}
+          isIdValid={isIdValid}
+          isPwValid={isPwValid}
+          seePw={seePw}
         />
-        {this.props.idOn && this.props.pwOn ? (
+        {isIdValid && isPwValid ? (
           <Link to='/List-siwonkim' className='btnOn' type='button'>
             로그인
           </Link>
@@ -28,14 +31,6 @@ class FormBox extends Component {
             로그인
           </button>
         )}
-        {/* <Link
-          to='/List-siwonkim'
-          className={this.props.idOn && this.props.pwOn ? 'btnOn' : 'btn'}
-          type='button'
-          onclick='goToList()'
-        >
-          로그인
-        </Link> */}
       </form>
     );
   }

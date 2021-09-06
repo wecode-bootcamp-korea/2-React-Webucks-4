@@ -3,13 +3,17 @@ import './PwInput.scss';
 
 class PwInput extends Component {
   render() {
+    const { isPwValid, seePw, handlePwInput } = this.props;
+
     return (
-      <input
-        className={this.props.pwOn ? 'boxstyle greenLight' : 'boxstyle'}
-        type={this.props.seePw ? 'text' : 'password'}
-        placeholder='비밀번호'
-        onChange={this.props.changePw}
-      />
+      <div className='PwInput'>
+        <input
+          className={isPwValid ? 'boxstyle greenLight' : 'boxstyle'}
+          type={seePw ? 'text' : 'password'}
+          placeholder='비밀번호'
+          onChange={handlePwInput}
+        />
+      </div>
     );
   }
 }

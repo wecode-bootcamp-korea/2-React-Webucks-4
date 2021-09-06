@@ -16,7 +16,6 @@ class List extends Component {
 
   goToEachDetailPage = (e, id) => {
     e.preventDefault();
-    console.log(e);
     if (e.target.classList.contains('like_bev_input')) return;
     this.props.history.push({
       pathname: '/detail-wonkooklee',

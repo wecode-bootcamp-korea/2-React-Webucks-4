@@ -6,15 +6,15 @@ class BreadCrumb extends Component {
     return (
       <ul className='smap'>
         <li>
-          <a href='http://localhost:3000'>.</a>
+          <a href='/list-wonkooklee'>홈</a>
         </li>
         <li></li>
         <li>
-          <a href='http://localhost:3000'>MENU</a>
+          <a href='/list-wonkooklee'>MENU</a>
         </li>
         <li></li>
         <li>
-          <a href='http://localhost:3000'>음료</a>
+          <a href='/list-wonkooklee'>음료</a>
         </li>
         <li></li>
         <li>
@@ -22,9 +22,7 @@ class BreadCrumb extends Component {
         </li>
         <li></li>
         <li>
-          <a href='/detail-wonkooklee'>
-            <strong>{this.props?.name}</strong>
-          </a>
+          <strong>{this.props?.name}</strong>
         </li>
       </ul>
     );

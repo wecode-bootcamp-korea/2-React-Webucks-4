@@ -1,4 +1,4 @@
-@import '../common.scss';
+@import '../mixin.scss';
 
 .FormBox {
   @include flex(column);

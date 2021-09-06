@@ -1,4 +1,4 @@
-@import '../common.scss';
+@import '../mixin.scss';
 
 .productList {
   @include grid(4, 270px);

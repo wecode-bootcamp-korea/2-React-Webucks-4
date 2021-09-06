@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import IdInput from './IdInput';
 import PwInput from './PwInput';
-import { Link } from 'react-router-dom';
-
 import './FormBox.scss';
 
 class FormBox extends Component {
-  handleOnclick = () => {
+  handleBtnOnclick = () => {
     alert('유효한 ID와 비밀번호가 아닙니다!');
   };
 
   render() {
     return (
-      <form className='FormBox' action=''>
+      <form className='FormBox'>
         <IdInput changeId={this.props.changeId} idOn={this.props.idOn} />
         <PwInput
           changePw={this.props.changePw}
@@ -25,7 +24,7 @@ class FormBox extends Component {
             로그인
           </Link>
         ) : (
-          <button className='btn' type='button' onClick={this.handleOnclick}>
+          <button className='btn' type='button' onClick={this.handleBtnOnclick}>
             로그인
           </button>
         )}

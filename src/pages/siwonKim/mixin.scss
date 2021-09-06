@@ -1,10 +1,9 @@
-@mixin flex($direction){
+@mixin flex($direction) {
   display: flex;
   flex-direction: $direction;
 }
 
-@mixin grid($n, $px){
+@mixin grid($n, $px) {
   display: grid;
   grid-template-columns: repeat($n, $px);
 }
-

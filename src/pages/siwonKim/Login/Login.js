@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import FormBox from './FormBox';
-
-import '../Login/Login.scss';
-import logo from './webuckslogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { faEye } from '@fortawesome/free-regular-svg-icons';
+import logo from './webuckslogo.png';
+import '../Login/Login.scss';
 
 class Login extends Component {
   constructor(props) {
@@ -14,25 +13,24 @@ class Login extends Component {
       idInput: '',
       pwInput: '',
       seePw: false,
-      IdOn: false,
-      PwOn: false,
+      isIdValid: false,
+      isPwValid: false,
     };
   }
 
   handleIdInput = e => {
     this.setState({ idInput: e.target.value }, () => {
       this.state.idInput.includes('@')
-        ? this.setState({ IdOn: true })
-        : this.setState({ IdOn: false });
+        ? this.setState({ isIdValid: true })
+        : this.setState({ isIdValid: false });
     });
   };
 
   handlePwInput = e => {
-    // if(e.target.key === 'Enter')
     this.setState({ pwInput: e.target.value }, () => {
       this.state.pwInput.length >= 5
-        ? this.setState({ PwOn: true })
-        : this.setState({ PwOn: false });
+        ? this.setState({ isPwValid: true })
+        : this.setState({ isPwValid: false });
     });
   };
 
@@ -48,8 +46,8 @@ class Login extends Component {
           <FormBox
             changeId={this.handleIdInput}
             changePw={this.handlePwInput}
-            idOn={this.state.IdOn}
-            pwOn={this.state.PwOn}
+            isIdValid={this.state.isIdValid}
+            isPwValid={this.state.isPwValid}
             seePw={this.state.seePw}
           />
           <FontAwesomeIcon

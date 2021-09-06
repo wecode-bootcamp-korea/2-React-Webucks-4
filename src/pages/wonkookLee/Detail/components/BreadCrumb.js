@@ -18,12 +18,12 @@ class BreadCrumb extends Component {
         </li>
         <li></li>
         <li>
-          <a href='http://localhost:3000'>콜드 브루</a>
+          <a href='/list-wonkooklee'>{this.props?.category}</a>
         </li>
         <li></li>
         <li>
-          <a href='http://localhost:3000'>
-            <strong>제주 비자림 콜드 브루</strong>
+          <a href='/detail-wonkooklee'>
+            <strong>{this.props?.name}</strong>
           </a>
         </li>
       </ul>

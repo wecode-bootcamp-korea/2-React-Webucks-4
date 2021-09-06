@@ -1,17 +1,35 @@
 import React, { Component } from 'react';
-import { BEVERAGES } from './ITEMS';
 import ProductsHeader from './ProductsHeader';
 import CoffeeCard from './CoffeeCard';
 
 class ProductList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      coldBrews: [],
+      breweds: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('/data/PRODUCT_LIST.json')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          coldBrews: data.coldBrews,
+          breweds: data.breweds,
+        })
+      );
+  }
+
   render() {
     return (
       <div className='product_list'>
         <dl>
-          <ProductsHeader category={BEVERAGES.coldBrews[0].category} />
+          <ProductsHeader category={this.state.coldBrews[0]?.category} />
           <dd>
             <ul className='product_cold_brew clearfix'>
-              {BEVERAGES.coldBrews.map(beverage => {
+              {this.state.coldBrews?.map(beverage => {
                 return (
                   <CoffeeCard
                     goToEachDetailPage={this.props.goToEachDetailPage}
@@ -19,15 +37,16 @@ class ProductList extends Component {
                     linkId={beverage.id}
                     name={beverage.name}
                     imgUrl={beverage.imgUrl}
+                    isNewProduct={beverage.isNewProduct}
                   />
                 );
               })}
             </ul>
           </dd>
-          <ProductsHeader category={BEVERAGES.breweds[0].category} />
+          <ProductsHeader category={this.state.breweds[0]?.category} />
           <dd>
             <ul className='product_brood clearfix'>
-              {BEVERAGES.breweds.map(beverage => {
+              {this.state.breweds?.map(beverage => {
                 return (
                   <CoffeeCard
                     goToEachDetailPage={this.props.goToEachDetailPage}
@@ -35,6 +54,7 @@ class ProductList extends Component {
                     linkId={beverage.id}
                     name={beverage.name}
                     imgUrl={beverage.imgUrl}
+                    isNewProduct={beverage.isNewProduct}
                   />
                 );
               })}

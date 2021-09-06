@@ -19,7 +19,7 @@ class LikeBtn extends Component {
           type='checkbox'
           name='like_bev'
           id='like_bev'
-          className={this.state.liked ? 'liked' : ''}
+          className={`like_bev_input ${this.state.liked ? 'liked' : ''}`}
           onClick={() =>
             this.setState({
               liked: !this.state.liked,

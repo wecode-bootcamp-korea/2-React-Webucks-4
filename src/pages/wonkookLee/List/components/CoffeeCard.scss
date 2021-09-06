@@ -1,0 +1,13 @@
+.menuDataSet {
+  .new_badge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    height: 48px;
+    z-index: 9999;
+
+    img {
+      width: 100%;
+    }
+  }
+}

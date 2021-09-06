@@ -12,7 +12,7 @@ class NavBar extends Component {
           <nav className='tablet_gnb_sep'>
             <ul>
               <li className='tablet_gnb01'>
-                <a href='http://localhost:3000' role='button'>
+                <a href='/login-wonkooklee' role='button'>
                   login
                 </a>
               </li>
@@ -34,7 +34,7 @@ class NavBar extends Component {
             <div className='sub_gnb_wrap'>
               <div className='sub_gnb_wrap_inner'>
                 <h1 className='logo'>
-                  <a href='http://localhost:3000'>Westabucks</a>
+                  <a href='/list-wonkooklee'>Westabucks</a>
                 </h1>
                 <nav className='util_nav'>
                   <ul className='clearfix'>

@@ -117,42 +117,46 @@ div.product_view_detail p.t1 {
   font-size: 16px;
 }
 
-/* NUTRITION FACT */
-
 div.product_info_content {
   margin: 20px 0;
   width: 100%;
-}
 
-div.product_info_content ul {
-  width: 50%;
-  float: left;
-}
+  &.clearfix::after {
+    clear: both;
+    display: block;
+    content: '';
+  }
 
-div.product_info_content ul:last-child {
-  width: 50%;
-  float: right;
-  border-left: 1px dotted #d6d6d6;
-}
+  ul {
+    width: 50%;
+    float: left;
 
-div.product_info_content ul li {
-  padding: 0 10px;
-  line-height: 2.5;
-}
+    &:last-child {
+      width: 50%;
+      float: right;
+      border-left: 1px dotted #d6d6d6;
+    }
 
-div.product_info_content ul li dl {
-  width: 100%;
-  font-size: 14px;
-  color: #444;
-}
+    li {
+      padding: 0 10px;
+      line-height: 2.5;
 
-div.product_info_content dl dt {
-  float: left;
-  width: 85%;
-}
+      dl {
+        width: 100%;
+        font-size: 14px;
+        color: #444;
 
-div.product_info_content dl dd {
-  float: right;
-  width: 15%;
-  text-align: right;
+        dt {
+          float: left;
+          width: 85%;
+        }
+
+        dd {
+          float: right;
+          width: 15%;
+          text-align: right;
+        }
+      }
+    }
+  }
 }

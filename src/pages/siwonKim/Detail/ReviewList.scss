@@ -1,0 +1,54 @@
+@import '../common.scss';
+
+.ReviewList {
+  @include flex(row);
+  list-style: none;
+  padding-top: 5px;
+  width: 500px;
+
+  .likeOn {
+    font-size: 15px;
+    margin: 5px;
+    color: red;
+    &:hover {
+      animation: likeOnRotate 1s 1;
+      transform-origin: 50% 50%;
+    }
+  }
+
+  .likeOff {
+    @extend .likeOn;
+    color: grey;
+  }
+
+  @keyframes likeOnRotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .id {
+    font-weight: bold;
+    margin: 5px;
+  }
+
+  .text {
+    margin: 5px;
+    word-break: break-all;
+  }
+
+  .delete {
+    margin: 5px;
+    padding: 0.5px 3px;
+    color: grey;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}

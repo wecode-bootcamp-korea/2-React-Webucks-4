@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import TopNav from '../TopNav';
 import ProductTitle from './ProductTitle';
-import DproductImg from './DproductImg';
 import DeInfo from './DeInfo';
 import Allergen from './Allergen';
 import Review from './Review';
 import Footer from './Footer';
 import DATA from '../PRODUCT_INFO';
-
 import '../Detail/Detail.scss';
 
 class Detail extends Component {
@@ -17,10 +15,10 @@ class Detail extends Component {
     return (
       <div className='Detail'>
         <TopNav />
-        <div className='body'>
+        <main className='mainContent'>
           <ProductTitle category={data.category} name={data.name} />
           <div className='bodyWrap'>
-            <DproductImg src={data.imgUrl} alt={data.name} />
+            <img src={data.imgUrl} alt={data.name} className='productImg' />
             <section className='productInfo'>
               <DeInfo data={data} />
               {data.nutritionFacts.allergen ? (
@@ -29,7 +27,7 @@ class Detail extends Component {
               <Review />
             </section>
           </div>
-        </div>
+        </main>
         <Footer />
       </div>
     );

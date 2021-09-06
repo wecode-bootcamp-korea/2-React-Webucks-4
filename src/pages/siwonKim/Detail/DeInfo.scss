@@ -12,16 +12,16 @@
 
   .productName {
     margin: 5px 0 0 0;
-    font-size: 25px;
     margin: 5px 0;
+    font-size: 25px;
   }
 
   .likeOn {
     position: absolute;
     right: 0px;
     top: 15px;
-    font-size: 20px;
     color: red;
+    font-size: 20px;
     transition: all 0.5s linear;
     &:hover {
       animation: likeOnRotate 1s 1;

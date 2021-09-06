@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 import './TopNav.scss';
 
 class TopNav extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <div className='TopNav'>

@@ -1,7 +1,7 @@
 @import '../mixin.scss';
 
 .Detail {
-  .body {
+  .mainContent {
     @include flex(column);
     align-items: center;
     margin-bottom: 20px;
@@ -10,6 +10,11 @@
       @include flex(row);
       justify-content: center;
       max-width: 1000;
+    }
+
+    .productImg {
+      width: 450px;
+      height: 450px;
     }
 
     .productInfo {

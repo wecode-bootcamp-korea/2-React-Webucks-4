@@ -12,7 +12,13 @@ class FacebookLogIn extends Component {
           </a>
         </h2>
         <p className='forget'>
-          <a href='http://localhost:3000/'>비밀번호를 잊으셨나요?</a>
+          <a
+            href='https://www.facebook.com/login/identify'
+            target='_blank'
+            rel='noreferrer'
+          >
+            비밀번호를 잊으셨나요?
+          </a>
         </p>
       </>
     );

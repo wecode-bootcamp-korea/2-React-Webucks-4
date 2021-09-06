@@ -9,13 +9,36 @@ import BreadCrumb from './components/BreadCrumb';
 import './Detail.scss';
 
 class Detail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: [],
+      hasUserLiked: false,
+    };
+  }
+
   componentDidMount() {
     addDetailBodyStyle();
+    fetch('http://localhost:3000/data/PRODUCTS.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          products: data[5],
+        })
+      );
   }
 
   componentWillUnmount() {
     removeDetailBodyStyle();
   }
+
+  hasUserLiked = () => {
+    this.setState({
+      hasUserLiked: !this.state.hasUserLiked,
+    });
+  };
 
   render() {
     return (
@@ -37,8 +60,17 @@ class Detail extends Component {
 
           <div className='content'>
             <div className='product_view_wrap1 clearfix'>
-              <MainImgFrame />
-              <ProdDesc />
+              <MainImgFrame
+                imgUrl={this.state.products?.imgUrl}
+                name={this.state.products?.name}
+              />
+              <ProdDesc
+                name={this.state.products?.name}
+                engName={this.state.products?.engName}
+                summary={this.state.products?.summary}
+                nutritionFacts={this.state.products?.nutritionFacts}
+                hasUserLiked={this.hasUserLiked}
+              />
               <Comment />
             </div>
           </div>

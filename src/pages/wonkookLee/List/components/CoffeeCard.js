@@ -8,7 +8,7 @@ class CoffeeCard extends Component {
         <dl>
           <dt>
             <LikeBtn />
-            <a href='http://localhost:3000'>
+            <a href='./detail-wonkooklee'>
               <img src={this.props.imgUrl} alt={this.props.name} />
             </a>
           </dt>

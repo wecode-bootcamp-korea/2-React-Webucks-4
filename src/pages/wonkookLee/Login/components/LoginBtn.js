@@ -5,15 +5,12 @@ import './LoginBtn.scss';
 class LoginBtn extends Component {
   constructor(props) {
     super(props);
-
     this.state = { ...this.state };
   }
 
-  state = { ...this.props };
-
   render() {
     return (
-      <Link to='/list'>
+      <Link to='/list-wonkooklee'>
         <button
           disabled={this.props.isActive}
           className={this.props.className}

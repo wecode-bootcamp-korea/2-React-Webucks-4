@@ -45,15 +45,19 @@ class LoginForm extends Component {
     }
   }
 
-  viewPassword(e) {
+  viewPassword() {
     this.setState({ isPwVisible: !this.state.isPwVisible });
+  }
+
+  redirectAfterLogin() {
+    window.location.href = '/list-wonkooklee';
   }
 
   render() {
     return (
       <section className='login'>
         <Logo link='#' text='Westabucks' />
-        <form action='./list.html' method='get' className='LoginForm auth'>
+        <form className='LoginForm auth'>
           <LoginInput
             onChange={this.validation}
             className={`inputField id ${this.state.isValidId ? 'valid' : ''}`}
@@ -83,7 +87,7 @@ class LoginForm extends Component {
           <Divider className='divider' text='또는' />
           <FacebookLogIn
             className='facebook__login'
-            link='http://localhost:3000/'
+            link='https://www.facebook.com/'
             text='Facebook으로 로그인'
           />
         </form>

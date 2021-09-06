@@ -26,22 +26,20 @@
 
 .zoomLens {
   display: none;
-  background-position: 0px 0px;
   float: right;
-  overflow: hidden;
-  z-index: 9;
-  transform: translateZ(0px);
-  opacity: 0.4;
-  zoom: 1;
-  width: 305px;
-  height: 234px;
-  background-color: white;
-  cursor: default;
-  border: 1px solid rgb(0, 0, 0);
-  background-repeat: no-repeat;
   position: absolute;
   left: 0;
   top: 0;
+  height: 234px;
+  width: 305px;
+  border: 1px solid rgb(0, 0, 0);
+  background-position: 0px 0px;
+  background-color: white;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 99;
+  opacity: 0.4;
+  cursor: default;
 }
 
 .zoomWindowContainer {
@@ -50,20 +48,19 @@
 
 .zoomWindow {
   display: none;
-  overflow: hidden;
-  background-position: 0 0;
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  width: 610px;
-  height: 468px;
   float: left;
-  background-size: 900px 940px;
-  z-index: 100;
-  background-repeat: no-repeat;
   position: absolute;
-  background-image: url(https://image.istarbucks.co.kr/upload/store/skuimg/2020/09/[9200000002672]_20200921171223958.jpg);
   top: 31px;
   left: 488px;
+  height: 468px;
+  width: 610px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  background-size: 900px 940px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  overflow: hidden;
+  z-index: 9999;
 }
 
 /* ZOOM animation end */

@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
-import { DETAILS } from './PRODUCT_INFO';
 import AlergenDesc from './AlergenDesc';
 import './ProdDesc.scss';
 
-const Prod = DETAILS[7];
-const NutFact = DETAILS[7].nutritionFacts;
-
 class ProdDesc extends Component {
   render() {
+    const { name, engName, summary, nutritionFacts, hasUserLiked } = this.props;
     return (
       <div className='product_view_detail'>
         <div className='myAssignZone'>
           <h4>
-            {Prod.name}
+            {name}
             <br />
-            <span>{Prod.engName}</span>
+            <span>{engName}</span>
           </h4>
           <p className='t1'>
-            {Prod.summary.split('\n').map((line, i) => {
+            {summary?.split('\n').map((line, i) => {
               return (
                 <span key={i}>
                   {line}
@@ -27,7 +24,7 @@ class ProdDesc extends Component {
             })}
           </p>
           <div className='like__btn'>
-            <input type='checkbox' id='like' />
+            <input type='checkbox' id='like' onClick={() => hasUserLiked()} />
             <label className='btn-love' htmlFor='like' />
           </div>
         </div>
@@ -41,7 +38,7 @@ class ProdDesc extends Component {
                 <p className='tit'>제품 영양 정보</p>
                 <div className='product_select_wrap2'>
                   <div className='selectTxt2' id='product_info01'>
-                    {NutFact.servingSize}
+                    {nutritionFacts?.servingSize}
                   </div>
                 </div>
               </div>
@@ -57,13 +54,13 @@ class ProdDesc extends Component {
                   <li className='kcal'>
                     <dl>
                       <dt>포화지방 (g)</dt>
-                      <dd>{NutFact.fat}</dd>
+                      <dd>{nutritionFacts?.fat}</dd>
                     </dl>
                   </li>
                   <li className='kcal'>
                     <dl>
                       <dt>단백질 (g)</dt>
-                      <dd>{NutFact.protein}</dd>
+                      <dd>{nutritionFacts?.protein}</dd>
                     </dl>
                   </li>
                 </ul>
@@ -71,25 +68,25 @@ class ProdDesc extends Component {
                   <li className='kcal'>
                     <dl>
                       <dt>나트륨 (mg)</dt>
-                      <dd>{NutFact.natrium}</dd>
+                      <dd>{nutritionFacts?.natrium}</dd>
                     </dl>
                   </li>
                   <li className='kcal'>
                     <dl>
                       <dt>당류 (g)</dt>
-                      <dd>{NutFact.sugars}</dd>
+                      <dd>{nutritionFacts?.sugars}</dd>
                     </dl>
                   </li>
                   <li className='kcal'>
                     <dl>
                       <dt>카페인 (mg)</dt>
-                      <dd>{NutFact.caffeine}</dd>
+                      <dd>{nutritionFacts?.caffeine}</dd>
                     </dl>
                   </li>
                 </ul>
               </div>
-              {NutFact.allergen ? (
-                <AlergenDesc allergen={NutFact.allergen} />
+              {nutritionFacts?.allergen ? (
+                <AlergenDesc allergen={nutritionFacts?.allergen} />
               ) : null}
             </div>
           </fieldset>

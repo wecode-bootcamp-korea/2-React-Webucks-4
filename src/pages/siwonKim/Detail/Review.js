@@ -11,8 +11,6 @@ class Review extends Component {
         { id: 1, userId: 'ksw', text: '이거 존맛', likeOn: true },
         { id: 2, userId: 'twosome', text: '이거 no맛', likeOn: false },
       ],
-      idInput: '',
-      textInput: '',
     };
     this.maxId = 2;
     this.idInput = '';
@@ -49,13 +47,15 @@ class Review extends Component {
       this.setState(() => {
         return { reviewList: newReview };
       });
+      this.textInput = '';
+      e.target.value = '';
     }
     this.textInput = e.target.value;
   };
 
   togleLike = id => {
     return () => {
-      const newReviewList = this.state.reviewList;
+      const newReviewList = Array.from(this.state.reviewList);
       newReviewList.find(object => object.id === id).likeOn =
         !newReviewList.find(object => object.id === id).likeOn;
       this.setState(() => ({ reviewList: newReviewList }));
@@ -64,7 +64,7 @@ class Review extends Component {
 
   deleteList = id => {
     return () => {
-      const newReviewList = this.state.reviewList;
+      const newReviewList = Array.from(this.state.reviewList);
       for (let i = 0; i < newReviewList.length; i++)
         if (newReviewList[i].id === id) {
           newReviewList.splice(i, 1);

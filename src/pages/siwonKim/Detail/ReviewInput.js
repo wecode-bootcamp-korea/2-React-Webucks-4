@@ -8,12 +8,14 @@ class ReviewInput extends Component {
     return (
       <div className='ReviewInput'>
         <input
+          name='inputId'
           className='inputId'
           type='text'
           placeholder='이름'
-          onKeyUp={handleInputId}
+          onChange={handleInputId}
         />
         <input
+          name='inputText'
           className='inputText'
           type='text'
           placeholder='리뷰를 입력해주세요'

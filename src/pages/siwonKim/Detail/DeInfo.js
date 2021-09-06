@@ -11,7 +11,7 @@ class DeInfo extends Component {
     };
   }
 
-  handleLike = e => {
+  handleLike = () => {
     this.setState({ isLikeOn: !this.state.isLikeOn });
   };
 

@@ -10,8 +10,6 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      idInput: '',
-      pwInput: '',
       isIdValid: false,
       isPwValid: false,
       seePw: false,
@@ -20,20 +18,16 @@ class Login extends Component {
 
   handleIdInput = e => {
     const { value } = e.target;
-    this.setState({ idInput: value }, () => {
-      this.state.idInput.includes('@')
-        ? this.setState({ isIdValid: true })
-        : this.setState({ isIdValid: false });
-    });
+    value.includes('@')
+      ? this.setState({ isIdValid: true })
+      : this.setState({ isIdValid: false });
   };
 
   handlePwInput = e => {
     const { value } = e.target;
-    this.setState({ pwInput: value }, () => {
-      this.state.pwInput.length >= 5
-        ? this.setState({ isPwValid: true })
-        : this.setState({ isPwValid: false });
-    });
+    value.length >= 5
+      ? this.setState({ isPwValid: true })
+      : this.setState({ isPwValid: false });
   };
 
   handleSeePw = () => {

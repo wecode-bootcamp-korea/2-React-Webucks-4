@@ -60,11 +60,17 @@
             padding-top: 10px;
           }
 
-          .fiHeart {
+          .likeHeart {
             position: absolute;
             right: 0;
             bottom: 30px;
             color: #d3d3d3;
+          }
+          .fillHeart {
+            position: absolute;
+            right: 0;
+            bottom: 30px;
+            color: red;
           }
         }
 

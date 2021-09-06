@@ -2,12 +2,6 @@
   "extends": ["react-app", "plugin:prettier/recommended"],
   "rules": {
     "linebreak-style": ["error", "windows"],
-    "prettier/prettier": 
-    [
-      "error", 
-      { 
-        "endOfLine": "auto" 
-      }
-    ]  
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
   }
 }

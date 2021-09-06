@@ -67,15 +67,15 @@
         color: white;
       }
 
-      .active {
-        opacity: 1;
-      }
+      // &:active {
+      //   opacity: 1;
+      // }
     }
   }
 
-  //  .loginButton.active {
-  //   opacity: 1;
-  //  }
+  .loginButton.active {
+    opacity: 1;
+  }
 
   .forgotPassword {
     align-self: center;

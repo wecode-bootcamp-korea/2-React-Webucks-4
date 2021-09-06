@@ -1,11 +1,51 @@
 import React, { Component } from 'react';
 import './Detail.scss';
-import Nav from '../../../components/Nav/Nav';
+import Nav from '../components/Nav';
 import { Link } from 'react-router-dom';
-import { FiHeart } from 'react-icons/fi';
+import { BsHeart, BsHeartFill } from 'react-icons/bs';
 
 class Detail extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isActive: false,
+      newReveiwValue: '',
+      reveiwValue: [{ text: '' }],
+    };
+  }
+
+  toggleActive = () => {
+    this.setState({
+      isActive: !this.state.isActive,
+    });
+  };
+  // 입력한 댓글 불러오기
+  getReveiwValue = e => {
+    this.setState({
+      newReveiwValue: e.target.value,
+    });
+  };
+  //댓글 저장 함수
+  addReview = () => {
+    this.state.reveiwValue.push({ text: this.state.newReveiwValue });
+
+    this.setState({
+      newReveiwValue: '',
+      reveiwValue: this.state.reveiwValue,
+    });
+  };
+  // 엔터 기능 함수
+  handleKeyPress = e => {
+    if (e.key === 'Enter' && this.state.newReveiwValue) {
+      this.addReview();
+
+      e.target.value = '';
+      e.preventDefault();
+    }
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div className='Detail'>
         <Nav />
@@ -13,10 +53,10 @@ class Detail extends Component {
           <section>
             <h1>콜드 브루</h1>
             <div className='linktap'>
-              <Link to='/login-yebomlee'> 홈 > </Link>
-              <a href='#'> MENU > </a>
-              <Link to='/list-yebomlee'> 음료 > </Link>
-              <a href='#'> 콜드브루 > </a>
+              <Link to='/login-yebomlee'> 홈 </Link> {'>'}
+              <a href='#'> MENU </a> {'>'}
+              <Link to='/list-yebomlee'> 음료 </Link> {'>'}
+              <a href='#'> 콜드브루 </a> {'>'}
               <a href='#'> 바닐라 크림 콜드 브루</a>
             </div>
           </section>
@@ -30,8 +70,20 @@ class Detail extends Component {
               <div className='menuNameBox'>
                 <p className='korean'>바닐라 크림 콜드 브루</p>
                 <p className='english'>Vanilla Cream Cold Brew</p>
-                <i className='fiHeart'>
-                  <FiHeart size='2em' />
+                <i>
+                  {this.state.isActive ? (
+                    <BsHeartFill
+                      onClick={this.toggleActive}
+                      className='fillHeart'
+                      size='2em'
+                    />
+                  ) : (
+                    <BsHeart
+                      className='likeHeart'
+                      onClick={this.toggleActive}
+                      size='2em'
+                    />
+                  )}
                 </i>
               </div>
               <p className='explainCoffee'>
@@ -79,8 +131,19 @@ class Detail extends Component {
                   <span>legend_dev </span>
                   <span>진짜 전설이다. 진짜 전설이다.</span>
                 </div>
+                <ul className='userReview4'>
+                  {this.state.reveiwValue.map(el => (
+                    <li>{el.text}</li>
+                  ))}
+                </ul>
                 <form>
-                  <input type='text' placeholder='리뷰를 입력해주세요.' />
+                  <input
+                    onKeyDown={this.handleKeyPress}
+                    onChange={this.getReveiwValue}
+                    // value={this.state.newReveiwValue}
+                    type='text'
+                    placeholder='리뷰를 입력해주세요.'
+                  />
                 </form>
               </div>
             </div>

@@ -1,0 +1,262 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+@include desktop {
+  .tablet_gnb_wrap {
+    display: none;
+  }
+
+  .sub_gnb_wrap {
+    position: fixed;
+    top: 0;
+    height: 120px;
+    width: 100%;
+    z-index: 10000;
+    background-color: #f6f5ef;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 2px solid #000;
+
+    .logo {
+      position: absolute;
+      top: 37px;
+      left: 0;
+      height: 75px;
+      width: 75px;
+      z-index: 12;
+      font-family: $font-family;
+      font-size: 46px;
+
+      a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .sub_gnb_wrap_inner {
+      position: relative;
+      margin: 0 auto;
+      height: 120px;
+      width: 1100px;
+
+      .util_nav {
+        position: absolute;
+        top: 15px;
+        right: 110px;
+        height: 20px;
+        overflow: hidden;
+
+        li {
+          margin-left: 30px;
+          height: 20px;
+          float: left;
+          text-align: center;
+
+          a {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            color: #555555;
+          }
+        }
+      }
+
+      .clearfix:after {
+        content: '';
+        clear: both;
+        display: table;
+      }
+
+      .btn_search {
+        position: absolute;
+        top: 9px;
+        right: 54px;
+        height: 32px;
+        width: 32px;
+      }
+    }
+  }
+
+  .sub_gnb_nav {
+    position: fixed;
+    top: 54px;
+    left: 0;
+    z-index: 11;
+    height: 66px;
+    width: 100%;
+    z-index: 10002;
+
+    .sub_gnb_nav_inner {
+      margin: 0 auto;
+      padding-top: 10px;
+      height: 66px;
+      width: 1100px;
+      z-index: 14;
+
+      ul {
+        float: right;
+
+        li {
+          float: left;
+
+          a {
+            color: #555555;
+          }
+        }
+
+        li.gnb_nav01 {
+          width: 89px;
+        }
+
+        li.gnb_nav02 {
+          width: 73px;
+        }
+
+        li.gnb_nav03 {
+          width: 79px;
+        }
+
+        li.gnb_nav04 {
+          width: 153px;
+        }
+
+        li.gnb_nav05 {
+          width: 225px;
+        }
+
+        li.gnb_nav06 {
+          width: 131px;
+        }
+      }
+    }
+  }
+}
+
+@include desktopToDesktopLarge {
+  div.tablet_gnb_wrap {
+    display: none;
+  }
+
+  /* SUB GNB */
+
+  .sub_gnb_wrap {
+    height: 120px;
+    z-index: 100;
+
+    div.sub_gnb_wrap_inner {
+      height: 120px;
+      width: 100%;
+
+      .logo {
+        position: absolute;
+        top: 37px;
+        left: 20px;
+        height: 75px;
+        width: 75px;
+        z-index: 12;
+        font-family: 'Style Script', cursive;
+        font-size: 46px;
+      }
+    }
+  }
+
+  nav.sub_gnb_nav {
+    width: 100%;
+
+    div.sub_gnb_nav_inner {
+      height: 66px;
+      width: 100%;
+
+      nav.util_nav {
+        position: absolute;
+        height: 20px;
+        right: 93px;
+        top: 15px;
+      }
+
+      ul > li {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@include mobileToDesktop {
+  div.tablet_gnb_wrap {
+    background: #f6f5ef;
+    border-bottom: 1px solid #e5e5e5;
+    height: 69px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    h1 {
+      height: 45px;
+      left: 12px;
+      position: absolute;
+      top: 22px;
+      font-family: 'Style Script', cursive;
+      font-size: 40px;
+
+      a {
+        display: block;
+      }
+    }
+  }
+
+  #gnb {
+    display: none;
+  }
+
+  nav.tablet_gnb_sep {
+    float: right;
+    height: 70px;
+    width: 235px;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+
+      li {
+        height: 60px;
+        margin: 10px 0 0 1px;
+        position: relative;
+        width: 60px;
+
+        a {
+          display: block;
+          position: absolute;
+          left: 18px;
+          font-size: 0;
+          overflow: hidden;
+        }
+
+        &:first-child > a {
+          top: 14px;
+          height: 30px;
+          width: 25px;
+          background: url(https://www.starbucks.co.kr/common/img/common/icon_user_m.png);
+          background-size: 100% auto;
+        }
+
+        &:nth-child(2) > a {
+          top: 12px;
+          height: 32px;
+          width: 24px;
+          background: url(https://www.starbucks.co.kr/common/img/common/icon_spot_m.png);
+          background-size: 100% auto;
+        }
+
+        &:last-child > a {
+          top: 15px;
+          height: 26px;
+          width: 28px;
+          background: url(https://www.starbucks.co.kr/common/img/common/btn_berger_m.png);
+          background-size: 100% auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixin';
+
+@include desktop {
+  dt.ProductHeader {
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #f4f4f2;
+
+    a {
+      display: block;
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    i {
+      display: block;
+      margin-left: 15px;
+      height: 18px;
+      width: 45px;
+
+      img {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        top: -9px;
+      }
+    }
+
+    .summary {
+      display: block;
+      line-height: 18px;
+      margin-left: 5px;
+      font-size: 13px;
+      color: #444444;
+      letter-spacing: -1px;
+    }
+  }
+}
+
+@include mobileToDesktop {
+  dt.ProductHeader {
+    padding: 20px;
+    background: #f4f4f2;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+
+    a {
+      display: block;
+      float: left;
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    i {
+      display: block;
+      float: left;
+      width: 45px;
+      height: 18px;
+      margin-left: 15px;
+
+      img {
+        position: relative;
+        top: -9px;
+        width: 100%;
+      }
+    }
+
+    .summary {
+      display: block;
+      float: left;
+      line-height: 18px;
+      margin-left: 5px;
+      font-size: 14px;
+      color: #444444;
+      letter-spacing: -1px;
+    }
+  }
+}
+
+@include mobileToTablet {
+  dt.ProductHeader .summary {
+    clear: both;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

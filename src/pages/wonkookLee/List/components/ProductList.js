@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProductsHeader from './ProductsHeader';
 import CoffeeCard from './CoffeeCard';
+import './ProductList.scss';
 
 class ProductList extends Component {
   constructor() {
@@ -19,7 +20,8 @@ class ProductList extends Component {
           coldBrews: data.coldBrews,
           breweds: data.breweds,
         })
-      );
+      )
+      .catch(console.log);
   }
 
   render() {

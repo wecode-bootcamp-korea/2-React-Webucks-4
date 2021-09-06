@@ -1,9 +1,7 @@
-/* REVIEW */
-
 section.review_wrap {
   margin-top: 30px;
-  float: right;
   width: 610px;
+  float: right;
 }
 
 section.review_wrap > dl > dt.review_tit {
@@ -25,50 +23,43 @@ section.review_wrap > dl > dd.review_container {
 
 section.review_wrap > dl > dd.review_container ul {
   position: absolute;
-  overflow-y: scroll;
   height: 100%;
   bottom: 0;
   width: 100%;
+  overflow-y: scroll;
 }
 
 #review_field {
+  padding-left: 10px;
   height: 34px;
   width: 100%;
-  border: none;
   background-color: #efefef;
-  padding-left: 10px;
+  border: none;
 }
 
 #review_field:focus {
   outline: none;
 }
 
-/* Review Validation */
-
 #validTag {
   position: absolute;
-  bottom: 35px;
-  text-align: center;
-  line-height: 24px;
-  color: #ffffff;
-  width: 180px;
   height: 26px;
-  background-color: #333;
+  width: 180px;
+  bottom: 35px;
+  line-height: 24px;
+  text-align: center;
   border-radius: 5px;
+  color: #ffffff;
+  background-color: #333;
   font-size: 12px;
   opacity: 0;
-  /* transition: opacity 2s; */
   animation-duration: 1.5s;
   animation-iteration-count: 1;
 }
 
-/* INTERACTION */
-
 .visible {
   display: block;
 }
-
-/* ANIMATIONS */
 
 @keyframes heart-burst {
   0% {

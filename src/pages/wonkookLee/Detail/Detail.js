@@ -30,7 +30,8 @@ class Detail extends Component {
         this.setState({
           products: item,
         });
-      });
+      })
+      .catch(console.log);
   }
 
   componentWillUnmount() {

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import './ProductsHeader.scss';
 
 class ProductsHeader extends Component {
   render() {
     return (
-      <dt>
+      <dt className='ProductHeader'>
         <a href='http://localhost:3000'>{this.props.category}</a>
         <i>
           <img

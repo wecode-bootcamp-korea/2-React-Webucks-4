@@ -30,21 +30,21 @@ class Comment extends Component {
     };
   }
 
-  addComment(e) {
-    if (e.key !== 'Enter') return;
-    e.preventDefault();
+  addComment(event) {
+    if (event.key !== 'Enter') return;
+    event.preventDefault();
     const { comments } = this.state;
     this.setState({
       comments: [
         {
           commentId: Math.floor(Math.random() * 1000) + 1,
           userId: 'oneook',
-          userComment: e.target.value,
+          userComment: event.target.value,
         },
         ...comments,
       ],
     });
-    e.target.value = '';
+    event.target.value = '';
   }
 
   removeComment(id) {

@@ -1,0 +1,87 @@
+// ZOOM INTERACTION
+
+export const zoomImage = function () {
+  const zoomFrame = document.getElementById('zoomFrame');
+  const zoomLens = document.getElementById('zoomLens');
+  const zoomWindow = document.getElementById('zoomWindow');
+
+  function handleMouseMove(event) {
+    const { left, top } = zoomFrame.getBoundingClientRect();
+    const { x: lensLeft, y: lensTop } = zoomLens.getBoundingClientRect();
+
+    const x = event.clientX - left;
+    const y = event.clientY - top;
+
+    zoomLens.classList.add('visible');
+    zoomWindow.classList.add('visible');
+
+    const boundary = {
+      xMin: 153,
+      xMax: 297,
+      yMin: 117,
+      yMax: 353,
+    };
+
+    const coord = {
+      x: x - 153 + 'px',
+      y: y - 117 + 'px',
+    };
+
+    switch (true) {
+      case x <= boundary.xMin && y <= boundary.yMin:
+        zoomLens.style.left = '0';
+        zoomLens.style.top = '0';
+        break;
+
+      case x > boundary.xMin && x < boundary.xMax && y <= boundary.yMin:
+        zoomLens.style.left = coord.x;
+        zoomLens.style.top = '0';
+        break;
+
+      case x >= boundary.xMax && y <= boundary.yMin:
+        zoomLens.style.left = '145px';
+        zoomLens.style.top = '0';
+        break;
+
+      case x <= boundary.xMin && y > boundary.yMin && y < boundary.yMax:
+        zoomLens.style.left = '0';
+        zoomLens.style.top = coord.y;
+        break;
+
+      case x <= boundary.xMin && y >= boundary.yMax:
+        zoomLens.style.left = '0';
+        zoomLens.style.top = '236px';
+        break;
+
+      case x > boundary.xMin && x < boundary.xMax && y >= boundary.yMax:
+        zoomLens.style.left = coord.x;
+        zoomLens.style.top = '236px';
+        break;
+
+      case x >= boundary.xMax && y >= boundary.yMax:
+        zoomLens.style.left = '145px';
+        zoomLens.style.top = '236px';
+        break;
+
+      case x >= boundary.xMax && y > boundary.yMin && y < boundary.yMax:
+        zoomLens.style.left = '145px';
+        zoomLens.style.top = coord.y;
+        break;
+
+      default:
+        zoomLens.style.left = coord.x;
+        zoomLens.style.top = coord.y;
+    }
+
+    zoomWindow.style.backgroundPosition = `${
+      ((lensLeft - left) * 100) / 145
+    }% ${((lensTop - top) * 100) / 236}%`;
+  }
+
+  zoomFrame.addEventListener('mousemove', handleMouseMove);
+
+  zoomFrame.addEventListener('mouseleave', () => {
+    zoomLens.classList.remove('visible');
+    zoomWindow.classList.remove('visible');
+  });
+};

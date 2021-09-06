@@ -3,8 +3,8 @@ import { DETAILS } from './PRODUCT_INFO';
 import AlergenDesc from './AlergenDesc';
 import './ProdDesc.scss';
 
-const Prod = DETAILS[1];
-const NutFact = DETAILS[1].nutritionFacts;
+const Prod = DETAILS[7];
+const NutFact = DETAILS[7].nutritionFacts;
 
 class ProdDesc extends Component {
   render() {
@@ -28,7 +28,7 @@ class ProdDesc extends Component {
           </p>
           <div className='like__btn'>
             <input type='checkbox' id='like' />
-            <label className='btn-love' for='like' />
+            <label className='btn-love' htmlFor='like' />
           </div>
         </div>
         <div className='m_view_slide'></div>

@@ -1,4 +1,4 @@
-export const DETAILS = [
+const DETAILS = [
   {
     id: 101,
     category: '콜드 브루 커피',
@@ -313,3 +313,4 @@ export const DETAILS = [
     },
   },
 ];
+export default DETAILS;

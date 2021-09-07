@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CoffeeCard from './CoffeeCard';
+import './CoffeeList.scss';
 
 class CoffeeList extends Component {
   render() {
@@ -8,7 +9,7 @@ class CoffeeList extends Component {
         {this.props.beverages.map((beverages, index) => {
           return (
             <CoffeeCard
-              key={beverages.id}
+              id={beverages.id}
               img={beverages.imgUrl}
               name={beverages.name}
             />

@@ -1,78 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
-@mixin vendorPrefix($property, $value) {
-  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-    #{$prefix}#{$property}: scale($value);
-  }
-}
-@mixin transition($property, $value) {
-  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-    #{$prefix}#{$property}: $value;
-  }
-}
-
 .List {
   main {
     width: 80%;
     margin: auto;
 
-    .menuBox {
-      margin-top: 30px;
-      margin-bottom: 20px;
-      background-color: #f6f5f0;
-      padding-top: 10px;
-      padding-bottom: 20px;
-      font-weight: bold;
-    }
-
-    .coffeeType {
-      font-size: 17px;
-      padding: 0 30px;
-    }
-
-    .extraInfo {
-      font-size: 12px;
-      padding-left: 20px;
-    }
-
-    .coffeelist {
-      list-style: none;
+    .otherCoffee {
       display: flex;
-      justify-content: flex-start;
-
-      li {
-        text-align: center;
-        font-weight: bold;
-        padding-bottom: 30px;
-
-        .link {
-          text-decoration: none;
-          color: black;
-        }
-
-        .todayCoffee {
-          display: flex;
-          align-items: center;
-        }
-
-        .donotgetbig {
-          width: 100%;
-          height: 50vh;
-          margin-bottom: 20px;
-          overflow: hidden;
-
-          .coffeeimg {
-            width: 100%;
-            height: 50vh;
-            @include vendorPrefix(transform, 1);
-            @include transition(transition, 0.3s);
-
-            &:hover {
-              @include vendorPrefix(transform, 1.1);
-            }
-          }
-        }
-      }
     }
   }
 }

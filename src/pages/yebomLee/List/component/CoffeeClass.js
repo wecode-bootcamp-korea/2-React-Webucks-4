@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import CoffeeList from './CoffeeList';
 import { SiCoffeescript } from 'react-icons/si';
-import BEVERAGES from './ITEMS';
+import './CoffeeClass.scss';
 
 class CoffeeClass extends Component {
   render() {

@@ -1,0 +1,62 @@
+[33mcommit 24e88c8a249e3709e5d82e2de01cef41e49cfb7c[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/yebomlee[m[33m)[m
+Author: yebomlee <eebzaaa@gamil.com>
+Date:   Mon Sep 6 12:45:56 2021 +0900
+
+    Add: [Mission 4] 커피 상세 페이지 좋아요 기능 구현하기
+
+[33mcommit 48fcf066d651e9ae928aba15192869f000f0867e[m[33m ([m[1;31morigin/feature/yebomlee[m[33m)[m
+Author: yebomlee <eebzaaa@gamil.com>
+Date:   Thu Sep 2 08:40:17 2021 +0900
+
+    Add: first commit
+
+[33mcommit 14245874dda314f1d40da1439682a7cbdd30bf7a[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: bfd199a 910ccc5
+Author: JHyeon0 <66706492+JHyeon0@users.noreply.github.com>
+Date:   Wed Sep 1 16:01:09 2021 +0900
+
+    Merge pull request #10 from wecode-bootcamp-korea/feature/wonkooklee
+    
+    Fixed: .eslintrc .prettierrc 적용 완료
+
+[33mcommit 910ccc5ab9fe7e94cfdd02b72b61ffacbe738cc2[m[33m ([m[1;31morigin/feature/wonkooklee[m[33m)[m
+Author: wonkooklee <const.wonkook@gmail.com>
+Date:   Wed Sep 1 15:49:32 2021 +0900
+
+    Fixed: .eslintrc .prettierrc 적용 완료
+
+[33mcommit bfd199a05e0997cddb43241ba6dcacfae1156b9e[m
+Author: wonkooklee <const.wonkook@gmail.com>
+Date:   Wed Sep 1 15:10:28 2021 +0900
+
+    Add: .eslintrc, .prettierrc 초기 세팅에 추가(2)
+
+[33mcommit 797437efd5ed056a1e0f9c68acdd866ee1a5536b[m
+Author: wonkooklee <const.wonkook@gmail.com>
+Date:   Wed Sep 1 14:33:02 2021 +0900
+
+    Add: .eslintrc, .prettierrc 초기 세팅에 추가
+
+[33mcommit 6a0811f95c7fcd3f95238b374e949edcd6f71691[m
+Author: wonkooklee <const.wonkook@gmail.com>
+Date:   Wed Sep 1 14:20:54 2021 +0900
+
+    Add: ESLint, Prettier 초기 세팅에 추가
+
+[33mcommit 738a2938c82d22971d5f989c3f4fa0e47350093a[m
+Author: wonkooklee <const.wonkook@gmail.com>
+Date:   Wed Sep 1 14:15:42 2021 +0900
+
+    Fixed: Route.js 인덴테이션 수정, reset.scss 작성
+
+[33mcommit 3e0bf8a364ea764c686fd0a76d7619acee5eec6e[m
+Author: wonkooklee <const.wonkook@gmail.com>
+Date:   Wed Sep 1 12:03:39 2021 +0900
+
+    first-commit
+
+[33mcommit 4ae663bd3cc7bf897ae2b6de3bf79b3812dd1f6e[m
+Author: wonkooklee <const.wonkook@gmail.com>
+Date:   Wed Sep 1 11:10:44 2021 +0900
+
+    Initialize project using Create React App

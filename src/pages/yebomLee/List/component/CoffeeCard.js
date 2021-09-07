@@ -3,9 +3,8 @@ import './CoffeeCard.scss';
 
 class CoffeeCard extends Component {
   render() {
-    console.log(this.props);
     return (
-      <li key={this.props.id}>
+      <li id={this.props.id}>
         <div className='fixImg'>
           <img
             className='coffeeImg'

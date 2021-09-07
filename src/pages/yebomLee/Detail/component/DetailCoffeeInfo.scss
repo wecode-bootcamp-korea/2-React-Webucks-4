@@ -1,0 +1,30 @@
+.menuNameBox {
+  position: relative;
+  padding: 0 0 20px 0;
+  border-bottom: 3px solid black;
+
+  .kor {
+    font-size: 25px;
+    text-align: left;
+  }
+
+  .eng {
+    padding-top: 10px;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .likeHeart {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    color: #d3d3d3;
+
+    &.active {
+      color: red;
+    }
+  }
+}
+.explainCoffee {
+  padding: 20px 0;
+}

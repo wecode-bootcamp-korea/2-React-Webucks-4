@@ -5,9 +5,8 @@ import './DetailCoffeeInfo.scss';
 
 class DetailCoffeeFeature extends Component {
   render() {
-    // const isHeartToggleOn = this.state.isHeartToggleOn;
-    const description = this.props.description;
-    const nutrition = this.props.nutrition;
+    const description = this.props.productData;
+    const nutrition = this.props.productData?.nutritionFacts;
     const summary = this.props.description?.desc.split('\n').map((line, i) => {
       return (
         <span key={i} className='coffeeDescription'>
@@ -16,6 +15,9 @@ class DetailCoffeeFeature extends Component {
         </span>
       );
     });
+    {
+      console.log(nutrition);
+    }
     return (
       <section className='infoContainer'>
         {/* header */}

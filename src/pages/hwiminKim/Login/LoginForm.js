@@ -9,12 +9,12 @@ class LoginForm extends Component {
   };
 
   handleId = event => {
-    const isIdValid = event.target.value.includes('@') ? true : false;
+    const isIdValid = event.target.value.includes('@');
     this.setState({ isIdValid });
   };
 
   handlePw = event => {
-    const isPwValid = event.target.value.length > 4 ? true : false;
+    const isPwValid = event.target.value.length > 4;
     this.setState({ isPwValid });
   };
 

@@ -26,11 +26,8 @@ class Detail extends Component {
       <>
         <section className='Detail'>
           <TopsNav />
-          <DetailCategoryHeader description={product} />
-          <DetailCoffeeInfo
-            description={product}
-            nutrition={product?.nutritionFacts}
-          />
+          <DetailCategoryHeader productData={product} />
+          <DetailCoffeeInfo productData={product} />
         </section>
         <Footer />
       </>

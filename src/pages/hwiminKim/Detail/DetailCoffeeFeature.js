@@ -5,13 +5,12 @@ import './DetailCoffeeFeature.scss';
 
 class DetailCoffeeFeature extends Component {
   render() {
+    const productData = this.props?.productData;
+    // const nutrition = this.props?.nutrition;
     return (
       <article className='coffeeInfoContainer'>
-        <DetailImg description={this.props?.description} />
-        <DetailCoffeeInfo
-          description={this.props?.description}
-          nutrition={this.props?.nutrition}
-        />
+        <DetailImg productData={productData} />
+        <DetailCoffeeInfo productData={productData} />
       </article>
     );
   }

@@ -5,10 +5,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 class Breadcrumb extends Component {
   render() {
-    const name = this.props.description?.name;
-    {
-      console.log(name);
-    }
+    const name = this.props.productData?.name;
     return (
       <ul className='subHeaderItems'>
         <li>

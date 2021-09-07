@@ -12,6 +12,7 @@ class DetailFeatureHeader extends Component {
     const { isToggleOn } = this.state;
     this.setState({ isToggleOn: !isToggleOn });
   };
+
   render() {
     const isToggleOn = this.state.isToggleOn;
 

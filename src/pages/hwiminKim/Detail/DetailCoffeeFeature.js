@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './DetailCoffeeFeature.scss';
 import DetailFeatureHeader from './DetailFeatureHeader';
 import DetailNutritionInfo from './DetailNutritionInfo';
 import ReveiwList from '../component/ReviewList';
+import './DetailCoffeeFeature.scss';
 
 class DetailCoffeeFeature extends Component {
   render() {

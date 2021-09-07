@@ -10,6 +10,7 @@ class SubHeader extends Component {
           <img
             alt='decaf logo'
             src='https://image.istarbucks.co.kr/common/img/menu/logo_decaf.png'
+            className='logo'
           />
           <p className='addShotDesc'>디카페인 에스프레소 샷 추가 가능</p>
         </div>

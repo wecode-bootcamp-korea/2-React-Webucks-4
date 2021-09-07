@@ -9,25 +9,28 @@ class Review extends Component {
   state = {
     isToggleOn: false,
   };
+
   changeHeartBtnColor = () => {
     const { isToggleOn } = this.state;
     this.setState({ isToggleOn: !isToggleOn });
   };
+
   handleChange = () => {
     const { data, onRemove } = this.props;
     onRemove(data.id);
   };
+
   render() {
     const isToggleOn = this.state.isToggleOn;
     return (
-      <li className='item'>
+      <li className='reviewItem'>
         <div className='contentBox'>
-          <p>
+          <p className='individualReviewBox'>
             <b>작성자</b> <span>{this.props.review}</span>
           </p>
         </div>
         <div className='btnBox'>
-          <button>
+          <button className='btn'>
             <FontAwesomeIcon
               className='trashIcon'
               icon={faTrash}
@@ -35,7 +38,7 @@ class Review extends Component {
               onClick={this.handleChange}
             />
           </button>
-          <button>
+          <button className='btn'>
             <FontAwesomeIcon
               icon={faHeart}
               size='1x'

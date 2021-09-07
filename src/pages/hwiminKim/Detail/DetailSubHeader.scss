@@ -1,18 +1,19 @@
 .DetailSubHeader {
   $heartAndNavColor: #999696;
   margin-bottom: 20px;
+
   h1 {
     font-size: 36px;
   }
+
   .subHeaderItems {
     display: flex;
     justify-content: flex-end;
-    list-style: none;
     font-size: 14px;
+
     li {
       a {
         margin-left: 3px;
-        text-decoration: none;
         color: $heartAndNavColor;
         &:visited {
           color: $heartAndNavColor;

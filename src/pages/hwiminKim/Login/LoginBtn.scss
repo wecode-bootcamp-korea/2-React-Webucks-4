@@ -11,7 +11,6 @@
   }
 
   .loginBtn {
-    text-decoration: none;
     color: white;
     font-size: 20;
     font-weight: 700;
@@ -22,9 +21,9 @@
   $loginBtnActivate: #58b2eb;
   height: 50px;
   padding: 10px;
-  background-color: $loginBtnActivate;
   border: none;
   border-radius: 8px;
+  background-color: $loginBtnActivate;
   font-size: 20px;
 
   &:hover {
@@ -32,9 +31,9 @@
   }
 
   .loginBtn {
-    text-decoration: none;
     color: white;
     font-size: 20;
     font-weight: 700;
+    text-decoration: none;
   }
 }

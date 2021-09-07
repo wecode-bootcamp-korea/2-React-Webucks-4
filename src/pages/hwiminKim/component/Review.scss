@@ -1,16 +1,16 @@
-li {
+.reviewItem {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
   font-size: 14px;
 
   .contentBox {
-    p {
+    .individualReviewBox {
       margin-left: 10px;
     }
   }
   .btnBox {
-    button {
+    .btn {
       margin-right: 20px;
       border: none;
       background-color: transparent;

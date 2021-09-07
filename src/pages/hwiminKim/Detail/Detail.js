@@ -9,6 +9,7 @@ class Detail extends Component {
   state = {
     products: [],
   };
+
   componentDidMount() {
     fetch('http://localhost:3000/data/PRODUCT_INFO.json', {
       method: 'GET',

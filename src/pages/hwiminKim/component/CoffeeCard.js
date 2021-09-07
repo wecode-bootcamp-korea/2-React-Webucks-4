@@ -23,7 +23,7 @@ class CoffeeCard extends Component {
         <li className='card'>
           <div className='flowbox'>
             <Link to='/detail-hwiminKim'>
-              <img className='cardImage' alt={title} src={imgURL} />
+              <img alt={title} className='cardImage' src={imgURL} />
             </Link>
           </div>
           <div className='productTitleBox'>

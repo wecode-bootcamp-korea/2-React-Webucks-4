@@ -9,8 +9,8 @@ class Login extends Component {
       <div className='Login'>
         <section className='loginBox'>
           <img
-            src='/img/hwiminKim/logo1.png'
             alt='webucks logo'
+            src='/img/hwiminKim/logo1.png'
             className='webucksLogo'
           />
           <LoginForm />

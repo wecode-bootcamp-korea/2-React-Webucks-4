@@ -10,9 +10,9 @@ class ReviewList extends Component {
     reviews: [],
   };
 
-  handleChange = e => {
+  handleChange = event => {
     this.setState({
-      newReview: e.target.value,
+      newReview: event.target.value,
     });
   };
 
@@ -23,11 +23,13 @@ class ReviewList extends Component {
     });
   };
 
-  createReview = e => {
-    if (e.key === 'Enter') {
+  createReview = event => {
+    const reviews = this.state.reviews;
+    const newReview = this.state.newReview;
+    if (event.key === 'Enter') {
       this.setState({
-        reviews: this.state.reviews.concat({
-          userReview: this.state.newReview,
+        reviews: reviews.concat({
+          userReview: newReview,
           id: this.id++,
         }),
       });

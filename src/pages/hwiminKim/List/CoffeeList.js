@@ -4,10 +4,11 @@ import './CoffeeList.scss';
 
 class CoffeeList extends Component {
   render() {
+    const productData = this.props.productData;
     return (
       <section className='coffeeList'>
         <ul className='coffeeListItems'>
-          {this.props.productData.map(individualProduct => {
+          {productData.map(individualProduct => {
             return (
               <CoffeeCard
                 key={individualProduct.id}

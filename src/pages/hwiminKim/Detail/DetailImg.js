@@ -3,13 +3,11 @@ import './DetailImg.scss';
 
 class DetailImg extends Component {
   render() {
+    const title = this.props.description?.title;
+    const imgUrl = this.props.description?.imgUrl;
     return (
       <section className='imgContainer'>
-        <img
-          alt={this.props.description?.title}
-          src={this.props.description?.imgUrl}
-          className='coffeeInfoImage'
-        />
+        <img alt={title} src={imgUrl} className='coffeeInfoImage' />
       </section>
     );
   }

@@ -14,8 +14,9 @@ class DetailFeatureHeader extends Component {
   };
 
   render() {
+    const name = this.props.description?.name;
+    const engName = this.props.description?.engName;
     const isToggleOn = this.state.isToggleOn;
-
     const summary = this.props.description?.desc.split('\n').map((line, i) => {
       return (
         <span key={i} className='coffeeDescription'>
@@ -29,8 +30,8 @@ class DetailFeatureHeader extends Component {
       <>
         <header className='infoHeader'>
           <div>
-            <h2 className='infoTitle'>{this.props.description?.name}</h2>
-            <p>{this.props.description?.engName}</p>
+            <h2 className='infoTitle'>{name}</h2>
+            <p>{engName}</p>
           </div>
           <FontAwesomeIcon
             icon={faHeart}

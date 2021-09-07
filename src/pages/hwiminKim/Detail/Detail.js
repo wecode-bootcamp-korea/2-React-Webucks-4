@@ -21,14 +21,15 @@ class Detail extends Component {
   }
 
   render() {
+    const product = this.state.products[4];
     return (
       <>
         <section className='Detail'>
           <TopsNav />
-          <DetailSubHeader category={this.state.products[3]?.category} />
+          <DetailSubHeader category={product?.category} />
           <DetailCoffeeInfo
-            description={this.state.products[3]}
-            nutrition={this.state.products[3]?.nutritionFacts}
+            description={product}
+            nutrition={product?.nutritionFacts}
           />
         </section>
         <Footer />

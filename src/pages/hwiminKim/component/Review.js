@@ -21,12 +21,13 @@ class Review extends Component {
   };
 
   render() {
+    const reviewText = this.props.review;
     const isToggleOn = this.state.isToggleOn;
     return (
       <li className='reviewItem'>
         <div className='contentBox'>
           <p className='individualReviewBox'>
-            <b>작성자</b> <span>{this.props.review}</span>
+            <b>작성자</b> <span>{reviewText}</span>
           </p>
         </div>
         <div className='btnBox'>

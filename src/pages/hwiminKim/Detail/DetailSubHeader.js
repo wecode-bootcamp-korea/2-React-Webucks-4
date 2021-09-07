@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './DetailSubHeader.scss';
 
 class DetailSubHeader extends Component {
   render() {
+    const category = this.props?.category;
     return (
       <header className='DetailSubHeader'>
-        <h1>{this.props?.category}</h1>
+        <h1>{category}</h1>
         <ul className='subHeaderItems'>
           <li>
-            <a>홈</a>
+            <Link>홈</Link>
           </li>
           <li>
             <FontAwesomeIcon
@@ -20,7 +22,7 @@ class DetailSubHeader extends Component {
             />
           </li>
           <li>
-            <a>MENU</a>
+            <Link>MENU</Link>
           </li>
           <li>
             <FontAwesomeIcon
@@ -30,7 +32,7 @@ class DetailSubHeader extends Component {
             />
           </li>
           <li>
-            <a>음료</a>
+            <Link>음료</Link>
           </li>
           <li>
             <FontAwesomeIcon
@@ -40,7 +42,7 @@ class DetailSubHeader extends Component {
             />
           </li>
           <li>
-            <a>에스프레소</a>
+            <Link>에스프레소</Link>
           </li>
           <li>
             <FontAwesomeIcon
@@ -50,7 +52,7 @@ class DetailSubHeader extends Component {
             />
           </li>
           <li>
-            <a>나이트로 바닐라 크림</a>
+            <Link>나이트로 바닐라 크림</Link>
           </li>
         </ul>
       </header>

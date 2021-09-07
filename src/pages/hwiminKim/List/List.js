@@ -22,13 +22,14 @@ class List extends Component {
   }
 
   render() {
+    const { coldBrews, breweds } = this.state;
     return (
       <section className='List'>
         <TopsNav />
         <SubHeader category={'콜드 브루 커피'} />
-        <CoffeeList productData={this.state.coldBrews} />
+        <CoffeeList productData={coldBrews} />
         <SubHeader category={'브루 커피'} />
-        <CoffeeList productData={this.state.breweds} />
+        <CoffeeList productData={breweds} />
       </section>
     );
   }

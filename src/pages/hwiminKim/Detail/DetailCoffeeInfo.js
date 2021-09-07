@@ -7,7 +7,7 @@ class DetailCoffeeInfo extends Component {
   render() {
     return (
       <article className='coffeeInfoContainer'>
-        <DetailImg description={this.props.description} />
+        <DetailImg description={this.props?.description} />
         <DetailCoffeeFeature
           description={this.props?.description}
           nutrition={this.props?.nutrition}

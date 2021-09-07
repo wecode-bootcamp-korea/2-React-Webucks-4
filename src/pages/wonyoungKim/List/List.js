@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import TopsNav from '../../../components/TopsNav/TopsNav.js';
-import CoffeeData from './CoffeeData.js';
-import CoffeeData2 from './CoffeeData2.js';
-import CoffeeCard from './CoffeeCard.js';
+import Menubar from './component/Menubar.js';
+import DETAILS from './component/PRODUCT_INFO.js';
+import CoffeeCard from './component/CoffeeCard.js';
+import Footer from '../Detail/components/Footer.js';
 import './List.scss';
 
 class List extends Component {
@@ -10,38 +11,27 @@ class List extends Component {
     return (
       <div>
         <TopsNav />
-        <section className='menubar1'>
-          <p className='subMenu'>
-            <span className='subTitle'>콜드 브루 커피</span>
-            <img
-              className='coffeeIcon'
-              alt='logo'
-              src='/images/coffee_icon.PNG'
-            />
-            디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)
-          </p>
-        </section>
-        <section className='menuList'>
-          {CoffeeData.map(product => {
-            return <CoffeeCard img={product.img} Name={product.Name} />;
+        <Menubar
+          name='콜드브루'
+          text='디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)'
+        />
+        <section className='Coldbrew'>
+          {DETAILS.map(product => {
+            if (product.category !== '콜드 브루 커피') return null;
+            return <CoffeeCard img={product.imgUrl} Name={product.name} />;
           })}
         </section>
-        <section className='menubar2'>
-          <p className='subMenu'>
-            <span className='subTitle'>브루드 커피</span>
-            <img
-              className='coffeeIcon'
-              src='/images/coffee_icon.PNG'
-              alt='coffee'
-            />
-            디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)
-          </p>
-        </section>
-        <section className='menuList'>
-          {CoffeeData2.map(product => {
-            return <CoffeeCard img={product.img} Name={product.Name} />;
+        <Menubar
+          name='브루드 커피'
+          text='디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)'
+        />
+        <section className='brewed'>
+          {DETAILS.map(product => {
+            if (product.category !== '브루드 커피') return null;
+            return <CoffeeCard img={product.imgUrl} Name={product.name} />;
           })}
         </section>
+        <Footer />
       </div>
     );
   }

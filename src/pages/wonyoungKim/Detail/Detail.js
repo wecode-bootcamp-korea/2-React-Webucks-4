@@ -1,33 +1,21 @@
 import React, { Component } from 'react';
 import TopsNav from '../../../components/TopsNav/TopsNav.js';
 import './Detail.scss';
-import DetailInfo from './DetailInfo.js';
-import DetailReview from './DetailReview.js';
-import DetailFooter from './DetailFooter.js';
+import './components/HeartLike.scss';
+import DetailInfo from './components/DetailInfo.js';
+import DetailReview from './components/DetailReview.js';
+import Footer from './components/Footer.js';
+import HeartLike from './components/HeartLike.js';
 
 class Detail extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      btnColor: false,
-    };
-  }
-
-  btnChangeHandler = () => {
-    this.state.btnColor
-      ? this.setState({ btnColor: false })
-      : this.setState({ btnColor: true });
-  };
-
   render() {
     return (
       <>
         <TopsNav />
-        <article className='menubar'>
+        <article className='topbar'>
           <h1>콜드 브루</h1>
           <p>
-            홈 {'>'} MENU {'>'} 음료 {'>'} 콜드 브루 {'>'} 시그니처 더 블랙 콜드
-            브루
+            홈 &gt; MENU &gt; 음료 &gt; 콜드 브루 &gt; 시그니처 더 블랙 콜드브루
           </p>
         </article>
         <section className='menu'>
@@ -38,13 +26,7 @@ class Detail extends Component {
           />
           <section className='Detail'>
             <div className='Title'>
-              <button onClick={this.btnChangeHandler}>
-                {this.state.btnColor ? (
-                  <img src='/images/heartRed.png' alt='heartRed' />
-                ) : (
-                  <img src='/images/heart.png' alt='heart' />
-                )}
-              </button>
+              <HeartLike />
               <p className='nameKo'>시그니처 더 블랙 콜드 브루</p>
               <p className='nameEn'>Signature The Bloack Cold Brew</p>
             </div>
@@ -52,9 +34,7 @@ class Detail extends Component {
             <DetailReview />
           </section>
         </section>
-        <footer>
-          <DetailFooter />
-        </footer>
+        <Footer />
       </>
     );
   }

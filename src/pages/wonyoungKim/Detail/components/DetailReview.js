@@ -5,6 +5,7 @@ class DetailReview extends React.Component {
   constructor() {
     super();
     this.state = {
+      ID: Date.now(),
       commentList: [],
       commentText: '',
       userID: 'coffeelover',
@@ -18,13 +19,20 @@ class DetailReview extends React.Component {
 
   //댓글추가
   commentAdd = () => {
-    const commentText = this.state.commentText;
-    this.state.commentList.push(commentText);
     this.setState({
-      commentList: this.state.commentList,
+      commentList: this.state.commentList.concat([this.state.commentText]),
       commentText: '',
     });
   };
+
+  /*
+  remove = key => {
+    const { Comment } = this.state;
+    this.setState({
+      Comment: Comment.filter(key => E.i !== i),
+    });
+  };
+  */
 
   render() {
     return (
@@ -32,15 +40,11 @@ class DetailReview extends React.Component {
         <div className='review'>
           <p className='reviewTitle'>리뷰</p>
           <ul>
-            {this.state.commentList.map((item, i) => {
-              return (
-                <Comment
-                  key={i}
-                  userId={this.state.userId}
-                  commentText={item}
-                />
-              );
-            })}
+            <li>
+              {this.state.commentList.map((e, i) => {
+                return <Comment key={i} commentText={e} remove={this.remove} />;
+              })}
+            </li>
           </ul>
         </div>
         <input

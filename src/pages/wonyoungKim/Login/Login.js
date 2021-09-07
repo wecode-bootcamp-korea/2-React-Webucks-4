@@ -14,7 +14,6 @@ class Login extends Component {
     };
   }
 
-  //아이디 체크
   handleIdInput = event => {
     this.setState({ userName: event.target.value });
     if (event.target.value.includes('@')) {
@@ -22,7 +21,6 @@ class Login extends Component {
     }
   };
 
-  //비번 체크
   handlePwInput = event => {
     this.setState({ userPW: event.target.value });
     if (event.target.value.length >= 5) {
@@ -30,17 +28,10 @@ class Login extends Component {
     }
   };
 
-  //버튼색변화
   btnChangeColor = () => {
     if (this.state.idCheck && this.state.pwCheck) {
       this.setState({ btnColor: '#1a6fb9' });
     }
-  };
-
-  //아이디비번 입력확인
-  btnClick = () => {
-    console.log('ID :', this.state.userName);
-    console.log('pw:', this.state.userPW);
   };
 
   render() {

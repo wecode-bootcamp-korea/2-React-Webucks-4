@@ -1,0 +1,61 @@
+.Text {
+  margin-top: 20px;
+  height: 70px;
+  border-bottom: 1px solid lightgray;
+
+  p {
+    color: #454545;
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
+
+.Info {
+  height: 60px;
+  padding: 20px 10px;
+  margin-top: 4px;
+  border-bottom: 1px solid lightgray;
+  font-size: 16px;
+
+  .InfoDetail {
+    float: right;
+  }
+}
+
+.Ingre {
+  height: 130px;
+
+  ul {
+    float: left;
+    margin-top: 13px;
+    padding: 8px;
+    list-style-type: none;
+    line-height: 30px;
+    font-size: 13px;
+  }
+
+  .detailL {
+    width: 200px;
+  }
+
+  .detailR {
+    width: 100px;
+    text-align: right;
+  }
+
+  #line {
+    border-right: 1px dashed lightgray;
+  }
+}
+
+.Allergy {
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgb(243, 241, 241);
+
+  p {
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 50px;
+  }
+}

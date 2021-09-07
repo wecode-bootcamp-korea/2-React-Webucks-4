@@ -1,4 +1,5 @@
 import React from 'react';
+import './DetailInfo.scss';
 
 class DetailInfo extends React.Component {
   render() {

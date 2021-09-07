@@ -6,12 +6,12 @@
     margin-bottom: 40px;
 
     ul {
+      display: flex;
+      flex-wrap: wrap;
       position: relative;
       top: -10px;
       left: -10px;
       width: 1120px;
-      display: flex;
-      flex-wrap: wrap;
     }
   }
 }
@@ -33,14 +33,14 @@
     width: 100%;
 
     ul {
-      margin: 0 auto;
       display: flex;
-      justify-content: flex-start;
       flex-wrap: wrap;
+      justify-content: flex-start;
       position: relative;
-      width: 100%;
-      left: 0;
       top: 0;
+      left: 0;
+      margin: 0 auto;
+      width: 100%;
     }
   }
 }

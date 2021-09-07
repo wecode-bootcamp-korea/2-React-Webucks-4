@@ -3,12 +3,13 @@ import './FacebookLogIn.scss';
 
 class FacebookLogIn extends Component {
   render() {
+    const { className, link, text } = this.props;
     return (
       <>
-        <h2 className={this.props.className}>
-          <a href={this.props.link}>
+        <h2 className={className}>
+          <a href={link}>
             <span></span>
-            {this.props.text}
+            {text}
           </a>
         </h2>
         <p className='forget'>

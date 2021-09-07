@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './ProductsHeader.scss';
+import './CategoryHeader.scss';
 
-class ProductsHeader extends Component {
+class CategoryHeader extends Component {
   render() {
     return (
       <dt className='ProductHeader'>
@@ -20,4 +20,4 @@ class ProductsHeader extends Component {
   }
 }
 
-export default ProductsHeader;
+export default CategoryHeader;

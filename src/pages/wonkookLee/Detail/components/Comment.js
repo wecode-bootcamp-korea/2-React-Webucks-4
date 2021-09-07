@@ -30,7 +30,7 @@ class Comment extends Component {
     };
   }
 
-  addComment(event) {
+  addComment = event => {
     if (event.key !== 'Enter') return;
     event.preventDefault();
     const { comments } = this.state;
@@ -45,16 +45,16 @@ class Comment extends Component {
       ],
     });
     event.target.value = '';
-  }
+  };
 
-  removeComment(id) {
+  removeComment = id => {
     const { comments } = this.state;
     this.setState({
-      comments: [...comments].filter(e => e.commentId !== id),
+      comments: [...comments].filter(cmt => cmt.commentId !== id),
     });
-  }
+  };
 
-  toggleLikeComment(id) {
+  toggleLikeComment = id => {
     const { comments } = this.state;
     const matchIndex = comments.findIndex(cmt => cmt.commentId === id);
     const toggleLiked = comments[matchIndex].liked;
@@ -62,7 +62,7 @@ class Comment extends Component {
     this.setState({
       comments: comments,
     });
-  }
+  };
 
   render() {
     return (
@@ -82,8 +82,8 @@ class Comment extends Component {
                     commentId={commentId}
                     userId={userId}
                     userComment={userComment}
-                    deleteThread={this.removeComment.bind(this)}
-                    toggleLiked={this.toggleLikeComment.bind(this)}
+                    deleteThread={this.removeComment}
+                    toggleLiked={this.toggleLikeComment}
                   />
                 );
               })}
@@ -93,7 +93,7 @@ class Comment extends Component {
         <div id='validTag'>최소 열 자 이상 입력해주세요</div>
         <form action='submit'>
           <input
-            onKeyPress={this.addComment.bind(this)}
+            onKeyPress={this.addComment}
             id='review_field'
             type='text'
             placeholder='리뷰를 입력해주세요'

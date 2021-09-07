@@ -1,29 +1,39 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './CoffeeCard.scss';
 import LikeBtn from './LikeBtn';
 
 class CoffeeCard extends Component {
   render() {
+    const { liked, linkId, isNewProduct, controlFavBeverages, name, imgUrl } =
+      this.props;
     return (
       <li className='menuDataSet'>
         <dl>
-          <dt
-            onClick={e => this.props.goToEachDetailPage(e, this.props.linkId)}
+          <Link
+            to={{
+              pathname: `/detail-wonkooklee/${linkId}`,
+              itemId: linkId,
+            }}
           >
-            {this.props.isNewProduct ? (
-              <div className='new_badge'>
-                <img
-                  src='https://image.istarbucks.co.kr/common/img/menu/mark01.png'
-                  alt='NEW'
-                />
-              </div>
-            ) : null}
-            <LikeBtn />
-            <a href='./detail-wonkooklee'>
-              <img src={this.props.imgUrl} alt={this.props.name} />
-            </a>
-          </dt>
-          <dd>{this.props.name}</dd>
+            <dt>
+              {isNewProduct ? (
+                <div className='new_badge'>
+                  <img
+                    src='https://image.istarbucks.co.kr/common/img/menu/mark01.png'
+                    alt='NEW'
+                  />
+                </div>
+              ) : null}
+              <LikeBtn
+                liked={liked}
+                linkId={linkId}
+                controlFavBeverages={controlFavBeverages}
+              />
+              <img src={imgUrl} alt={name} />
+            </dt>
+          </Link>
+          <dd>{name}</dd>
         </dl>
       </li>
     );

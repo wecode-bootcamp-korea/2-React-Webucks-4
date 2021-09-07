@@ -14,15 +14,6 @@ class List extends Component {
     removeListBodyStyle();
   }
 
-  goToEachDetailPage = (e, id) => {
-    e.preventDefault();
-    if (e.target.classList.contains('like_bev_input')) return;
-    this.props.history.push({
-      pathname: '/detail-wonkooklee',
-      state: { selectedItem: id },
-    });
-  };
-
   render() {
     return (
       <div id='wrap'>
@@ -45,7 +36,7 @@ class List extends Component {
                 <dl className='product_view_tab product_view_tab01'>
                   <dt className='dt1'></dt>
                   <dd>
-                    <ProductList goToEachDetailPage={this.goToEachDetailPage} />
+                    <ProductList goToEachPage={this.props.match.params} />
                   </dd>
                 </dl>
               </div>

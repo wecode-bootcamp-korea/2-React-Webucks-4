@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ScrollIntoView from './pages/wonkookLee/utils';
 
 // 휘민's 컴포넌트
 import LoginHM from './pages/hwiminKim/Login/Login';
@@ -30,23 +31,25 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
-        <Switch>
-          <Route exact path='/login-hwiminKim' component={LoginHM} />
-          <Route exact path='/list-hwiminKim' component={ListHM} />
-          <Route exact path='/detail-hwiminKim' component={DetailHM} />
-          <Route exact path='/login-wonyoungKim' component={LoginWY} />
-          <Route exact path='/list-wonyoungKim' component={ListWY} />
-          <Route exact path='/detail-wonyoungKim' component={DetailWY} />
-          <Route exact path='/login-siwonKim' component={LoginSW} />
-          <Route exact path='/list-siwonKim' component={ListSW} />
-          <Route exact path='/detail-siwonKim' component={DetailSW} />
-          <Route exact path='/login-yebomLee' component={LoginYB} />
-          <Route exact path='/list-yebomLee' component={ListYB} />
-          <Route exact path='/detail-yebomLee' component={DetailYB} />
-          <Route exact path='/login-wonkookLee' component={LoginWK} />
-          <Route exact path='/list-wonkookLee' component={ListWK} />
-          <Route exact path='/detail-wonkookLee' component={DetailWK} />
-        </Switch>
+        <ScrollIntoView>
+          <Switch>
+            <Route exact path='/login-hwiminKim' component={LoginHM} />
+            <Route exact path='/list-hwiminKim' component={ListHM} />
+            <Route exact path='/detail-hwiminKim' component={DetailHM} />
+            <Route exact path='/login-wonyoungKim' component={LoginWY} />
+            <Route exact path='/list-wonyoungKim' component={ListWY} />
+            <Route exact path='/detail-wonyoungKim' component={DetailWY} />
+            <Route exact path='/login-siwonKim' component={LoginSW} />
+            <Route exact path='/list-siwonKim' component={ListSW} />
+            <Route exact path='/detail-siwonKim' component={DetailSW} />
+            <Route exact path='/login-yebomLee' component={LoginYB} />
+            <Route exact path='/list-yebomLee' component={ListYB} />
+            <Route exact path='/detail-yebomLee' component={DetailYB} />
+            <Route exact path='/login-wonkookLee' component={LoginWK} />
+            <Route exact path='/list-wonkookLee' component={ListWK} />
+            <Route exact path='/detail-wonkookLee/:id' component={DetailWK} />
+          </Switch>
+        </ScrollIntoView>
       </Router>
     );
   }

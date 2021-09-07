@@ -9,15 +9,16 @@ class LoginBtn extends Component {
   }
 
   render() {
+    const { isActive, className, type, form, children } = this.props;
     return (
       <Link to='/list-wonkooklee'>
         <button
-          disabled={this.props.isActive}
-          className={this.props.className}
-          type={this.props.type}
-          form={this.props.form}
+          disabled={isActive}
+          className={className}
+          type={type}
+          form={form}
         >
-          {this.props.children}
+          {children}
         </button>
       </Link>
     );

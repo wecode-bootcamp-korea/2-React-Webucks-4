@@ -3,13 +3,14 @@ import './LoginInput.scss';
 
 class LoginInput extends Component {
   render() {
+    const { className, onChange, goToPage, type, placeholder } = this.props;
     return (
       <input
-        className={this.props.className}
-        onChange={this.props.onChange}
-        onKeyPress={this.props.goToPage}
-        type={this.props.type}
-        placeholder={this.props.placeholder}
+        className={className}
+        onChange={onChange}
+        onKeyPress={goToPage}
+        type={type}
+        placeholder={placeholder}
         spellCheck='false'
       />
     );

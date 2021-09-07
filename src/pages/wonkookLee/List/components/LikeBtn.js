@@ -5,10 +5,10 @@ import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons';
 import './LikeBtn.scss';
 
 class LikeBtn extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      liked: false,
+      liked: this.props.liked,
     };
   }
 
@@ -20,11 +20,19 @@ class LikeBtn extends Component {
           name='like_bev'
           id='like_bev'
           className={`like_bev_input ${this.state.liked ? 'liked' : ''}`}
-          onClick={() =>
-            this.setState({
-              liked: !this.state.liked,
-            })
-          }
+          onClick={() => {
+            this.setState(
+              {
+                liked: !this.state.liked,
+              },
+              () => {
+                this.props.controlFavBeverages(
+                  this.props.linkId,
+                  this.state.liked
+                );
+              }
+            );
+          }}
         />
         <FontAwesomeIcon className='far fa-heart login_icon' icon={farHeart} />
         <FontAwesomeIcon className='fas fa-heart login_icon' icon={fasHeart} />

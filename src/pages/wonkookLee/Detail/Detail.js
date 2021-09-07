@@ -25,7 +25,7 @@ class Detail extends Component {
       .then(res => res.json())
       .then(data => {
         const item = data.find(
-          e => e.id === this.props.location.state.selectedItem
+          e => e.id === parseInt(this.props.match.params.id)
         );
         this.setState({
           products: item,
@@ -45,6 +45,7 @@ class Detail extends Component {
   };
 
   render() {
+    const products = this.state.products;
     const { name, category } = this.state.products;
     return (
       <div id='wrap'>
@@ -65,15 +66,12 @@ class Detail extends Component {
 
           <div className='content'>
             <div className='product_view_wrap1 clearfix'>
-              <MainImgFrame
-                imgUrl={this.state.products?.imgUrl}
-                name={this.state.products?.name}
-              />
+              <MainImgFrame imgUrl={products?.imgUrl} name={products?.name} />
               <ProdDesc
-                name={this.state.products?.name}
-                engName={this.state.products?.engName}
-                summary={this.state.products?.summary}
-                nutritionFacts={this.state.products?.nutritionFacts}
+                name={products?.name}
+                engName={products?.engName}
+                summary={products?.summary}
+                nutritionFacts={products?.nutritionFacts}
                 hasUserLiked={this.hasUserLiked}
               />
               <Comment />

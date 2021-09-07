@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import DetailFeatureHeader from './DetailFeatureHeader';
-import DetailNutritionInfo from './DetailNutritionInfo';
-import ReveiwList from '../component/ReviewList';
+import DetailImg from './DetailImg';
+import DetailCoffeeInfo from './DetailCoffeeInfo';
 import './DetailCoffeeFeature.scss';
 
 class DetailCoffeeFeature extends Component {
   render() {
     return (
-      <section className='infoContainer'>
-        <DetailFeatureHeader description={this.props?.description} />
-        <DetailNutritionInfo nutrition={this.props?.nutrition} />
-        <ReveiwList />
-      </section>
+      <article className='coffeeInfoContainer'>
+        <DetailImg description={this.props?.description} />
+        <DetailCoffeeInfo
+          description={this.props?.description}
+          nutrition={this.props?.nutrition}
+        />
+      </article>
     );
   }
 }

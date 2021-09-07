@@ -1,0 +1,21 @@
+.btn {
+  border: none;
+  background-color: unset;
+  .heartIcon {
+    font-size: 15px;
+    transition: all 0.3s;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .iconColorRed {
+    color: red;
+    font-size: 15px;
+    transform: scale(1.2);
+    transition: all 0.5s;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

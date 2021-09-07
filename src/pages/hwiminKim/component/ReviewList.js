@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Review from './Review';
+import ReviewThread from './ReviewThread';
 import './ReviewList.scss';
 
 class ReviewList extends Component {
@@ -46,7 +46,7 @@ class ReviewList extends Component {
           <ul className='items'>
             {reviews.map(review => {
               return (
-                <Review
+                <ReviewThread
                   key={review.id}
                   review={review.userReview}
                   onRemove={this.handleRemove}

@@ -1,4 +1,5 @@
-.infoContainer {
-  $heartAndNavColor: #999696;
-  width: 575px;
+.coffeeInfoContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
 }

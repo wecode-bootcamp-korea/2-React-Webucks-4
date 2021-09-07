@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TopsNav from '../component/TopsNav';
-import DetailSubHeader from './DetailSubHeader';
-import DetailCoffeeInfo from './DetailCoffeeInfo';
+import DetailCategoryHeader from './DetailCategoryHeader';
+import DetailCoffeeInfo from './DetailCoffeeFeature';
 import Footer from '../component/Footer';
 import './Detail.scss';
 
@@ -26,7 +26,7 @@ class Detail extends Component {
       <>
         <section className='Detail'>
           <TopsNav />
-          <DetailSubHeader category={product?.category} />
+          <DetailCategoryHeader description={product} />
           <DetailCoffeeInfo
             description={product}
             nutrition={product?.nutritionFacts}

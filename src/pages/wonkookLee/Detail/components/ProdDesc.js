@@ -6,7 +6,7 @@ class ProdDesc extends Component {
   render() {
     const { name, engName, summary, nutritionFacts, hasUserLiked } = this.props;
     return (
-      <div className='product_view_detail'>
+      <div className='ProductDesc'>
         <div className='myAssignZone'>
           <h4>
             {name}

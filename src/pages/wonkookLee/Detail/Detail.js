@@ -40,7 +40,6 @@ class Detail extends Component {
 
   render() {
     const products = this.state.products;
-    const { name, category } = this.state.products;
     return (
       <div id='wrap' className='Detail'>
         <TopNav />
@@ -54,7 +53,7 @@ class Detail extends Component {
                   alt='콜드 브루'
                 />
               </h2>
-              <BreadCrumb name={name} category={category} />
+              <BreadCrumb name={products?.name} category={products?.category} />
             </div>
           </div>
 

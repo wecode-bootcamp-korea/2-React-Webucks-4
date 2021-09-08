@@ -6,6 +6,7 @@ class Comment extends Component {
   constructor() {
     super();
     this.state = {
+      invalidCommentLength: false,
       comments: [
         {
           commentId: 1,
@@ -30,9 +31,23 @@ class Comment extends Component {
     };
   }
 
+  invalidCommentLength = () => {
+    this.setState({
+      invalidCommentLength: true,
+    });
+    setTimeout(() => {
+      this.setState({
+        invalidCommentLength: false,
+      });
+    }, 1500);
+  };
+
   addComment = event => {
     if (event.key !== 'Enter') return;
-    event.preventDefault();
+    if (event.target.value.length < 10) {
+      this.invalidCommentLength();
+      return;
+    }
     const { comments } = this.state;
     this.setState({
       comments: [
@@ -90,8 +105,13 @@ class Comment extends Component {
             </ul>
           </dd>
         </dl>
-        <div id='validTag'>최소 열 자 이상 입력해주세요</div>
-        <form action='submit'>
+        <div
+          id='validTag'
+          className={this.state.invalidCommentLength ? 'notValid' : ''}
+        >
+          최소 열 자 이상 입력해주세요
+        </div>
+        <form action='submit' onSubmit={e => e.preventDefault()}>
           <input
             onKeyPress={this.addComment}
             id='review_field'

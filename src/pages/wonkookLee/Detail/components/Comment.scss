@@ -2,85 +2,86 @@ section.review_wrap {
   margin-top: 30px;
   width: 610px;
   float: right;
-}
 
-section.review_wrap > dl > dt.review_tit {
-  height: 40px;
-  line-height: 40px;
-  border-bottom: 1px solid #d6d6d6;
-}
+  dt.review_tit {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #d6d6d6;
 
-section.review_wrap > dl > dt.review_tit h4 {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-section.review_wrap > dl > dd.review_container {
-  position: relative;
-  margin: 20px 0 10px 0;
-  height: 80px;
-}
-
-section.review_wrap > dl > dd.review_container ul {
-  position: absolute;
-  height: 100%;
-  bottom: 0;
-  width: 100%;
-  overflow-y: scroll;
-}
-
-#review_field {
-  padding-left: 10px;
-  height: 34px;
-  width: 100%;
-  background-color: #efefef;
-  border: none;
-}
-
-#review_field:focus {
-  outline: none;
-}
-
-#validTag {
-  position: absolute;
-  height: 26px;
-  width: 180px;
-  bottom: 35px;
-  line-height: 24px;
-  text-align: center;
-  border-radius: 5px;
-  color: #ffffff;
-  background-color: #333;
-  font-size: 12px;
-  opacity: 0;
-  animation-duration: 1.5s;
-  animation-iteration-count: 1;
-}
-
-.visible {
-  display: block;
-}
-
-@keyframes heart-burst {
-  0% {
-    background-position: left;
+    h4 {
+      font-size: 18px;
+      font-weight: bold;
+    }
   }
-  100% {
-    background-position: right;
-  }
-}
 
-@keyframes notValid {
-  0% {
+  dd.review_container {
+    position: relative;
+    margin: 20px 0 10px 0;
+    height: 80px;
+
+    ul {
+      position: absolute;
+      height: 100%;
+      bottom: 0;
+      width: 100%;
+      overflow-y: scroll;
+    }
+  }
+
+  #review_field {
+    padding-left: 10px;
+    height: 34px;
+    width: 100%;
+    background-color: #efefef;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #validTag {
+    position: absolute;
+    height: 26px;
+    width: 180px;
+    bottom: 35px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #333;
+    font-size: 12px;
     opacity: 0;
+    z-index: 9000;
   }
-  10% {
-    opacity: 1;
+
+  .notValid {
+    animation-name: notValid;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
   }
-  60% {
-    opacity: 1;
+
+  @keyframes heart-burst {
+    0% {
+      background-position: left;
+    }
+    100% {
+      background-position: right;
+    }
   }
-  100% {
-    opacity: 0;
+
+  @keyframes notValid {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 }

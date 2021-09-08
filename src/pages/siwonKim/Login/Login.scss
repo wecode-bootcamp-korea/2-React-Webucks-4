@@ -1,0 +1,43 @@
+@import '../mixin.scss';
+
+.Login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+
+  .backBoard {
+    @include flex(column);
+    align-items: center;
+    position: relative;
+    width: 450px;
+    height: 550px;
+    margin: 100px auto;
+    border: 1px solid lightgray;
+    background-color: white;
+  }
+
+  .logo {
+    width: 65%;
+    margin-top: 50px;
+  }
+
+  .eye {
+    position: relative;
+    top: -108px;
+    left: 140px;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .a {
+    position: absolute;
+    bottom: 90px;
+    color: #739ab3;
+    text-decoration: none;
+    &:visited {
+      color: #739ab3;
+    }
+  }
+}

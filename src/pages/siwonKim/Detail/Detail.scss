@@ -1,0 +1,25 @@
+@import '../mixin.scss';
+
+.Detail {
+  .mainContent {
+    @include flex(column);
+    align-items: center;
+    margin-bottom: 20px;
+
+    .bodyWrap {
+      @include flex(row);
+      justify-content: center;
+      max-width: 1000;
+    }
+
+    .productImg {
+      width: 450px;
+      height: 450px;
+    }
+
+    .productInfo {
+      @include flex(column);
+      align-items: center;
+    }
+  }
+}

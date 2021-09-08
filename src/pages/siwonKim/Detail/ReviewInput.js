@@ -1,0 +1,29 @@
+import React, { Component } from 'react';
+import './ReviewInput.scss';
+
+class ReviewInput extends Component {
+  render() {
+    const { handleInputId, handleInputText } = this.props;
+
+    return (
+      <div className='ReviewInput'>
+        <input
+          name='inputId'
+          className='inputId'
+          type='text'
+          placeholder='이름'
+          onChange={handleInputId}
+        />
+        <input
+          name='inputText'
+          className='inputText'
+          type='text'
+          placeholder='리뷰를 입력해주세요'
+          onKeyUp={handleInputText}
+        />
+      </div>
+    );
+  }
+}
+
+export default ReviewInput;

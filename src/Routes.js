@@ -39,7 +39,7 @@ class Routes extends React.Component {
           <Route exact path='/detail-wonyoungKim' component={DetailWY} />
           <Route exact path='/login-siwonKim' component={LoginSW} />
           <Route exact path='/list-siwonKim' component={ListSW} />
-          <Route exact path='/detail-siwonKim' component={DetailSW} />
+          <Route exact path='/detail-siwonKim/:id' component={DetailSW} />
           <Route exact path='/login-yebomLee' component={LoginYB} />
           <Route exact path='/list-yebomLee' component={ListYB} />
           <Route exact path='/detail-yebomLee' component={DetailYB} />

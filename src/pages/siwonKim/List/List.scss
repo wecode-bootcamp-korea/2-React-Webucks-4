@@ -1,0 +1,8 @@
+@import '../mixin.scss';
+
+.List {
+  .liner {
+    @include flex(column);
+    align-items: center;
+  }
+}

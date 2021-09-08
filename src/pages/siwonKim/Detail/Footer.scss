@@ -1,0 +1,23 @@
+@import '../mixin.scss';
+
+.Footer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 50px 0;
+  background-color: #333333;
+  color: white;
+  font-size: 15px;
+
+  .footerMenu {
+    @include flex(column);
+    font-size: 15px;
+    span {
+      margin-bottom: 4px;
+    }
+  }
+
+  .footerMenu span:first-child {
+    margin-bottom: 20px;
+  }
+}

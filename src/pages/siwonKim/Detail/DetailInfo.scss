@@ -1,0 +1,91 @@
+@import '../mixin.scss';
+
+.DetailInfo {
+  width: 500px;
+  margin-left: 50px;
+
+  .productTitleDesc {
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+  }
+
+  .productName {
+    margin-top: 5px;
+    font-size: 25px;
+  }
+
+  .likeOn {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    color: red;
+    font-size: 20px;
+    transition: all 0.5s linear;
+    &:hover {
+      animation: likeOnRotate 1s 1;
+      transform-origin: 50% 50%;
+    }
+  }
+
+  .likeOff {
+    @extend .likeOn;
+    color: grey;
+  }
+
+  @keyframes likeOnRotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .description {
+    display: inline-block;
+    margin: 20px 5px;
+    line-height: 20px;
+  }
+
+  .nutritionTitle {
+    @include flex(row);
+    justify-content: space-between;
+    padding: 20px 5px;
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+  }
+
+  .tableTitle {
+    font-size: 20px;
+  }
+
+  .nutritionFact {
+    @include flex(row);
+    justify-content: space-evenly;
+    margin: 20px 5px;
+  }
+
+  .kcalFatProtein {
+    position: relative;
+    width: 240px;
+    div {
+      margin-bottom: 10px;
+      padding: 0 3px;
+    }
+  }
+
+  .natriumSugarCaffeine {
+    position: relative;
+    width: 240px;
+    border-left: 2px solid lightgrey;
+    padding-left: 5px;
+    div {
+      margin-bottom: 10px;
+      padding: 0 3px;
+    }
+  }
+
+  .numbers {
+    position: absolute;
+    display: inline-block;
+    right: 1px;
+  }
+}

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Logo from './Logo';
 import LoginInput from './LoginInput';
 import LoginBtn from './LoginBtn';
-import Divider from './Divider';
 import FacebookLogIn from './FacebookLogIn';
 import ToggleVisibility from './ToggleVisibility';
 import './LoginForm.scss';
@@ -81,7 +80,10 @@ class LoginForm extends Component {
             iconToggle={isPwVisible}
             toggleType={this.viewPassword}
           />
-          <Divider className='divider' text='또는' />
+          <div className='divider'>
+            <hr />
+            <span>또는</span>
+          </div>
           <FacebookLogIn
             className='facebook__login'
             link='https://www.facebook.com/'

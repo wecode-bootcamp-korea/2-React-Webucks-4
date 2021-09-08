@@ -27,7 +27,7 @@ class List extends Component {
                 <dl className='product_view_tab product_view_tab01'>
                   <dt className='dt1'></dt>
                   <dd>
-                    <ProductList goToEachPage={this.props.match.params} />
+                    <ProductList />
                   </dd>
                 </dl>
               </div>

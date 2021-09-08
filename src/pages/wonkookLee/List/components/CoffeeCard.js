@@ -17,14 +17,14 @@ class CoffeeCard extends Component {
             }}
           >
             <dt>
-              {isNewProduct ? (
+              {isNewProduct && (
                 <div className='new_badge'>
                   <img
                     src='https://image.istarbucks.co.kr/common/img/menu/mark01.png'
                     alt='NEW'
                   />
                 </div>
-              ) : null}
+              )}
               <LikeBtn
                 liked={liked}
                 linkId={linkId}

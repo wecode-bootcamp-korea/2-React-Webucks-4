@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import Logo from './Logo';
 import LoginInput from './LoginInput';
 import LoginBtn from './LoginBtn';
@@ -14,29 +15,21 @@ class LoginForm extends Component {
       isValidId: false,
       isValidPw: false,
       isPwVisible: false,
-      isBtnActive: false,
     };
   }
 
   validation = event => {
-    if (event.target.classList.contains('id')) {
-      const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-      this.setState({ isValidId: event.target.value.match(emailRegex) });
-    }
-    if (event.target.classList.contains('password')) {
-      const passwordRegex =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/g;
-      this.setState({ isValidPw: event.target.value.match(passwordRegex) });
-    }
-    this.activateBtn();
-  };
-
-  activateBtn = () => {
-    if (this.state.isValidId && this.state.isValidPw) {
-      this.setState({ isBtnActive: true });
-    } else {
-      this.setState({ isBtnActive: false });
-    }
+    const { id, value } = event.target;
+    const regExp = {
+      id: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+      password:
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/g,
+    };
+    this.setState({
+      [`isValid${id === 'id' ? 'Id' : 'Pw'}`]: value.match(regExp[id])
+        ? true
+        : false,
+    });
   };
 
   viewPassword = () => {
@@ -44,26 +37,28 @@ class LoginForm extends Component {
   };
 
   redirectAfterLogin = () => {
-    if (!this.state.isBtnActive) return;
-    window.location.href = '/list-wonkooklee';
+    if (!this.state.isValidId || !this.state.isValidPw) return;
+    this.props.history.push('/list-wonkooklee');
   };
 
   render() {
-    const { isValidId, isValidPw, isPwVisible, isBtnActive } = this.state;
+    const { isValidId, isValidPw, isPwVisible } = this.state;
     return (
       <section className='login'>
         <Logo link='#' text='Westabucks' />
         <form className='LoginForm auth'>
           <LoginInput
-            onChange={this.validation}
+            validation={this.validation}
             redirectAfterLogin={this.redirectAfterLogin}
+            id='id'
             className={`inputField id ${isValidId ? 'valid' : ''}`}
             type='text'
             placeholder='전화번호, 사용자 이름 또는 이메일'
           />
           <LoginInput
-            onChange={this.validation}
-            redirectAfterLogin={this.redirectAfterLogin.bind(this)}
+            validation={this.validation}
+            redirectAfterLogin={this.redirectAfterLogin}
+            id='password'
             className={`inputField password ${isValidPw ? 'valid' : ''}`}
             type={isPwVisible ? 'text' : 'password'}
             placeholder='비밀번호'
@@ -71,14 +66,14 @@ class LoginForm extends Component {
           <LoginBtn
             className='btn_login'
             type='submit'
-            form='submit'
-            isActive={!isBtnActive}
+            isValidId={isValidId}
+            isValidPw={isValidPw}
           >
             로그인
           </LoginBtn>
           <ToggleVisibility
-            iconToggle={isPwVisible}
-            toggleType={this.viewPassword}
+            isPwVisible={isPwVisible}
+            viewPassword={this.viewPassword}
           />
           <div className='divider'>
             <hr />
@@ -95,4 +90,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);

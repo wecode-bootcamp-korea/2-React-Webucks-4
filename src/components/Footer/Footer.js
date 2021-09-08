@@ -1,12 +1,30 @@
 import React, { Component } from 'react';
+import FooterMap from './components/FooterMap';
 import './Footer.scss';
 
 class Footer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      footerMap: [],
+    };
+  }
+
+  componentDidMount = () => {
+    fetch('/data/FOOTER_MAP.json')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          footerMap: data,
+        })
+      );
+  };
+
   render() {
     return (
       <footer>
-        <nav className='footerNav'>
-          <ul className='company'>
+        <FooterMap footerMap={this.state.footerMap} />
+        {/* <ul className='company'>
             <h4>COMPANY</h4>
             <li>
               <a href='/list-wonkooklee'>한눈에 보기</a>
@@ -68,15 +86,14 @@ class Footer extends Component {
             <li>
               <a href='/list-wonkooklee'>채용 지원하기</a>
             </li>
-          </ul>
-          <div className='webucks'>
+          </ul> */}
+        {/* <div className='webucks'>
             <h4>
               <a href='https://wecode.co.kr/' target='_blank' rel='noreferrer'>
                 WEBUCKS
               </a>
             </h4>
-          </div>
-        </nav>
+          </div> */}
       </footer>
     );
   }

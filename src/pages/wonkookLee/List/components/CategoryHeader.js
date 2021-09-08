@@ -5,7 +5,7 @@ class CategoryHeader extends Component {
   render() {
     return (
       <dt className='ProductHeader'>
-        <a href='http://localhost:3000'>{this.props.category}</a>
+        <a href='/list-wonkooklee'>{this.props.category}</a>
         <i>
           <img
             src='https://image.istarbucks.co.kr/common/img/menu/logo_decaf.png'

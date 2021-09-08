@@ -50,7 +50,6 @@ class ProductList extends Component {
               {this.state.coldBrews?.map(beverage => {
                 return (
                   <CoffeeCard
-                    goToEachDetailPage={this.props.goToEachDetailPage}
                     key={beverage.id}
                     linkId={beverage.id}
                     name={beverage.name}
@@ -69,7 +68,6 @@ class ProductList extends Component {
               {this.state.breweds?.map(beverage => {
                 return (
                   <CoffeeCard
-                    goToEachDetailPage={this.props.goToEachDetailPage}
                     key={beverage.id}
                     linkId={beverage.id}
                     name={beverage.name}

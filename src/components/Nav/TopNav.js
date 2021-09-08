@@ -17,12 +17,12 @@ class NavBar extends Component {
                 </a>
               </li>
               <li className='tablet_gnb02'>
-                <a href='http://localhost:3000' role='button'>
+                <a href='/list-wonkooklee' role='button'>
                   stores
                 </a>
               </li>
               <li className='tablet_gnb03'>
-                <a href='http://localhost:3000' role='button'>
+                <a href='/list-wonkooklee' role='button'>
                   menus
                 </a>
               </li>
@@ -42,20 +42,20 @@ class NavBar extends Component {
                       <a href='/login-wonkooklee'>Sign In</a>
                     </li>
                     <li className='util_nav02'>
-                      <a href='http://localhost:3000'>My Westarbucks</a>
+                      <a href='/list-wonkooklee'>My Westarbucks</a>
                     </li>
                     <li className='util_nav03'>
-                      <a href='http://localhost:3000'>
+                      <a href='/list-wonkooklee'>
                         Customer Service &amp; Ideas
                       </a>
                     </li>
                     <li className='util_nav04'>
-                      <a href='http://localhost:3000'>Find a Store</a>
+                      <a href='/list-wonkooklee'>Find a Store</a>
                     </li>
                   </ul>
                 </nav>
                 <p className='btn_search'>
-                  <a href='http://localhost:3000'>
+                  <a href='/list-wonkooklee'>
                     <img
                       src='https://image.istarbucks.co.kr/common/img/common/icon_magnifier_black.png'
                       alt='통합검색'
@@ -79,22 +79,22 @@ class NavBar extends Component {
                   </li>
                   <li className='gnb_nav03'>
                     <h2>
-                      <a href='http://localhost:3000'>STORE</a>
+                      <a href='/list-wonkooklee'>STORE</a>
                     </h2>
                   </li>
                   <li className='gnb_nav04'>
                     <h2>
-                      <a href='http://localhost:3000'>RESPONSIBILITY</a>
+                      <a href='/list-wonkooklee'>RESPONSIBILITY</a>
                     </h2>
                   </li>
                   <li className='gnb_nav05'>
                     <h2>
-                      <a href='http://localhost:3000'>WESTARBUCKS REWARDS</a>
+                      <a href='/list-wonkooklee'>WESTARBUCKS REWARDS</a>
                     </h2>
                   </li>
                   <li className='gnb_nav06'>
                     <h2>
-                      <a href='http://localhost:3000'>WHAT'S NEW</a>
+                      <a href='/list-wonkooklee'>WHAT'S NEW</a>
                     </h2>
                   </li>
                 </ul>

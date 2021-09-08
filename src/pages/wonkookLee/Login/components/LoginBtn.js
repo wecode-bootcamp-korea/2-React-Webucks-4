@@ -9,14 +9,13 @@ class LoginBtn extends Component {
   }
 
   render() {
-    const { isActive, className, type, form, children } = this.props;
+    const { isValidId, isValidPw, className, type, children } = this.props;
     return (
       <Link to='/list-wonkooklee'>
         <button
-          disabled={isActive}
+          disabled={!(isValidId && isValidPw)}
           className={className}
           type={type}
-          form={form}
         >
           {children}
         </button>

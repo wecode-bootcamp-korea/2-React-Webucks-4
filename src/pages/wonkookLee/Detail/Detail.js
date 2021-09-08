@@ -17,7 +17,7 @@ class Detail extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/PRODUCTS.json', {
+    fetch('/data/PRODUCTS.json', {
       method: 'GET',
     })
       .then(res => res.json())

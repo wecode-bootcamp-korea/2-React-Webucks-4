@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import './LoginInput.scss';
 
 class LoginInput extends Component {
+  loginWithPressEnter = event => {
+    if (event.key !== 'Enter') return;
+    this.props.redirectAfterLogin();
+  };
+
   render() {
-    const { className, onChange, redirectAfterLogin, type, placeholder } =
-      this.props;
+    const { id, className, validation, type, placeholder } = this.props;
     return (
       <input
         className={className}
-        onChange={onChange}
-        onKeyPress={event => {
-          if (event.key !== 'Enter') return;
-          redirectAfterLogin();
-        }}
+        onChange={validation}
+        onSubmit={this.loginWithPressEnter}
         type={type}
+        id={id}
         placeholder={placeholder}
         spellCheck='false'
       />

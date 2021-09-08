@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import IdInput from './IdInput';
-import PwInput from './PwInput';
+import InputBox from './InputBox';
 import './FormBox.scss';
 
 class FormBox extends Component {
@@ -10,27 +9,32 @@ class FormBox extends Component {
   };
 
   render() {
-    const { handleIdInput, handlePwInput, isIdValid, isPwValid, seePw } =
+    const { handleIdInput, handlePwInput, isIdValid, isPwValid, isVisible } =
       this.props;
 
     return (
       <form className='FormBox'>
-        <IdInput handleIdInput={handleIdInput} isIdValid={isIdValid} />
-        <PwInput
-          handlePwInput={handlePwInput}
-          isIdValid={isIdValid}
-          isPwValid={isPwValid}
-          seePw={seePw}
+        <InputBox
+          validity={isIdValid}
+          type='text'
+          placeHolder='전화번호, 사용자 이름 또는 이메일'
+          handleInput={handleIdInput}
         />
-        {isIdValid && isPwValid ? (
-          <Link to='/List-siwonkim' className='btnOn' type='button'>
-            로그인
-          </Link>
-        ) : (
-          <button className='btn' type='button' onClick={this.handleBtnOnclick}>
+        <InputBox
+          validity={isPwValid}
+          isVisible={isVisible}
+          placeHolder='비밀번호'
+          handleInput={handlePwInput}
+          isPw={true}
+        />
+        <Link to='/List-siwonkim'>
+          <button
+            className={isIdValid && isPwValid ? 'btn btnOn' : 'btn'}
+            disabled={!(isIdValid && isPwValid)}
+          >
             로그인
           </button>
-        )}
+        </Link>
       </form>
     );
   }

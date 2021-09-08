@@ -12,30 +12,26 @@ class Login extends Component {
     this.state = {
       isIdValid: false,
       isPwValid: false,
-      seePw: false,
+      isVisible: false,
     };
   }
 
   handleIdInput = e => {
     const { value } = e.target;
-    value.includes('@')
-      ? this.setState({ isIdValid: true })
-      : this.setState({ isIdValid: false });
+    this.setState({ isIdValid: value.includes('@') });
   };
 
   handlePwInput = e => {
     const { value } = e.target;
-    value.length >= 5
-      ? this.setState({ isPwValid: true })
-      : this.setState({ isPwValid: false });
+    this.setState({ isPwValid: value.length >= 5 });
   };
 
   handleSeePw = () => {
-    this.setState({ seePw: !this.state.seePw });
+    this.setState({ isVisible: !this.state.isVisible });
   };
 
   render() {
-    const { isIdValid, isPwValid, seePw } = this.state;
+    const { isIdValid, isPwValid, isVisible } = this.state;
 
     return (
       <div className='Login'>
@@ -46,10 +42,10 @@ class Login extends Component {
             handlePwInput={this.handlePwInput}
             isIdValid={isIdValid}
             isPwValid={isPwValid}
-            seePw={seePw}
+            isVisible={isVisible}
           />
           <FontAwesomeIcon
-            icon={seePw ? faEye : faEyeSlash}
+            icon={isVisible ? faEye : faEyeSlash}
             className='eye'
             onClick={this.handleSeePw}
           />

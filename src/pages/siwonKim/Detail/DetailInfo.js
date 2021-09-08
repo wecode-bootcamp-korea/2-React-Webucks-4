@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import './DeInfo.scss';
+import './DetailInfo.scss';
 
-class DeInfo extends Component {
+class DetailInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +22,8 @@ class DeInfo extends Component {
     const { isLikeOn } = this.state;
 
     return (
-      <div className='DeInfo'>
-        <div className='contentWrap1'>
+      <div className='DetailInfo'>
+        <div className='productTitleDesc'>
           <h2 className='productName'>{name}</h2>
           <span className='englishName'>{engName}</span>
           <FontAwesomeIcon
@@ -34,12 +34,12 @@ class DeInfo extends Component {
         </div>
         <span className='description'>{summary}</span>
 
-        <div className='contentWrap2'>
+        <div className='nutritionTitle'>
           <span className='tableTitle'>제품 영양 정보</span>
           <span className='tableTitle'>{servingSize}</span>
         </div>
-        <div className='contentWrap3'>
-          <div className='col1'>
+        <div className='nutritionFact'>
+          <div className='kcalFatProtein'>
             <div>
               <span>1회 제공량 (kcal)</span>
               <span className='numbers'>{kcal}</span>
@@ -53,7 +53,7 @@ class DeInfo extends Component {
               <span className='numbers'>{protein}</span>
             </div>
           </div>
-          <div className='col2'>
+          <div className='natriumSugarCaffeine'>
             <div>
               <span>나트륨 (mg)</span>
               <span className='numbers'>{natrium}</span>
@@ -73,4 +73,4 @@ class DeInfo extends Component {
   }
 }
 
-export default DeInfo;
+export default DetailInfo;

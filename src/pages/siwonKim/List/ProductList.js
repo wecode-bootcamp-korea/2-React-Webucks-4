@@ -11,18 +11,6 @@ class ProductList extends Component {
       likeOn: false,
     };
   }
-  // json데이터 받고 나서
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/data/myData.json', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         products: data.myData,
-  //       });
-  //     });
-  // }
 
   togleLike = () => {
     this.setState({ likeOn: !this.state.likeOn });

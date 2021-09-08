@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TopNav from '../TopNav';
 import ProductTitle from './ProductTitle';
-import DeInfo from './DeInfo';
+import DetailInfo from './DetailInfo';
 import Allergen from './Allergen';
 import Review from './Review';
 import Footer from './Footer';
@@ -48,7 +48,7 @@ class Detail extends Component {
           <div className='bodyWrap'>
             <img src={data.imgUrl} alt={data.name} className='productImg' />
             <section className='productInfo'>
-              <DeInfo data={data} />
+              <DetailInfo data={data} />
               {data.nutritionFacts.allergen ? (
                 <Allergen allergen={data.nutritionFacts.allergen} />
               ) : null}

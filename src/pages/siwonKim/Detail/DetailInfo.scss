@@ -1,18 +1,17 @@
 @import '../mixin.scss';
 
-.DeInfo {
+.DetailInfo {
   width: 500px;
   margin-left: 50px;
 
-  .contentWrap1 {
+  .productTitleDesc {
     position: relative;
     padding-bottom: 20px;
     border-bottom: 2px solid black;
   }
 
   .productName {
-    margin: 5px 0 0 0;
-    margin: 5px 0;
+    margin-top: 5px;
     font-size: 25px;
   }
 
@@ -46,11 +45,11 @@
     line-height: 20px;
   }
 
-  .contentWrap2 {
+  .nutritionTitle {
     @include flex(row);
     justify-content: space-between;
-    border-top: 2px solid lightgrey;
     padding: 20px 5px;
+    border-top: 2px solid lightgrey;
     border-bottom: 2px solid lightgrey;
   }
 
@@ -58,27 +57,27 @@
     font-size: 20px;
   }
 
-  .contentWrap3 {
+  .nutritionFact {
     @include flex(row);
     justify-content: space-evenly;
     margin: 20px 5px;
   }
 
-  .col1 {
+  .kcalFatProtein {
     position: relative;
     width: 240px;
-    * {
+    div {
       margin-bottom: 10px;
       padding: 0 3px;
     }
   }
 
-  .col2 {
+  .natriumSugarCaffeine {
     position: relative;
     width: 240px;
     border-left: 2px solid lightgrey;
     padding-left: 5px;
-    * {
+    div {
       margin-bottom: 10px;
       padding: 0 3px;
     }

@@ -29,10 +29,12 @@ class Review extends Component {
 
   handleInputText = e => {
     if (e.key === 'Enter') {
+      // id valid test
       if (!this.idInput) {
         alert('아이디를 입력하세요!');
         return null;
       }
+      // text valid test
       if (!this.textInput) {
         alert('리뷰를 입력하세요!');
         return null;
@@ -53,25 +55,15 @@ class Review extends Component {
     this.textInput = e.target.value;
   };
 
-  togleLike = id => {
-    return () => {
-      const newReviewList = Array.from(this.state.reviewList);
-      newReviewList.find(object => object.id === id).likeOn =
-        !newReviewList.find(object => object.id === id).likeOn;
-      this.setState(() => ({ reviewList: newReviewList }));
-    };
-  };
-
-  deleteList = id => {
-    return () => {
-      const newReviewList = Array.from(this.state.reviewList);
-      for (let i = 0; i < newReviewList.length; i++)
-        if (newReviewList[i].id === id) {
-          newReviewList.splice(i, 1);
-          break;
-        }
-      this.setState(() => ({ reviewList: newReviewList }));
-    };
+  togleLikeOrDeleteState = (id, cmd) => {
+    const newReviewList = Array.from(this.state.reviewList);
+    for (let i = 0; i < newReviewList.length; i++)
+      if (newReviewList[i].id === id) {
+        if (cmd === 't') newReviewList[i].likeOn = !newReviewList[i].likeOn;
+        else if (cmd === 'd') newReviewList.splice(i, 1);
+        break;
+      }
+    this.setState(() => ({ reviewList: newReviewList }));
   };
 
   render() {
@@ -84,8 +76,7 @@ class Review extends Component {
           {reviewList.map(item => (
             <ReviewList
               data={item}
-              togleLike={this.togleLike}
-              deleteList={this.deleteList}
+              togleLikeOrDeleteState={this.togleLikeOrDeleteState}
             />
           ))}
         </ul>

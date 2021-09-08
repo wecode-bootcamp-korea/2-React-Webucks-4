@@ -5,7 +5,7 @@ import './ReviewList.scss';
 
 class ReviewList extends Component {
   render() {
-    const { data, togleLike, deleteList } = this.props;
+    const { data, togleLikeOrDeleteState } = this.props;
 
     return (
       <li className='ReviewList'>
@@ -14,9 +14,16 @@ class ReviewList extends Component {
         <FontAwesomeIcon
           icon={faHeart}
           className={data.likeOn ? 'likeOn' : 'likeOff'}
-          onClick={togleLike(data.id)}
+          onClick={() => {
+            togleLikeOrDeleteState(data.id, 't');
+          }}
         />
-        <span className='delete' onClick={deleteList(data.id)}>
+        <span
+          className='delete'
+          onClick={() => {
+            togleLikeOrDeleteState(data.id, 'd');
+          }}
+        >
           x
         </span>
       </li>

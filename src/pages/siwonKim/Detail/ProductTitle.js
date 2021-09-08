@@ -9,7 +9,7 @@ class ProductTitle extends Component {
       <div className='ProductTitle'>
         <h1 className='groupName'>{category}</h1>
         <span className='category'>
-          홈 {'>'} MENU {'>'} 음료 {'>'} {category} {'>'} {name}
+          홈 &#62; MENU &#62; 음료 &#62; {category} &#62; {name}
         </span>
       </div>
     );

@@ -1,0 +1,27 @@
+.menubar {
+  display: block;
+  clear: left;
+  width: 1100px;
+  margin: 100px auto 30px auto;
+  padding: 0 30px;
+  background-color: rgb(241, 238, 238);
+
+  .subMenu {
+    font-weight: bold;
+    font-size: 14px;
+    color: #545454;
+  }
+
+  .coffeeIcon {
+    position: relative;
+    top: 5px;
+    height: 35px;
+    margin: 0 8px;
+  }
+
+  .subTitle {
+    display: inline-block;
+    line-height: 60px;
+    font-size: 18px;
+  }
+}

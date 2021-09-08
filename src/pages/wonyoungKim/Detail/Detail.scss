@@ -1,0 +1,104 @@
+* {
+  color: #454545;
+}
+
+.topbar {
+  width: 1100px;
+  height: 60px;
+  margin: 100px auto 0 auto;
+
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  p {
+    text-align: right;
+    font-size: 13px;
+  }
+}
+
+.menu {
+  width: 1100px;
+  height: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
+
+  .mainPic {
+    margin-right: 50px;
+    width: 450px;
+  }
+
+  .detail {
+    float: right;
+    clear: left;
+    width: 600px;
+  }
+
+  .title {
+    height: 70px;
+    border-bottom: 2px solid #454545;
+  }
+
+  .nameKo {
+    margin: 0px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #454545;
+  }
+
+  .nameEn {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .review {
+    height: 100px;
+    margin-top: 30px;
+    font-size: 14px;
+
+    .reviewTitle {
+      border-bottom: 1px solid lightgray;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .comment {
+      height: 30px;
+    }
+
+    .reviewId {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    button {
+      height: 15px;
+      width: 38px;
+      margin-top: 7px;
+      padding: 0px;
+      border: 1px solid rgb(218, 215, 215);
+      border-radius: 3px;
+      color: #454545;
+      font-size: 2px;
+    }
+  }
+  .reviewEnter {
+    height: 40px;
+    width: 90%;
+    padding-left: 10px;
+    border: 1px solid rgb(218, 215, 215);
+    border-radius: 3px;
+  }
+
+  .reviewAddBtn {
+    height: 40px;
+    width: 52px;
+    background-color: rgb(243, 241, 241);
+    border: 1px solid rgb(218, 215, 215);
+    border-radius: 3px;
+    color: #454545;
+  }
+}

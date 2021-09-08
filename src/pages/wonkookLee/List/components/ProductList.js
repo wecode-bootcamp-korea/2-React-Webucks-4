@@ -46,7 +46,7 @@ class ProductList extends Component {
         <dl>
           <CategoryHeader category={this.state.coldBrews[0]?.category} />
           <dd>
-            <ul className='product_cold_brew clearfix'>
+            <ul className='product_cold_brew'>
               {this.state.coldBrews?.map(beverage => {
                 return (
                   <CoffeeCard
@@ -65,7 +65,7 @@ class ProductList extends Component {
           </dd>
           <CategoryHeader category={this.state.breweds[0]?.category} />
           <dd>
-            <ul className='product_brood clearfix'>
+            <ul className='product_brood'>
               {this.state.breweds?.map(beverage => {
                 return (
                   <CoffeeCard

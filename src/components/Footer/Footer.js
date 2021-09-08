@@ -5,7 +5,7 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <nav className='footer_nav'>
+        <nav className='footerNav'>
           <ul className='company'>
             <h4>COMPANY</h4>
             <li>

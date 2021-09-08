@@ -37,7 +37,7 @@ class NavBar extends Component {
                   <a href='/list-wonkooklee'>Westabucks</a>
                 </h1>
                 <nav className='util_nav'>
-                  <ul className='clearfix'>
+                  <ul>
                     <li className='util_nav01 sign_in'>
                       <a href='/login-wonkooklee'>Sign In</a>
                     </li>

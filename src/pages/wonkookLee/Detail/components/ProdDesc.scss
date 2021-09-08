@@ -1,5 +1,6 @@
-/* LIKE */
+@import '../../../../styles/mixin';
 
+/* LIKE */
 div.like__btn {
   position: absolute;
   top: 0;
@@ -120,12 +121,7 @@ div.product_view_detail p.t1 {
 div.product_info_content {
   margin: 20px 0;
   width: 100%;
-
-  &.clearfix::after {
-    clear: both;
-    display: block;
-    content: '';
-  }
+  @include clearfix();
 
   ul {
     width: 50%;

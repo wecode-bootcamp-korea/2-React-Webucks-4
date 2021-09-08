@@ -43,7 +43,7 @@ class ProdDesc extends Component {
                 </div>
               </div>
 
-              <div className='product_info_content clearfix'>
+              <div className='product_info_content'>
                 <ul>
                   <li className='kcal'>
                     <dl>

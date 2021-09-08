@@ -10,9 +10,6 @@ import './LoginForm.scss';
 class LoginForm extends Component {
   constructor(props) {
     super(props);
-    this.validation = this.validation.bind(this);
-    this.viewPassword = this.viewPassword.bind(this);
-    this.activateBtn = this.activateBtn.bind(this);
 
     this.state = {
       isValidId: false,
@@ -22,7 +19,7 @@ class LoginForm extends Component {
     };
   }
 
-  validation(event) {
+  validation = event => {
     if (event.target.classList.contains('id')) {
       const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
       this.setState({ isValidId: event.target.value.match(emailRegex) });
@@ -33,23 +30,24 @@ class LoginForm extends Component {
       this.setState({ isValidPw: event.target.value.match(passwordRegex) });
     }
     this.activateBtn();
-  }
+  };
 
-  activateBtn() {
+  activateBtn = () => {
     if (this.state.isValidId && this.state.isValidPw) {
       this.setState({ isBtnActive: true });
     } else {
       this.setState({ isBtnActive: false });
     }
-  }
+  };
 
-  viewPassword() {
+  viewPassword = () => {
     this.setState({ isPwVisible: !this.state.isPwVisible });
-  }
+  };
 
-  redirectAfterLogin() {
+  redirectAfterLogin = () => {
+    if (!this.state.isBtnActive) return;
     window.location.href = '/list-wonkooklee';
-  }
+  };
 
   render() {
     const { isValidId, isValidPw, isPwVisible, isBtnActive } = this.state;
@@ -59,12 +57,14 @@ class LoginForm extends Component {
         <form className='LoginForm auth'>
           <LoginInput
             onChange={this.validation}
+            redirectAfterLogin={this.redirectAfterLogin}
             className={`inputField id ${isValidId ? 'valid' : ''}`}
             type='text'
             placeholder='전화번호, 사용자 이름 또는 이메일'
           />
           <LoginInput
             onChange={this.validation}
+            redirectAfterLogin={this.redirectAfterLogin.bind(this)}
             className={`inputField password ${isValidPw ? 'valid' : ''}`}
             type={isPwVisible ? 'text' : 'password'}
             placeholder='비밀번호'

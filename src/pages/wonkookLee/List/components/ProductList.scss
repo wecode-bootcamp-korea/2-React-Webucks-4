@@ -18,12 +18,12 @@
 
 @include desktopToDesktopLarge {
   div.product_list > dl > dd > ul {
-    width: 100%;
-    position: relative;
     display: flex;
     flex-wrap: wrap;
-    left: 0;
+    position: relative;
+    width: 100%;
     top: 0;
+    left: 0;
   }
 }
 

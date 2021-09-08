@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 900;
+  z-index: 9000;
 
   #like_bev {
     display: block;
@@ -11,7 +11,7 @@
     left: 0;
     width: 40px;
     height: 40px;
-    z-index: 10000;
+    z-index: 9000;
     opacity: 0;
     cursor: pointer;
   }

@@ -1,22 +1,13 @@
 import React, { Component } from 'react';
-import { addListBodyStyle, removeListBodyStyle } from '../utils';
 import TopNav from '../../../components/Nav/TopNav';
 import ProductList from './components/ProductList';
 import Footer from '../../../components/Footer/Footer';
 import './List.scss';
 
 class List extends Component {
-  componentDidMount() {
-    addListBodyStyle();
-  }
-
-  componentWillUnmount() {
-    removeListBodyStyle();
-  }
-
   render() {
     return (
-      <div id='wrap'>
+      <div id='wrap List'>
         <TopNav />
         <div id='container'>
           <div className='sub_tit_wrap'>

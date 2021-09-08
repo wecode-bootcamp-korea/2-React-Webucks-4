@@ -1,32 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+@import '../../../styles/mixin';
 
-/* GLOBAL */
-
-body.Detail_body {
-  padding-top: 120px;
+.Detail {
   background-color: #fff;
-  font-family: 'Noto Sans KR', sans-serif;
+  min-height: 880px;
 
   .wrap {
     height: 100vh;
     position: relative;
   }
 
-  /* SUB TITLE */
-
   #container {
     width: 100%;
-    min-height: 880px;
   }
 
-  div.sub_tit_wrap {
+  div.subTitWrap {
     height: 98px;
     width: 100%;
     background-color: #ffffff;
   }
 
-  div.sub_tit_inner {
+  div.subTitInner {
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -35,14 +30,10 @@ body.Detail_body {
     width: 1100px;
   }
 
-  div.sub_tit_inner h2 {
+  div.subTitInner h2 {
     position: relative;
     padding-top: 30px;
   }
-
-  /* SUB TITLE end */
-
-  /* CONTENTS */
 
   .content {
     margin: 0 auto;
@@ -51,8 +42,9 @@ body.Detail_body {
     background: transparent;
   }
 
-  div.product_view_wrap1 {
+  div.productViewWrap {
     position: relative;
     padding-top: 30px;
+    @include clearfix();
   }
 }

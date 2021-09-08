@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { addDetailBodyStyle, removeDetailBodyStyle } from '../utils';
 import TopNav from '../../../components/Nav/TopNav';
 import Footer from '../../../components/Footer/Footer';
 import MainImgFrame from './components/MainImgFrame';
@@ -18,7 +17,6 @@ class Detail extends Component {
   }
 
   componentDidMount() {
-    addDetailBodyStyle();
     fetch('http://localhost:3000/data/PRODUCTS.json', {
       method: 'GET',
     })
@@ -34,10 +32,6 @@ class Detail extends Component {
       .catch(console.log);
   }
 
-  componentWillUnmount() {
-    removeDetailBodyStyle();
-  }
-
   hasUserLiked = () => {
     this.setState({
       hasUserLiked: !this.state.hasUserLiked,
@@ -48,12 +42,12 @@ class Detail extends Component {
     const products = this.state.products;
     const { name, category } = this.state.products;
     return (
-      <div id='wrap'>
+      <div id='wrap' className='Detail'>
         <TopNav />
 
         <div id='container'>
-          <div className='sub_tit_wrap'>
-            <div className='sub_tit_inner'>
+          <div className='subTitWrap'>
+            <div className='subTitInner'>
               <h2>
                 <img
                   src='https://image.istarbucks.co.kr/common/img/menu/tit/drink_tit9.png'
@@ -65,7 +59,7 @@ class Detail extends Component {
           </div>
 
           <div className='content'>
-            <div className='product_view_wrap1 clearfix'>
+            <div className='productViewWrap'>
               <MainImgFrame imgUrl={products?.imgUrl} name={products?.name} />
               <ProdDesc
                 name={products?.name}

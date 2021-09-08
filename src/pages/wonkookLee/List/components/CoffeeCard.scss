@@ -5,6 +5,7 @@
   position: relative;
   margin: 10px;
   width: 260px;
+  overflow: hidden;
 
   dl {
     width: 260px;
@@ -12,7 +13,6 @@
     dt {
       position: relative;
       height: auto;
-      width: 258px;
       overflow: hidden;
 
       img {
@@ -40,10 +40,10 @@
     }
 
     dd {
-      font-size: 14px;
-      color: #444;
       height: 54px;
       line-height: 54px;
+      color: #444;
+      font-size: 14px;
       text-align: center;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -56,7 +56,7 @@
     bottom: 10px;
     left: 10px;
     height: 48px;
-    z-index: 9999;
+    z-index: 9000;
 
     img {
       width: 100%;

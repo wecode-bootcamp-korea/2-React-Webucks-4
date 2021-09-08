@@ -36,13 +36,15 @@ class DetailReview extends React.Component {
 
   render() {
     return (
-      <>
+      <section>
         <div className='review'>
           <p className='reviewTitle'>리뷰</p>
           <ul>
             <li>
-              {this.state.commentList.map((e, i) => {
-                return <Comment key={i} commentText={e} remove={this.remove} />;
+              {this.state.commentList.map((content, i) => {
+                return (
+                  <Comment key={i} commentText={content} remove={this.remove} />
+                );
               })}
             </li>
           </ul>
@@ -62,7 +64,7 @@ class DetailReview extends React.Component {
         <button className='reviewAddBtn' onClick={this.commentAdd}>
           Add
         </button>
-      </>
+      </section>
     );
   }
 }

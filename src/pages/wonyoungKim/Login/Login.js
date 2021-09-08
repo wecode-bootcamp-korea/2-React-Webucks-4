@@ -6,11 +6,11 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      userName: '',
+      userName: '', //안쓰고도 가능?
       userPW: '',
       idCheck: false,
       pwCheck: false,
-      btnColor: '#c4e1fb',
+      btnColor: '#c4e1fb', //css에서
     };
   }
 

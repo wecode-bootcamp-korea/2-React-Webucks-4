@@ -6,7 +6,7 @@ class Menubar extends Component {
     return (
       <section className='menubar'>
         <div className='subMenu'>
-          <span className='subTitle'>{this.props.name}</span>
+          <h1 className='subTitle'>{this.props.name}</h1>
           <img
             className='coffeeIcon'
             alt='logo'

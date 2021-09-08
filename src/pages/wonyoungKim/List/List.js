@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TopsNav from '../../../components/TopsNav/TopsNav.js';
 import Menubar from './component/Menubar.js';
-import DETAILS from './component/PRODUCT_INFO.js';
+import DETAILS from '../../../components/PRODUCT_INFO.js';
 import CoffeeCard from './component/CoffeeCard.js';
 import Footer from '../Detail/components/Footer.js';
 import './List.scss';

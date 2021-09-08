@@ -4,7 +4,7 @@ import './TopsNav.scss';
 class TopsNav extends Component {
   render() {
     return (
-      <nav className='navbar'>
+      <h1 className='navbar'>
         <div className='fix'>
           <a id='logo' href='#!'>
             <img src='/images/logo.PNG' alt='logo' />
@@ -24,7 +24,7 @@ class TopsNav extends Component {
             </li>
           </ul>
         </div>
-      </nav>
+      </h1>
     );
   }
 }

@@ -3,9 +3,10 @@ import './FooterItem.scss';
 
 class FooterItem extends Component {
   render() {
+    const footerCategory = this.props.category;
     return (
       <ul className='footerItemList'>
-        {this.props.category.map(el => {
+        {footerCategory.map(el => {
           return (
             <li key={el.id} className='footerItem'>
               {el.content}

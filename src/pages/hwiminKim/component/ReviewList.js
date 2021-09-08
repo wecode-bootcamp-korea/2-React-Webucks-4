@@ -6,17 +6,10 @@ class ReviewList extends Component {
   inputRef = React.createRef();
   id = 0;
   state = {
-    newReview: '',
     reviews: [],
   };
 
-  handleChange = event => {
-    this.setState({
-      newReview: event.target.value,
-    });
-  };
-
-  handleRemove = id => {
+  onRemove = id => {
     const { reviews } = this.state;
     this.setState({
       reviews: reviews.filter(review => review.id !== id),
@@ -24,8 +17,8 @@ class ReviewList extends Component {
   };
 
   createReview = event => {
+    const newReview = event.target.value;
     const reviews = this.state.reviews;
-    const newReview = this.state.newReview;
     if (event.key === 'Enter') {
       this.setState({
         reviews: reviews.concat({
@@ -49,7 +42,7 @@ class ReviewList extends Component {
                 <ReviewThread
                   key={review.id}
                   review={review.userReview}
-                  onRemove={this.handleRemove}
+                  onRemove={this.onRemove}
                   data={review}
                 />
               );

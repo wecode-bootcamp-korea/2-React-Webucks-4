@@ -1,7 +1,6 @@
-.main-header {
-  $headerColor: #f6f5ef;
-  $heartAndNavColor: #999696;
+@import '../../../styles/variable';
 
+.main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;

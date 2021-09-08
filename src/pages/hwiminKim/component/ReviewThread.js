@@ -5,7 +5,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import './ReviewThread.scss';
 
 class Review extends Component {
-  handleChange = () => {
+  deleteReviewThread = () => {
     const { data, onRemove } = this.props;
     onRemove(data.id);
   };
@@ -25,7 +25,7 @@ class Review extends Component {
               className='trashIcon'
               icon={faTrash}
               size='1x'
-              onClick={this.handleChange}
+              onClick={this.deleteReviewThread}
             />
           </button>
           <HeartIcon />

@@ -1,5 +1,6 @@
+@import '../../../styles/variable';
+
 .loginForm {
-  $borderColor: #dedede;
   display: flex;
   flex-direction: column;
   row-gap: 25px;
@@ -9,24 +10,24 @@
   .idForm {
     height: 50px;
     padding: 10px;
-    border: solid 3px $borderColor;
+    border: solid 3px $inputBorderColor;
     border-radius: 5px;
     font-size: 16px;
 
     &::placeholder {
-      color: $borderColor;
+      color: $inputBorderColor;
     }
   }
 
   .passwordForm {
     height: 50px;
     padding: 10px;
-    border: solid 3px $borderColor;
+    border: solid 3px $inputBorderColor;
     border-radius: 5px;
     font-size: 16px;
 
     &::placeholder {
-      color: $borderColor;
+      color: $inputBorderColor;
     }
   }
 }

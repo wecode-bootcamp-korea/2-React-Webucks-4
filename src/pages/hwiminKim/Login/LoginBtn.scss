@@ -1,9 +1,11 @@
+@import '../../../styles/variable';
+
 .loginBtnDeactivate {
   height: 50px;
   padding: 10px;
   border: none;
   border-radius: 8px;
-  background-color: #add3eb;
+  background-color: $deactivatedLoginBtnColor;
   font-size: 20px;
 
   &:hover {
@@ -18,12 +20,11 @@
 }
 
 .loginBtnActivate {
-  $loginBtnActivate: #58b2eb;
   height: 50px;
   padding: 10px;
   border: none;
   border-radius: 8px;
-  background-color: $loginBtnActivate;
+  background-color: $activatedLoginBtnColor;
   font-size: 20px;
 
   &:hover {

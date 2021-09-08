@@ -15,9 +15,7 @@ class DetailCoffeeFeature extends Component {
         </span>
       );
     });
-    {
-      console.log(nutrition);
-    }
+
     return (
       <section className='infoContainer'>
         {/* header */}

@@ -1,17 +1,7 @@
+@import '../../../styles/variable';
+
 .List {
-  $headerColor: #f6f5ef;
-  $heartAndNavColor: #999696;
   font-family: sans-serif;
   width: 1114px;
   margin: 0 auto;
-
-  .icon-color__red {
-    color: red;
-  }
-
-  .heart {
-    color: $heartAndNavColor;
-    margin-left: 10px;
-    cursor: pointer;
-  }
 }

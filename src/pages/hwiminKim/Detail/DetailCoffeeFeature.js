@@ -6,7 +6,6 @@ import './DetailCoffeeFeature.scss';
 class DetailCoffeeFeature extends Component {
   render() {
     const productData = this.props?.productData;
-    // const nutrition = this.props?.nutrition;
     return (
       <article className='coffeeInfoContainer'>
         <DetailImg productData={productData} />

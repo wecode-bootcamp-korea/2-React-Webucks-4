@@ -1,6 +1,6 @@
-.reviewContainer {
-  $heartAndNavColor: #999696;
+@import '../../../styles/variable';
 
+.reviewContainer {
   .reviewHeader {
     margin-bottom: 20px;
     padding-bottom: 10px;

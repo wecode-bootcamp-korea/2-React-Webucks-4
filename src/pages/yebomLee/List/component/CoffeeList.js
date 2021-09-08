@@ -6,10 +6,10 @@ class CoffeeList extends Component {
   render() {
     return (
       <ul className='coffeeList'>
-        {this.props.beverages.map((beverages, index) => {
+        {this.props.beverages.map(beverages => {
           return (
             <CoffeeCard
-              id={beverages.id}
+              key={beverages.id}
               img={beverages.imgUrl}
               name={beverages.name}
             />

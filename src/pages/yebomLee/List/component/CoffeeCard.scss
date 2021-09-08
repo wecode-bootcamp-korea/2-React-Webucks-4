@@ -10,11 +10,11 @@
   }
 }
 
-li {
+.CoffeeCard {
   padding-bottom: 30px;
   text-align: center;
 
-  .coffeename {
+  .coffeeName {
     margin-bottom: 20px;
     text-align: center;
     font-weight: bold;
@@ -22,12 +22,12 @@ li {
 
   .fixImg {
     margin-bottom: 20px;
-    width: 40vh;
+    width: 17vw;
     height: 50vh;
     overflow: hidden;
 
     .coffeeImg {
-      width: 40vh;
+      width: 17vw;
       height: 50vh;
       @include vendorPrefix(transform, 1);
       @include transition(transition, 0.3s);

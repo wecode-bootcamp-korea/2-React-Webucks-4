@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { SiCoffeescript } from 'react-icons/si';
-import './CoffeeClass.scss';
+import './CoffeeCategory.scss';
 
-class CoffeeClass extends Component {
+class CoffeeCategory extends Component {
   render() {
     return (
-      <div className='menuBox'>
+      <div className='CoffeeCategory'>
         <span className='coffeeType'>콜드 브루 커피</span>
         <i className='icon'>
           <SiCoffeescript />
@@ -18,4 +18,4 @@ class CoffeeClass extends Component {
   }
 }
 
-export default CoffeeClass;
+export default CoffeeCategory;

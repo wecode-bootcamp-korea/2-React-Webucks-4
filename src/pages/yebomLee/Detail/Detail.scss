@@ -8,18 +8,12 @@
 .Detail {
   main {
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
 
     article {
       @include flex-between();
 
-      .coffeeImg {
-        width: 45%;
-        height: 45%;
-        display: flex;
-      }
-
-      .mainContainer {
+      .coffeeInfoContainer {
         display: flex;
         flex-direction: column;
         width: 50%;

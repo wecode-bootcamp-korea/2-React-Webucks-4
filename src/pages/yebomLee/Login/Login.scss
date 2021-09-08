@@ -5,31 +5,32 @@
   @include flexCenter();
   background-color: #eeefef;
 
-  .backgroundBox {
+  .loginBox {
     @include flexCenter(column);
-    @include marginTandB(20vh, 20vh);
+    @include marginTandB(15vh, 20vh);
     background-color: white;
     border: {
       width: 3px;
       style: solid;
       color: #dddddd;
     }
-  }
 
-  .mainLogo {
-    align-self: center;
-    @include marginTandB(70px, 20px);
-    font: {
-      family: 'Dancing Script', cursive;
-      size: 70px;
+    .mainLogo {
+      align-self: center;
+      @include marginTandB(70px, 20px);
+      font: {
+        family: 'Dancing Script', cursive;
+        size: 70px;
+      }
     }
-  }
 
-  .forgotPassword {
-    align-self: center;
-    margin-bottom: 50px;
-    color: #739ab4;
-    font-weight: bold;
-    text-decoration: none;
+    .forgotPassword {
+      align-self: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      color: #739ab4;
+      font-weight: bold;
+      text-decoration: none;
+    }
   }
 }

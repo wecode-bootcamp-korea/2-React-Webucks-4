@@ -9,7 +9,7 @@
   margin-bottom: $bottom;
 }
 
-.inputWrap {
+.LoginInput {
   @include flexCenter(column);
   @include marginTandB(40px, 130px);
   width: 350px;
@@ -17,7 +17,7 @@
 
   #userId,
   #userPassword {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding: 15px;
     border-radius: 7px;
     border: 2px solid #dddddd;
@@ -27,6 +27,7 @@
   }
 
   .loginButton {
+    margin-top: 20px;
     padding: 15px;
     color: white;
     background-color: #61aded;

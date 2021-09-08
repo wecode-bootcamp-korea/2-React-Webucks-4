@@ -5,61 +5,57 @@ class DetailReview extends Component {
   constructor() {
     super();
     this.state = {
-      newReveiwValue: '',
-      reveiwValue: [{ text: '' }],
+      newReviewTxt: '',
+      reviewContents: [{ text: '' }],
     };
   }
 
-  getReveiwValue = e => {
+  getReviewTxt = e => {
     this.setState({
-      newReveiwValue: e.target.value,
+      newReviewTxt: e.target.value,
     });
   };
 
   addReview = () => {
-    this.state.reveiwValue.push({ text: this.state.newReveiwValue });
+    this.state.reviewContents.push({ text: this.state.newReviewTxt });
 
     this.setState({
-      newReveiwValue: '',
-      reveiwValue: this.state.reveiwValue,
+      newReviewTxt: '',
+      reviewContents: this.state.reviewContents,
     });
   };
 
   handleKeyPress = e => {
-    if (e.key === 'Enter') {
-      this.addReview();
-
-      e.target.value = '';
-      e.preventDefault();
+    if (e.key !== 'Enter') {
+      return;
     }
+    e.preventDefault();
+    this.addReview();
+    e.target.value = '';
   };
 
   render() {
     return (
-      <div className='reviewBox'>
-        {/* <p className='review'>리뷰</p>
-        <div className='userReview1'>
-          <span>coffee_lover </span>
-          <span>너무 맛있어요!</span>
-        </div>
-        <div className='userReview2'>
-          <span>CHOCO7 </span>
-          <span>오늘도 마시러 갑니다.</span>
-        </div>
-        <div className='userReview3'>
-          <span>legend_dev </span>
-          <span>진짜 전설이다. 진짜 전설이다.</span>
-        </div> */}
-        <ul className='userReview4'>
-          {this.state.reveiwValue.map(el => (
-            <li>{el.text}</li>
+      <div className='DetailReview'>
+        <p className='review'>리뷰</p>
+        <ul className='userReview'>
+          <li>
+            <span>coffee_lover</span> 너무 맛있어요!
+          </li>
+          <li>
+            <span>CHOCO7</span> 오늘도 마시러 갑니다.
+          </li>
+          <li>
+            <span>legend_dev</span> 진짜 전설이다. 진짜 전설이다.
+          </li>
+          {this.state.reviewContents.map(thread => (
+            <li>{thread.text}</li>
           ))}
         </ul>
         <form>
           <input
             onKeyPress={this.handleKeyPress}
-            onChange={this.getReveiwValue}
-            // value={this.state.newReveiwValue}
+            onChange={this.getReviewTxt}
             type='text'
             placeholder='리뷰를 입력해주세요.'
           />

@@ -4,7 +4,7 @@ import './CoffeeCard.scss';
 class CoffeeCard extends Component {
   render() {
     return (
-      <li id={this.props.id}>
+      <li className='CoffeeCard' id={this.props.id}>
         <div className='fixImg'>
           <img
             className='coffeeImg'
@@ -12,7 +12,7 @@ class CoffeeCard extends Component {
             src={this.props.img}
           />
         </div>
-        <p className='coffeename'>{this.props.name}</p>
+        <p className='coffeeName'>{this.props.name}</p>
       </li>
     );
   }

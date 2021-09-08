@@ -1,30 +1,65 @@
-.menuNameBox {
-  position: relative;
-  padding: 0 0 20px 0;
-  border-bottom: 3px solid black;
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.DetailCoffeeInfo {
+  .menuNameBox {
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 3px solid black;
 
-  .kor {
-    font-size: 25px;
-    text-align: left;
-  }
+    .nameKOR {
+      font-size: 25px;
+      text-align: left;
+    }
 
-  .eng {
-    padding-top: 10px;
-    font-size: 15px;
-    text-align: left;
-  }
+    .nameENG {
+      padding-top: 10px;
+      font-size: 15px;
+      text-align: left;
+    }
 
-  .likeHeart {
-    position: absolute;
-    right: 0;
-    bottom: 30px;
-    color: #d3d3d3;
+    .likeHeart {
+      position: absolute;
+      right: 0;
+      bottom: 30px;
+      color: #d3d3d3;
 
-    &.active {
-      color: red;
+      &.active {
+        color: red;
+      }
     }
   }
-}
-.explainCoffee {
-  padding: 20px 0;
+
+  .explainCoffee {
+    padding: 20px 0;
+  }
+
+  .nutritionBox {
+    @include flex-between();
+    padding: 30px 0;
+    border-top: 2px solid #d3d3d3;
+    border-bottom: 2px solid #d3d3d3;
+    font-size: 20px;
+  }
+
+  .table {
+    @include flex-between();
+
+    .rightalign {
+      padding-left: 80px;
+      text-align: right;
+    }
+
+    td {
+      padding: 10px;
+    }
+  }
+
+  .allergyBox {
+    margin-top: 30px;
+    padding: 15px 0 15px 10px;
+    background-color: #efefef;
+    border-radius: 5px;
+  }
 }

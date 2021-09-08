@@ -17,11 +17,21 @@ class DetailCoffeeInfo extends Component {
   };
 
   render() {
+    const {
+      servingSize,
+      kcal,
+      fat,
+      protein,
+      natrium,
+      sugars,
+      caffeine,
+      allergen,
+    } = this.props.nutritionFacts;
     return (
-      <div>
+      <div className='DetailCoffeeInfo'>
         <div className='menuNameBox'>
-          <p className='kor'>바닐라 크림 콜드 브루</p>
-          <p className='eng'>Vanilla Cream Cold Brew</p>
+          <p className='nameKOR'>{this.props.name}</p>
+          <p className='nameENG'>{this.props.engName}</p>
           <i>
             {this.state.isActive ? (
               <BsHeartFill
@@ -38,10 +48,44 @@ class DetailCoffeeInfo extends Component {
             )}
           </i>
         </div>
-        <p className='explainCoffee'>
-          콜드 브루에 더해진 바닐라 크림으로 깔끔하면서 달콤한 콜드 브루를
-          새롭게 즐길 수 있는 음료입니다.
-        </p>
+        <p className='explainCoffee'>{this.props.summary}</p>
+        <div className='nutritionBox'>
+          <span>제품 영양 정보</span>
+          <span>{servingSize}</span>
+        </div>
+        <div className='table'>
+          <table className='leftTable'>
+            <tr>
+              <td>1회 제공량 (kcal)</td>
+              <td className='rightalign'>{kcal}</td>
+            </tr>
+            <tr>
+              <td>포화지방 (g)</td>
+              <td className='rightalign'>{fat}</td>
+            </tr>
+            <tr>
+              <td>단백질 (g)</td>
+              <td className='rightalign'>{protein}</td>
+            </tr>
+          </table>
+          <table className='rightTable'>
+            <tr>
+              <td>나트륨 (mg)</td>
+              <td className='rightalign'>{natrium}</td>
+            </tr>
+            <tr>
+              <td>당류 (g)</td>
+              <td className='rightalign'>{sugars}</td>
+            </tr>
+            <tr>
+              <td>카페인 (mg)</td>
+              <td className='rightalign'>{caffeine}</td>
+            </tr>
+          </table>
+        </div>
+        <div className='allergyBox'>
+          <p>알레르기 유발 요인: {allergen}</p>
+        </div>
       </div>
     );
   }

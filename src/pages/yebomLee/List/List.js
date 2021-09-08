@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import './List.scss';
 import Nav from '../components/Nav';
-import CoffeeClass from './component/CoffeeClass';
+import CoffeeCategory from './component/CoffeeCategory';
 import CoffeeList from './component/CoffeeList';
 import BEVERAGES from './component/ITEMS';
+import './List.scss';
 
 class List extends Component {
   render() {
     return (
       <div className='List'>
         <Nav />
-        <main>
-          <CoffeeClass />
+        <main className='mainCoffeeContent'>
+          <CoffeeCategory />
           <CoffeeList beverages={BEVERAGES.coldBrews} />
-          <CoffeeClass />
+          <CoffeeCategory />
           <div className='otherCoffee'>
             <CoffeeList beverages={BEVERAGES.breweds} />
           </div>

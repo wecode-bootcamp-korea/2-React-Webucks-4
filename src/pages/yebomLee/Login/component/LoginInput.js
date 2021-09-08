@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-class LoginForm extends Component {
+class LoginInput extends Component {
   constructor() {
     super();
     this.state = {
@@ -29,15 +29,16 @@ class LoginForm extends Component {
   };
 
   handleKeyPress = e => {
-    if (e.key === 'Enter') {
-      this.goToList();
-      e.preventDefault();
+    if (e.key !== 'Enter') {
+      return;
     }
+    e.preventDefault();
+    this.goToList();
   };
 
   render() {
     return (
-      <form action='' className='inputWrap'>
+      <form action='' className='LoginInput'>
         <input
           onChange={this.isVaildId}
           onKeyPress={this.handleKeyPress}
@@ -67,4 +68,4 @@ class LoginForm extends Component {
   }
 }
 
-export default withRouter(LoginForm);
+export default withRouter(LoginInput);

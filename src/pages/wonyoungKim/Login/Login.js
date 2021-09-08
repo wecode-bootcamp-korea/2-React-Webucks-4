@@ -1,37 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.scss';
 
-class Login extends Component {
+class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      userName: '', //안쓰고도 가능?
-      userPW: '',
       idCheck: false,
       pwCheck: false,
-      btnColor: '#c4e1fb', //css에서
     };
   }
 
   handleIdInput = event => {
-    this.setState({ userName: event.target.value });
-    if (event.target.value.includes('@')) {
-      this.setState({ idCheck: true });
-    }
+    const idCheck = event.target.value.includes('@');
+    this.setState({ idCheck });
   };
 
   handlePwInput = event => {
-    this.setState({ userPW: event.target.value });
-    if (event.target.value.length >= 5) {
-      this.setState({ pwCheck: true }, () => this.btnChangeColor());
-    }
-  };
-
-  btnChangeColor = () => {
-    if (this.state.idCheck && this.state.pwCheck) {
-      this.setState({ btnColor: '#1a6fb9' });
-    }
+    const pwCheck = event.target.value.length >= 5;
+    this.setState({ pwCheck });
   };
 
   render() {
@@ -40,22 +27,24 @@ class Login extends Component {
         <img src='/images/logo.PNG' className='logo' alt='webucks' />
         <div className='loginBox'>
           <input
-            className='userName'
+            name='ID'
             type='text'
             placeholder='전화번호,사용자 이름 또는 이메일'
             onChange={this.handleIdInput}
           />
           <input
-            className='userPW'
+            name='PW'
             type='password'
             placeholder='비밀번호'
             onChange={this.handlePwInput}
           />
           <Link to='/List-wonyoungKim'>
             <button
-              className='loginBtn'
-              style={{ backgroundColor: this.state.btnColor }}
-              onClick={this.btnClick}
+              className={
+                this.state.idCheck && this.state.pwCheck
+                  ? 'loginBtnTurn'
+                  : 'loginBtn'
+              }
             >
               로그인
             </button>

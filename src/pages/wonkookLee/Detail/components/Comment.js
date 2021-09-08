@@ -64,8 +64,14 @@ class Comment extends Component {
 
   removeComment = id => {
     const { comments } = this.state;
+    for (let i = 0; i < comments.length; i++) {
+      if (comments[i].commentId === id) {
+        comments.splice(i, 1);
+        break;
+      }
+    }
     this.setState({
-      comments: [...comments].filter(cmt => cmt.commentId !== id),
+      comments: comments,
     });
   };
 

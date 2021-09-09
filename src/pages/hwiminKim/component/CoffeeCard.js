@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeartIcon from './HeartBtn';
+import HeartBtn from './HeartBtn';
 import { Link } from 'react-router-dom';
 import './CoffeeCard.scss';
 
@@ -18,7 +18,7 @@ class CoffeeCard extends Component {
           </div>
           <div className='productTitleBox'>
             <Link to='/detail-hwiminKim'>{name}</Link>
-            <HeartIcon
+            <HeartBtn
               isLiked={isLiked}
               changeHeartBtnColor={changeHeartBtnColor}
               id={id}

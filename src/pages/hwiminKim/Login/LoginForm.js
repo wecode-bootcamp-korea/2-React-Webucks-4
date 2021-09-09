@@ -4,38 +4,41 @@ import './LoginForm.scss';
 
 class LoginForm extends Component {
   state = {
-    isIdValid: false,
-    isPwValid: false,
+    id: '',
+    pw: '',
   };
 
-  handleId = event => {
-    const isIdValid = event.target.value.includes('@');
-    this.setState({ isIdValid });
+  loginBtnActivate = () => {
+    const { id, pw } = this.state;
+    return id.includes('@') && pw.length > 4;
   };
 
-  handlePw = event => {
-    const isPwValid = event.target.value.length > 4;
-    this.setState({ isPwValid });
+  handleInput = event => {
+    const { value, name } = event.target;
+    this.setState({
+      [name]: value,
+    });
+    this.loginBtnActivate();
   };
 
   render() {
     return (
-      <form className='loginForm'>
+      <form className='LoginForm'>
         <input
           name='id'
           className='idForm'
           type='text'
           placeholder='전화번호, 사용자 이름 또는 이메일'
-          onChange={this.handleId}
+          onChange={this.handleInput}
         />
         <input
-          name='password'
+          name='pw'
           className='passwordForm'
           type='password'
           placeholder='비밀번호'
-          onChange={this.handlePw}
+          onChange={this.handleInput}
         />
-        <LoginBtn validation={this.state} />
+        <LoginBtn loginBtnActivate={this.loginBtnActivate} />
       </form>
     );
   }

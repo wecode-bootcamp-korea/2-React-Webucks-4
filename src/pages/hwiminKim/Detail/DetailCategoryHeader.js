@@ -5,11 +5,12 @@ import './DetailCategoryHeader.scss';
 
 class DetailCategoryHeader extends Component {
   render() {
-    const category = this.props.productData?.category;
+    const { category } = this.props.productData;
+    const { productData } = this.props;
     return (
       <header className='DetailCategoryHeader'>
         <h1>{category}</h1>
-        <Breadcrumb productData={this.props.productData} />
+        <Breadcrumb productData={productData} />
       </header>
     );
   }

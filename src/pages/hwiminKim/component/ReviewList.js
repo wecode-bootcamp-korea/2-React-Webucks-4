@@ -3,13 +3,12 @@ import ReviewThread from './ReviewThread';
 import './ReviewList.scss';
 
 class ReviewList extends Component {
-  inputRef = React.createRef();
   id = 0;
   state = {
     reviews: [],
   };
 
-  onRemove = id => {
+  deleteReview = id => {
     const { reviews } = this.state;
     this.setState({
       reviews: reviews.filter(review => review.id !== id),
@@ -17,48 +16,63 @@ class ReviewList extends Component {
   };
 
   createReview = event => {
-    const newReview = event.target.value;
-    const reviews = this.state.reviews;
-    if (event.key === 'Enter') {
-      this.setState({
-        reviews: reviews.concat({
-          userReview: newReview,
-          id: this.id++,
-        }),
-      });
-      this.inputRef.current.value = '';
-    }
+    event.preventDefault();
+    let reviewText = event.target.reviewInput.value;
+    const { reviews } = this.state;
+    this.setState({
+      reviews: reviews.concat({
+        reviewText,
+        id: this.id++,
+        isLiked: false,
+      }),
+    });
+    event.target.reset();
+  };
+
+  changeHeartBtnColor = id => {
+    const reviews = this.state.reviews.map(item => {
+      return item.id === id
+        ? {
+            ...item,
+            isLiked: !item.isLiked,
+          }
+        : item;
+    });
+
+    this.setState({ reviews });
   };
 
   render() {
     const { reviews } = this.state;
     return (
-      <>
-        <div className='reviewContainer'>
-          <h3 className='reviewHeader'>리뷰</h3>
-          <ul className='items'>
-            {reviews.map(review => {
-              return (
-                <ReviewThread
-                  key={review.id}
-                  review={review.userReview}
-                  onRemove={this.onRemove}
-                  data={review}
-                />
-              );
-            })}
-          </ul>
-        </div>
+      <form className='ReviewList' onSubmit={this.createReview}>
+        <h3 className='reviewHeader'>리뷰</h3>
+        <ul className='items'>
+          {reviews.map(reviewThread => {
+            const { id, isLiked, reviewText } = reviewThread;
+            const deleteReview = this.deleteReview;
+            const changeHeartBtnColor = this.changeHeartBtnColor;
+            return (
+              <ReviewThread
+                key={id}
+                id={id}
+                isLiked={isLiked}
+                reviewText={reviewText}
+                deleteReview={deleteReview}
+                reviewThread={reviewThread}
+                changeHeartBtnColor={changeHeartBtnColor}
+              />
+            );
+          })}
+        </ul>
+
         <input
-          name='review'
+          name='reviewInput'
           className='reviewInput'
           type='text'
           placeholder='리뷰를 입력해주세요.'
-          onChange={this.handleChange}
-          onKeyPress={this.createReview}
-          ref={this.inputRef}
         />
-      </>
+      </form>
     );
   }
 }

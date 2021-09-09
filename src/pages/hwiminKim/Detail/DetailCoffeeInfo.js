@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import ReveiwList from '../component/ReviewList';
-import HeartIcon from '../component/HeartIcon';
+import HeartBtn from '../component/HeartBtn';
 import './DetailCoffeeInfo.scss';
 
 class DetailCoffeeFeature extends Component {
   render() {
-    const description = this.props.productData;
-    const nutrition = this.props.productData?.nutritionFacts;
-    const summary = this.props.description?.desc.split('\n').map((line, i) => {
+    const { name, engName, desc, id, isLiked } = this.props.productData;
+    const { changeHeartBtnColor } = this.props;
+    const {
+      servingSize,
+      kcal,
+      fat,
+      protein,
+      natrium,
+      sugars,
+      caffeine,
+      allergen,
+    } = this.props.productData.nutritionFacts;
+    const descriptionText = desc.split('\n').map((line, i) => {
       return (
         <span key={i} className='coffeeDescription'>
           {line}
@@ -17,60 +27,63 @@ class DetailCoffeeFeature extends Component {
     });
 
     return (
-      <section className='infoContainer'>
+      <section className='DetailCoffeeInfo'>
         {/* header */}
         <header className='infoHeader'>
           <div>
-            <h2 className='infoTitle'>{description?.name}</h2>
-            <p>{description?.engName}</p>
+            <h2 className='infoTitle'>{name}</h2>
+            <p className='infoEngTitle'>{engName}</p>
           </div>
-          <HeartIcon />
+          <HeartBtn
+            isLiked={isLiked}
+            id={id}
+            changeHeartBtnColor={changeHeartBtnColor}
+          />
         </header>
-        <p className='coffeeDescriptionBox'>{summary}</p>
+        <p className='coffeeDescriptionBox'>{descriptionText}</p>
 
         {/* nutrition */}
-        <div className='nutritionTitleBox'>
-          <h3 className='nutritionTitle'>제품 영양 정보</h3>
-          <p className='nutiritionServingSize'>{nutrition?.servingSize}</p>
-        </div>
-
-        <div className='nutritionContainer'>
-          <div className='nutritionLeft'>
-            <div className='nutritionItembox'>
-              <p>1회 제공량</p>
-              <p>{nutrition?.kcal}</p>
-            </div>
-            <div className='nutritionItembox'>
-              <p>포화지방 (g)</p>
-              <p>{nutrition?.kcal}</p>
-            </div>
-            <div className='nutritionItembox'>
-              <p>단백질 (g)</p>
-              <p>{nutrition?.protein}</p>
-            </div>
-          </div>
-
-          <div className='nutritionRight'>
-            <div className='nutritionItembox'>
-              <p>나트륨 (mg)</p>
-              <p>{nutrition?.natrium}</p>
-            </div>
-            <div className='nutritionItembox'>
-              <p>당류 (g)</p>
-              <p>{nutrition?.sugar}</p>
-            </div>
-            <div className='nutritionItembox'>
-              <p>카페인 (mg)</p>
-              <p>{nutrition?.caffeine}</p>
-            </div>
-          </div>
-        </div>
-        {nutrition?.allergen ? (
+        <table
+          className='nutritionTable'
+          id='keywords'
+          cellSpacing='0'
+          cellPadding='0'
+        >
+          <thead className='tableHead'>
+            <tr className='nutritionTitleBox'>
+              <th className='nutritionTitle' colSpan='2'>
+                <span>제품 영양 정보</span>
+              </th>
+              <th className='servingSize' colSpan='2'>
+                <span>{servingSize}</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody className='tableBody'>
+            <tr>
+              <td className='nutritionFactLeft'>1회 제공량 (kcal)</td>
+              <td className='numberOfNutrition centerBorder'>{kcal}</td>
+              <td className='nutritionFactLeft'>나트륨 (mg)</td>
+              <td className='numberOfNutrition'>{natrium}</td>
+            </tr>
+            <tr>
+              <td className='nutritionFactLeft'>포화지방</td>
+              <td className='numberOfNutrition centerBorder'>{fat}</td>
+              <td className='nutritionFactLeft'>당류 (g)</td>
+              <td className='numberOfNutrition'>{sugars}</td>
+            </tr>
+            <tr>
+              <td className='nutritionFactLeft'>단백질 (g)</td>
+              <td className='numberOfNutrition centerBorder'>{protein}</td>
+              <td className='nutritionFactLeft'>카페인 (mg)</td>
+              <td className='numberOfNutrition'>{caffeine}</td>
+            </tr>
+          </tbody>
+        </table>
+        {allergen && (
           <div className='allergyCause'>
-            <p>{nutrition?.allergen}</p>
+            <p>{allergen}</p>
           </div>
-        ) : (
-          <div className='emptyAllergyCause'></div>
         )}
         <ReveiwList />
       </section>

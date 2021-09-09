@@ -11,23 +11,44 @@ class Detail extends Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/PRODUCT_INFO.json', {
-      method: 'GET',
-    })
+    fetch('http://localhost:3000/data/PRODUCT_INFO.json', {})
       .then(res => res.json())
       .then(data => {
         this.setState({ products: data });
       });
   }
 
+  changeHeartBtnColor = id => {
+    const products = this.state.products.map(item => {
+      return item.id === id
+        ? {
+            ...item,
+            isLiked: !item.isLiked,
+          }
+        : item;
+    });
+    this.setState({ products });
+  };
+
   render() {
-    const product = this.state.products[4];
+    let productData = this.state.products[8];
+    if (!productData)
+      productData = {
+        category: '',
+        name: '',
+        imgUrl: '',
+        desc: '',
+        nutritionFacts: { allergen: '' },
+      };
     return (
       <>
+        <TopsNav />
         <section className='Detail'>
-          <TopsNav />
-          <DetailCategoryHeader productData={product} />
-          <DetailCoffeeInfo productData={product} />
+          <DetailCategoryHeader productData={productData} />
+          <DetailCoffeeInfo
+            productData={productData}
+            changeHeartBtnColor={this.changeHeartBtnColor}
+          />
         </section>
         <Footer />
       </>

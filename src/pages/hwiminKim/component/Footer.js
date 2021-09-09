@@ -3,25 +3,14 @@ import FooterItem from './FooterItem';
 import { FOOTER_INFO } from '../data/FOOTER_DATA';
 import './Footer.scss';
 
-const {
-  company,
-  corporateSales,
-  partnership,
-  onlineCommunity,
-  recruit,
-  webucks,
-} = FOOTER_INFO;
-
 class Footer extends Component {
   render() {
+    const categories = Object.keys(FOOTER_INFO);
     return (
-      <footer className='footer'>
-        <FooterItem category={company} />
-        <FooterItem category={corporateSales} />
-        <FooterItem category={partnership} />
-        <FooterItem category={onlineCommunity} />
-        <FooterItem category={recruit} />
-        <FooterItem category={webucks} />
+      <footer className='Footer'>
+        {categories.map(category => {
+          return <FooterItem category={FOOTER_INFO[category]} />;
+        })}
       </footer>
     );
   }

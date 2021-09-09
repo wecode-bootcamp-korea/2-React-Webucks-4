@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import HeartIcon from './HeartIcon';
+import HeartBtn from './HeartBtn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import './ReviewThread.scss';
 
 class Review extends Component {
   deleteReviewThread = () => {
-    const { data, onRemove } = this.props;
-    onRemove(data.id);
+    const { reviewThread, deleteReview } = this.props;
+    deleteReview(reviewThread.id);
   };
 
   render() {
-    const reviewText = this.props.review;
+    const { reviewText, id, isLiked, changeHeartBtnColor } = this.props;
     return (
-      <li className='reviewItem'>
+      <li className='ReviewThread'>
         <div className='contentBox'>
           <p className='individualReviewBox'>
             <b>작성자</b> <span>{reviewText}</span>
@@ -28,7 +28,11 @@ class Review extends Component {
               onClick={this.deleteReviewThread}
             />
           </button>
-          <HeartIcon />
+          <HeartBtn
+            id={id}
+            isLiked={isLiked}
+            changeHeartBtnColor={changeHeartBtnColor}
+          />
         </div>
       </li>
     );

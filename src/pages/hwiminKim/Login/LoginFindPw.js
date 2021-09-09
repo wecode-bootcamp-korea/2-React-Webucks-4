@@ -5,7 +5,7 @@ import './LoginFindPw.scss';
 class LoginFindPw extends Component {
   render() {
     return (
-      <p className='findPasswordBox'>
+      <p className='LoginFindPw'>
         <Link className='findPassword' to='#'>
           비밀번호를 잊으셨나요?
         </Link>

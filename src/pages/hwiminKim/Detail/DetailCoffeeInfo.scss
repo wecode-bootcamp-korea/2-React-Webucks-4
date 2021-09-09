@@ -1,4 +1,4 @@
-.infoContainer {
+.DetailCoffeeInfo {
   width: 575px;
 
   .infoHeader {
@@ -10,9 +10,13 @@
     border-bottom: solid 2px black;
 
     .infoTitle {
-      margin-bottom: 15px;
+      margin-bottom: 5px;
       font-weight: 700;
       font-size: 24px;
+    }
+    .infoEngTitle {
+      margin-bottom: 15px;
+      font-size: 15px;
     }
 
     .heartIcon {
@@ -34,50 +38,42 @@
       line-height: 1.2;
     }
   }
-  .nutritionTitleBox {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding: 20px 0 20px 0;
-    border {
-      top: solid 2px lightgrey;
-      bottom: solid 2px lightgrey;
-    }
+  .nutritionTable {
+    width: 100%;
+    margin-bottom: 30px;
 
-    .nutritionTitle {
-      margin-left: 20px;
-      font-size: 22px;
-      font-weight: 400;
-    }
+    .tableHead {
+      border-top: 1px solid black;
+      border-bottom: 1px solid lightgray;
 
-    .nutiritionServingSize {
-      margin-right: 20px;
-      font-size: 22px;
-    }
-  }
-
-  .nutritionContainer {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 15px;
-
-    .nutritionLeft {
-      padding-right: 30px;
-      border-right: dashed 1px lightgrey;
-
-      .nutritionItembox {
-        display: flex;
-        justify-content: space-between;
-        width: 250px;
-        margin-bottom: 20px;
+      .nutritionTitle {
+        padding-right: 145px;
+      }
+      .servingSize {
+        padding: 25px 20px;
+        font-size: 20px;
       }
     }
-    .nutritionRight {
-      .nutritionItembox {
-        display: flex;
-        justify-content: space-between;
-        width: 250px;
-        margin-bottom: 20px;
+    .tableBody {
+      padding: 30px;
+
+      td {
+        padding: 12px 0px;
+      }
+
+      .nutritionFactLeft {
+        padding-left: 10px;
+        padding-right: 60px;
+      }
+
+      .numberOfNutrition {
+        text-align: right;
+        padding-right: 10px;
+        padding-left: 60px;
+      }
+
+      .centerBorder {
+        border-right: lightgray dotted 2px;
       }
     }
   }

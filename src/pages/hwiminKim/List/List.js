@@ -1,36 +1,66 @@
 import React, { Component } from 'react';
 import TopsNav from '../component/TopsNav';
-import SubHeader from './ListSubHeader';
 import CoffeeList from './CoffeeList';
 import './List.scss';
 
 class List extends Component {
   state = {
-    coldBrews: [],
-    breweds: [],
+    coldBrewsData: [],
+    brewedsData: [],
+    isError: false,
   };
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/ITEMS.json', {
-      method: 'GET',
-    })
+    fetch('http://localhost:3000/data/ITEMS.json', {})
       .then(res => res.json())
       .then(data => {
-        const { coldBrews, breweds } = data;
-        this.setState({ coldBrews, breweds });
-      });
+        const { coldBrewsData, brewedsData } = data;
+        this.setState({ coldBrewsData, brewedsData });
+      })
+      .catch(() =>
+        this.setState({
+          isError: true,
+        })
+      );
   }
 
+  changeHeartBtnColor = id => {
+    const { coldBrewsData, brewedsData } = this.state;
+    const compareId = (data, id) => {
+      return data.map(item => {
+        return item.id === id
+          ? {
+              ...item,
+              isLiked: !item.isLiked,
+            }
+          : item;
+      });
+    };
+
+    this.setState({
+      coldBrewsData: compareId(coldBrewsData, id),
+      brewedsData: compareId(brewedsData, id),
+    });
+  };
+
   render() {
-    const { coldBrews, breweds } = this.state;
+    const { coldBrewsData, brewedsData, isError } = this.state;
     return (
-      <section className='List'>
+      <>
         <TopsNav />
-        <SubHeader category={'콜드 브루 커피'} />
-        <CoffeeList productData={coldBrews} />
-        <SubHeader category={'브루 커피'} />
-        <CoffeeList productData={breweds} />
-      </section>
+        <section className='List'>
+          <CoffeeList
+            isError={isError}
+            productData={coldBrewsData}
+            changeHeartBtnColor={this.changeHeartBtnColor}
+          />
+          <CoffeeList
+            isError={isError}
+            productData={brewedsData}
+            changeHeartBtnColor={this.changeHeartBtnColor}
+          />
+        </section>
+      </>
     );
   }
 }

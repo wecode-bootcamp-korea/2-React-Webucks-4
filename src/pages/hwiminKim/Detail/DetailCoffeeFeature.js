@@ -5,11 +5,15 @@ import './DetailCoffeeFeature.scss';
 
 class DetailCoffeeFeature extends Component {
   render() {
-    const productData = this.props?.productData;
+    const { productData, changeHeartBtnColor } = this.props;
+    const { name, imgUrl } = this.props.productData;
     return (
-      <article className='coffeeInfoContainer'>
-        <DetailImg productData={productData} />
-        <DetailCoffeeInfo productData={productData} />
+      <article className='DetailCoffeeFeature'>
+        <DetailImg name={name} imgUrl={imgUrl} />
+        <DetailCoffeeInfo
+          productData={productData}
+          changeHeartBtnColor={changeHeartBtnColor}
+        />
       </article>
     );
   }

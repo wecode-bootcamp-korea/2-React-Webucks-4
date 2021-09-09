@@ -3,9 +3,10 @@ import './ListSubHeader.scss';
 
 class SubHeader extends Component {
   render() {
+    const category = this.props.category;
     return (
-      <header className='subHeader'>
-        <h4 className='subHeaderTitle'>{this.props.category}</h4>
+      <header className='ListSubHeader'>
+        <h4 className='subHeaderTitle'>{category}</h4>
         <div className='addShot'>
           <img
             alt='decaf logo'

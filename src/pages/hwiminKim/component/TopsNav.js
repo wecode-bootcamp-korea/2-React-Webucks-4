@@ -4,20 +4,20 @@ import './TopsNav.scss';
 class TopsNav extends Component {
   render() {
     return (
-      <header className='main-header'>
-        <div className='logo-container'>
+      <header className='TopsNav'>
+        <div className='logoContainer'>
           <img
             alt='webucks logo'
             src='/img/hwiminKim/logo-removedbg.png'
             className='logo'
           />
         </div>
-        <nav className='nav-menu'>
-          <ul className='nav-menu__items'>
-            <li>COFFEE</li>
-            <li>MENU</li>
-            <li>STORE</li>
-            <li>WHAT'S NEW</li>
+        <nav className='navMenu'>
+          <ul className='navMenuItems'>
+            <li className='navMenuItem'>COFFEE</li>
+            <li className='navMenuItem'>MENU</li>
+            <li className='navMenuItem'>STORE</li>
+            <li className='navMenuItem'>WHAT'S NEW</li>
           </ul>
         </nav>
       </header>

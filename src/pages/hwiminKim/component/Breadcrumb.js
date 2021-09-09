@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import './Breadcrumb.scss';
 
 class Breadcrumb extends Component {
   render() {
-    const name = this.props.productData?.name;
+    const { name } = this.props.productData;
     return (
-      <ul className='subHeaderItems'>
+      <ul className='Breadcrumb'>
         <li>
-          <Link>홈</Link>
+          <Link to='/'>홈</Link>
         </li>
         <li>
           <FontAwesomeIcon
@@ -19,7 +20,7 @@ class Breadcrumb extends Component {
           />
         </li>
         <li>
-          <Link>MENU</Link>
+          <Link to='/'>MENU</Link>
         </li>
         <li>
           <FontAwesomeIcon
@@ -29,7 +30,7 @@ class Breadcrumb extends Component {
           />
         </li>
         <li>
-          <Link>음료</Link>
+          <Link to='/'>음료</Link>
         </li>
         <li>
           <FontAwesomeIcon
@@ -39,7 +40,7 @@ class Breadcrumb extends Component {
           />
         </li>
         <li>
-          <Link>에스프레소</Link>
+          <Link to='/'>에스프레소</Link>
         </li>
         <li>
           <FontAwesomeIcon
@@ -49,7 +50,7 @@ class Breadcrumb extends Component {
           />
         </li>
         <li>
-          <Link>{name}</Link>
+          <Link to='/'>{name}</Link>
         </li>
       </ul>
     );

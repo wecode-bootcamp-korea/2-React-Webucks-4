@@ -1,40 +1,29 @@
 @import '../../../styles/variable';
 
-.loginBtnDeactivate {
-  height: 50px;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background-color: $deactivatedLoginBtnColor;
-  font-size: 20px;
-
-  &:hover {
-    cursor: pointer;
-  }
-
+.LoginBtn {
   .loginBtn {
-    color: white;
-    font-size: 20;
-    font-weight: 700;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .loginBtnText {
+      color: white;
+      font-size: 20;
+      font-weight: 700;
+    }
   }
-}
 
-.loginBtnActivate {
-  height: 50px;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background-color: $activatedLoginBtnColor;
-  font-size: 20px;
-
-  &:hover {
-    cursor: pointer;
+  .loginBtnDeactivate {
+    background-color: $deactivatedLoginBtnColor;
   }
 
-  .loginBtn {
-    color: white;
-    font-size: 20;
-    font-weight: 700;
-    text-decoration: none;
+  .loginBtnActivate {
+    background-color: $activatedLoginBtnColor;
   }
 }

@@ -4,19 +4,22 @@ import './LoginBtn.scss';
 
 class LoginBtn extends Component {
   render() {
-    const isIdValid = this.props.validation.isIdValid;
-    const isPwValid = this.props.validation.isPwValid;
+    const loginBtnActivate = this.props.loginBtnActivate();
     return (
-      <button
-        className={
-          isIdValid && isPwValid ? 'loginBtnActivate' : 'loginBtnDeactivate'
-        }
-        type='button'
-      >
-        <Link className='loginBtn' to='/list-hwiminKim'>
-          로그인
-        </Link>
-      </button>
+      <div className='LoginBtn'>
+        <button
+          className={
+            loginBtnActivate
+              ? 'loginBtnActivate loginBtn'
+              : 'loginBtnDeactivate loginBtn'
+          }
+          type='button'
+        >
+          <Link className='loginBtnText' to='/list-hwiminKim'>
+            로그인
+          </Link>
+        </button>
+      </div>
     );
   }
 }

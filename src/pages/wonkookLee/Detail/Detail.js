@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import TopNav from '../../../components/Nav/TopNav';
-import Footer from '../../../components/Footer/Footer';
 import MainImgFrame from './components/MainImgFrame';
 import ProdDesc from './components/ProdDesc';
 import Comment from './components/Comment';
@@ -21,7 +19,7 @@ class Detail extends Component {
       .then(res => res.json())
       .then(data => {
         const item = data.find(
-          e => e.id === parseInt(this.props.match.params.id)
+          dataObj => dataObj.id === parseInt(this.props.match.params.id)
         );
         this.setState({
           products: item,
@@ -52,8 +50,6 @@ class Detail extends Component {
       this.state.products;
     return (
       <div id='wrap' className='Detail'>
-        <TopNav />
-
         <div id='container'>
           <div className='subTitWrap'>
             <div className='subTitInner'>
@@ -83,7 +79,6 @@ class Detail extends Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

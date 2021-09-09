@@ -26,28 +26,34 @@ import DetailYB from './pages/yebomLee/Detail/Detail';
 import LoginWK from './pages/wonkookLee/Login/Login';
 import ListWK from './pages/wonkookLee/List/List';
 import DetailWK from './pages/wonkookLee/Detail/Detail';
+import TopNav from './components/Nav/TopNav';
+import Footer from './components/Footer/Footer';
 
 class Routes extends React.Component {
   render() {
     return (
       <Router>
+        <Route exact path='/login-hwiminKim' component={LoginHM} />
+        <Route exact path='/list-hwiminKim' component={ListHM} />
+        <Route exact path='/detail-hwiminKim' component={DetailHM} />
+        <Route exact path='/login-wonyoungKim' component={LoginWY} />
+        <Route exact path='/list-wonyoungKim' component={ListWY} />
+        <Route exact path='/detail-wonyoungKim' component={DetailWY} />
+        <Route exact path='/login-siwonKim' component={LoginSW} />
+        <Route exact path='/list-siwonKim' component={ListSW} />
+        <Route exact path='/detail-siwonKim' component={DetailSW} />
+        <Route exact path='/login-yebomLee' component={LoginYB} />
+        <Route exact path='/list-yebomLee' component={ListYB} />
+        <Route exact path='/detail-yebomLee' component={DetailYB} />
         <ScrollIntoView>
           <Switch>
-            <Route exact path='/login-hwiminKim' component={LoginHM} />
-            <Route exact path='/list-hwiminKim' component={ListHM} />
-            <Route exact path='/detail-hwiminKim' component={DetailHM} />
-            <Route exact path='/login-wonyoungKim' component={LoginWY} />
-            <Route exact path='/list-wonyoungKim' component={ListWY} />
-            <Route exact path='/detail-wonyoungKim' component={DetailWY} />
-            <Route exact path='/login-siwonKim' component={LoginSW} />
-            <Route exact path='/list-siwonKim' component={ListSW} />
-            <Route exact path='/detail-siwonKim' component={DetailSW} />
-            <Route exact path='/login-yebomLee' component={LoginYB} />
-            <Route exact path='/list-yebomLee' component={ListYB} />
-            <Route exact path='/detail-yebomLee' component={DetailYB} />
             <Route exact path='/login-wonkookLee' component={LoginWK} />
-            <Route exact path='/list-wonkookLee' component={ListWK} />
-            <Route exact path='/detail-wonkookLee/:id' component={DetailWK} />
+            <>
+              <TopNav />
+              <Route exact path='/list-wonkookLee' component={ListWK} />
+              <Route exact path='/detail-wonkookLee/:id' component={DetailWK} />
+              <Footer />
+            </>
           </Switch>
         </ScrollIntoView>
       </Router>

@@ -7,27 +7,20 @@ class ProductList extends Component {
   constructor() {
     super();
     this.state = {
-      coldBrews: [],
-      breweds: [],
+      data: null,
       favBeverages: [101, 103, 107],
-      isError: false,
     };
   }
 
   componentDidMount() {
     fetch('/data/PRODUCT_LIST.json')
       .then(res => res.json())
-      .then(data =>
+      .then(data => {
         this.setState({
-          coldBrews: data.coldBrews,
-          breweds: data.breweds,
-        })
-      )
-      .catch(() => {
-        this.setState({
-          isError: true,
+          data: data,
         });
-      });
+      })
+      .catch(console.log);
   }
 
   controlFavBeverages = (event, id) => {
@@ -40,49 +33,38 @@ class ProductList extends Component {
     });
   };
 
+  displayProductList = data => {
+    return Object.values(data).map((eachData, i) => {
+      return (
+        <div key={i} className='productList'>
+          <CategoryHeader category={eachData[0].category} />
+          <ul>
+            {eachData.map(beverage => {
+              const { id, name, imgUrl, isNewProduct } = beverage;
+              return (
+                <CoffeeCard
+                  key={id}
+                  linkId={id}
+                  name={name}
+                  imgUrl={imgUrl}
+                  isNewProduct={isNewProduct}
+                  controlFavBeverages={this.controlFavBeverages}
+                  liked={this.state.favBeverages.includes(id)}
+                />
+              );
+            })}
+          </ul>
+        </div>
+      );
+    });
+  };
+
   render() {
     return (
       <div className='content'>
         <div className='productResultWrap'>
           <dl className='productViewTab'>
-            <div className='productList'>
-              <CategoryHeader category='콜드 브루' />
-              <ul>
-                {!this.state.isError &&
-                  this.state.coldBrews.map(beverage => {
-                    return (
-                      <CoffeeCard
-                        key={beverage.id}
-                        linkId={beverage.id}
-                        name={beverage.name}
-                        imgUrl={beverage.imgUrl}
-                        isNewProduct={beverage.isNewProduct}
-                        controlFavBeverages={this.controlFavBeverages}
-                        liked={this.state.favBeverages.includes(beverage.id)}
-                      />
-                    );
-                  })}
-              </ul>
-            </div>
-            <div className='productList'>
-              <CategoryHeader category='브루드 커피' />
-              <ul>
-                {!this.state.isError &&
-                  this.state.breweds.map(beverage => {
-                    return (
-                      <CoffeeCard
-                        key={beverage.id}
-                        linkId={beverage.id}
-                        name={beverage.name}
-                        imgUrl={beverage.imgUrl}
-                        isNewProduct={beverage.isNewProduct}
-                        controlFavBeverages={this.controlFavBeverages}
-                        liked={this.state.favBeverages.includes(beverage.id)}
-                      />
-                    );
-                  })}
-              </ul>
-            </div>
+            {this.state.data && this.displayProductList(this.state.data)}
           </dl>
         </div>
       </div>

@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import TopNav from '../../../components/Nav/TopNav';
 import ProductList from './components/ProductList';
-import Footer from '../../../components/Footer/Footer';
 import './List.scss';
 
 class List extends Component {
   render() {
     return (
       <div id='wrap List'>
-        <TopNav />
         <div id='container'>
           <div className='subTitWrap'>
             <div className='subTitInner'>
@@ -22,7 +19,6 @@ class List extends Component {
           </div>
           <ProductList />
         </div>
-        <Footer />
       </div>
     );
   }

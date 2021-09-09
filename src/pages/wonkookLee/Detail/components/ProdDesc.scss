@@ -1,0 +1,154 @@
+@import '../../../../styles/mixin';
+
+div.likeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  #like {
+    opacity: 0;
+    z-index: 5;
+  }
+
+  .btnLove {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: 0;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
+      background: url(https://abs.twimg.com/a/1446862637/img/t1/web_heart_animation.png)
+        0 0 no-repeat;
+      background-size: 2900%;
+      height: 100px;
+      width: 100px;
+    }
+  }
+
+  #like:checked + .btnLove:after {
+    animation: heart-burst steps(28) 0.8s 1 both;
+  }
+}
+
+div.ProductDesc {
+  position: relative;
+  width: 610px;
+  float: right;
+
+  .myAssignZone {
+    position: relative;
+  }
+
+  h4 {
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #333;
+    font-weight: bold;
+    font-size: 24px;
+    color: #222;
+
+    span {
+      font-size: 14px;
+      font-weight: normal;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #666;
+    }
+  }
+
+  p.t1 {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    min-height: 40px;
+  }
+}
+
+.hid {
+  position: absolute;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.productInfoHead {
+  position: relative;
+  height: 59px;
+  line-height: 59px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+
+  p.tit {
+    padding-left: 10px;
+    font-size: 18px;
+    color: #222;
+  }
+
+  .productSelectWrap {
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+
+    div.selectTxt {
+      float: left;
+      margin-right: 6px;
+      margin-top: -5px;
+      font-size: 16px;
+    }
+  }
+}
+
+div.productInfoContent {
+  margin: 20px 0;
+  width: 100%;
+  @include clearfix();
+
+  ul {
+    width: 50%;
+    float: left;
+
+    &:last-child {
+      width: 50%;
+      float: right;
+      border-left: 1px dotted #d6d6d6;
+    }
+
+    li {
+      padding: 0 10px;
+      line-height: 2.5;
+
+      dl {
+        width: 100%;
+        font-size: 14px;
+        color: #444;
+
+        dt {
+          float: left;
+          width: 85%;
+        }
+
+        dd {
+          float: right;
+          width: 15%;
+          text-align: right;
+        }
+      }
+    }
+  }
+}

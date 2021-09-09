@@ -1,0 +1,30 @@
+@import '../../../../styles/variables';
+
+.Login {
+  input {
+    display: block;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    height: 38px;
+    width: 100%;
+    border: $input-border;
+    border-radius: 3px;
+    background-color: #fafafa;
+  }
+
+  input::placeholder {
+    color: $place-holder;
+    font-size: 12px;
+  }
+
+  input:focus {
+    border: $input-border-focus;
+    background-color: $input-bg-focus;
+    outline: none;
+  }
+
+  input.valid {
+    border: $valid-border;
+    background-color: $valid-bg-focus;
+  }
+}

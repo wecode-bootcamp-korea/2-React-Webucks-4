@@ -1,0 +1,38 @@
+.Detail {
+  ul.smap {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+
+    strong {
+      font-weight: 500;
+    }
+
+    li {
+      font-size: 13px;
+    }
+
+    li:first-child {
+      position: relative;
+      top: 3px;
+      height: 15px;
+      width: 15px;
+      background-image: url(https://image.istarbucks.co.kr/common/img/common/icon_home.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-size: 0;
+    }
+
+    li:nth-child(2n) {
+      width: 7px;
+      height: 12px;
+      position: relative;
+      top: 1px;
+      background-image: url(https://image.istarbucks.co.kr/common/img/common/icon_arrow.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

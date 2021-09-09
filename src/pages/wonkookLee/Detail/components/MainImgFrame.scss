@@ -1,0 +1,62 @@
+.productViewPic {
+  width: 450px;
+  float: left;
+  overflow: hidden;
+}
+
+.productBigPic {
+  width: 100%;
+}
+
+.productBigPic .zoomFrame > img {
+  height: auto;
+  width: 100%;
+}
+
+.zoomFrame {
+  position: relative;
+  height: 470px;
+}
+
+.zoomLens {
+  display: none;
+  float: right;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 234px;
+  width: 305px;
+  border: 1px solid rgb(0, 0, 0);
+  background-position: 0px 0px;
+  background-color: white;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 5000;
+  opacity: 0.4;
+  cursor: default;
+}
+
+.zoomWindowContainer {
+  width: 610px;
+}
+
+.zoomWindow {
+  display: none;
+  float: left;
+  position: absolute;
+  top: 31px;
+  left: 488px;
+  height: 468px;
+  width: 610px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  background-size: 900px 940px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  overflow: hidden;
+  z-index: 9000;
+}
+
+.visible {
+  display: block;
+}

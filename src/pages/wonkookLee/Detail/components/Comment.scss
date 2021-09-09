@@ -1,0 +1,89 @@
+section.reviewWrap {
+  margin-top: 30px;
+  width: 610px;
+  float: right;
+
+  dt.reviewTit {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #d6d6d6;
+
+    h4 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  dd.reviewContainer {
+    position: relative;
+    margin: 20px 0 10px 0;
+    height: 80px;
+
+    ul {
+      position: absolute;
+      height: 100%;
+      bottom: 0;
+      width: 100%;
+      overflow-y: scroll;
+    }
+  }
+
+  #reviewField {
+    padding-left: 10px;
+    height: 34px;
+    width: 100%;
+    background-color: #efefef;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #validTag {
+    position: absolute;
+    height: 26px;
+    width: 180px;
+    bottom: 35px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #333;
+    font-size: 12px;
+    visibility: hidden;
+    z-index: 9000;
+  }
+
+  .notValid {
+    animation-name: notValid;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes heart-burst {
+    0% {
+      background-position: left;
+    }
+    100% {
+      background-position: right;
+    }
+  }
+
+  @keyframes notValid {
+    0% {
+      opacity: 0;
+      visibility: visible;
+    }
+    10% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@import '../../../../styles/variables';
+
+.Login {
+  section.login {
+    margin-bottom: 10px;
+    border: $input-border;
+    text-align: center;
+    background-color: $white-color;
+
+    .loginLogo {
+      position: relative;
+      margin: 37px 0 37px 0;
+      font-family: $font-family;
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    form.auth {
+      position: relative;
+      margin: 0 auto;
+      width: 250px;
+
+      .divider {
+        position: relative;
+        margin-top: 20px;
+        font-size: 13px;
+
+        hr {
+          margin: 0;
+          height: 1px;
+          border: 0;
+          border-top: $input-border;
+        }
+
+        span {
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 60px;
+          color: $hr-line;
+          background-color: $white-color;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .facebookLogin {
+        margin-top: 32px;
+        font-size: 14px;
+        font-weight: 600;
+
+        a {
+          color: $text-emphasize;
+        }
+
+        span {
+          display: inline-block;
+          position: relative;
+          margin-right: 10px;
+          top: 3px;
+          height: 15px;
+          width: 15px;
+          background-image: $facebook-logo;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+
+      p.forget {
+        margin: 21px 0;
+        font-size: 12px;
+
+        a {
+          color: $text-emphasize;
+        }
+      }
+    }
+  }
+}

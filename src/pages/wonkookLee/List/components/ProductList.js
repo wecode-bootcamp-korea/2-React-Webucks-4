@@ -10,6 +10,7 @@ class ProductList extends Component {
       coldBrews: [],
       breweds: [],
       favBeverages: [101, 103, 107],
+      isError: false,
     };
   }
 
@@ -22,65 +23,68 @@ class ProductList extends Component {
           breweds: data.breweds,
         })
       )
-      .catch(console.log);
+      .catch(() => {
+        this.setState({
+          isError: true,
+        });
+      });
   }
 
-  controlFavBeverages = (id, action) => {
-    if (action) {
-      this.setState({
-        favBeverages: [...this.state.favBeverages, id],
-      });
-    } else {
-      const filtered = this.state.favBeverages.filter(
-        beverage => beverage !== id
-      );
-      this.setState({
-        favBeverages: filtered,
-      });
-    }
+  controlFavBeverages = (event, id) => {
+    event.preventDefault();
+    const favArr = this.state.favBeverages.slice();
+    this.setState({
+      favBeverages: favArr.includes(id)
+        ? favArr.filter(bevId => bevId !== id)
+        : [...favArr, id],
+    });
   };
 
   render() {
     return (
-      <div className='product_list'>
-        <dl>
-          <CategoryHeader category={this.state.coldBrews[0]?.category} />
-          <dd>
-            <ul className='product_cold_brew'>
-              {this.state.coldBrews?.map(beverage => {
-                return (
-                  <CoffeeCard
-                    key={beverage.id}
-                    linkId={beverage.id}
-                    name={beverage.name}
-                    imgUrl={beverage.imgUrl}
-                    isNewProduct={beverage.isNewProduct}
-                    controlFavBeverages={this.controlFavBeverages}
-                    liked={this.state.favBeverages.includes(beverage.id)}
-                  />
-                );
-              })}
-            </ul>
-          </dd>
-          <CategoryHeader category={this.state.breweds[0]?.category} />
-          <dd>
-            <ul className='product_brood'>
-              {this.state.breweds?.map(beverage => {
-                return (
-                  <CoffeeCard
-                    key={beverage.id}
-                    linkId={beverage.id}
-                    name={beverage.name}
-                    imgUrl={beverage.imgUrl}
-                    isNewProduct={beverage.isNewProduct}
-                    controlFavBeverages={this.controlFavBeverages}
-                    liked={this.state.favBeverages.includes(beverage.id)}
-                  />
-                );
-              })}
-            </ul>
-          </dd>
-        </dl>
+      <div className='content'>
+        <div className='product_result_wrap product_result_wrap01'>
+          <div className='product_view_tab_wrap'>
+            <dl className='product_view_tab product_view_tab01'>
+              <div className='product_list'>
+                <CategoryHeader category='콜드 브루 커피' />
+                <ul className='product_cold_brew'>
+                  {!this.state.isError &&
+                    this.state.coldBrews.map(beverage => {
+                      return (
+                        <CoffeeCard
+                          key={beverage.id}
+                          linkId={beverage.id}
+                          name={beverage.name}
+                          imgUrl={beverage.imgUrl}
+                          isNewProduct={beverage.isNewProduct}
+                          controlFavBeverages={this.controlFavBeverages}
+                          liked={this.state.favBeverages.includes(beverage.id)}
+                        />
+                      );
+                    })}
+                </ul>
+                <CategoryHeader category='브루드 커피' />
+                <ul className='product_brood'>
+                  {!this.state.isError &&
+                    this.state.breweds.map(beverage => {
+                      return (
+                        <CoffeeCard
+                          key={beverage.id}
+                          linkId={beverage.id}
+                          name={beverage.name}
+                          imgUrl={beverage.imgUrl}
+                          isNewProduct={beverage.isNewProduct}
+                          controlFavBeverages={this.controlFavBeverages}
+                          liked={this.state.favBeverages.includes(beverage.id)}
+                        />
+                      );
+                    })}
+                </ul>
+              </div>
+            </dl>
+          </div>
+        </div>
       </div>
     );
   }

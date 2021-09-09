@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-import Logo from './Logo';
 import LoginInput from './LoginInput';
 import LoginBtn from './LoginBtn';
-import FacebookLogIn from './FacebookLogIn';
 import ToggleVisibility from './ToggleVisibility';
 import './LoginForm.scss';
 
@@ -45,7 +43,7 @@ class LoginForm extends Component {
     const { isValidId, isValidPw, isPwVisible } = this.state;
     return (
       <section className='login'>
-        <Logo link='#' text='Westabucks' />
+        <h1 className='loginLogo'>Westabucks</h1>
         <form className='LoginForm auth'>
           <LoginInput
             validation={this.validation}
@@ -79,11 +77,21 @@ class LoginForm extends Component {
             <hr />
             <span>또는</span>
           </div>
-          <FacebookLogIn
-            className='facebook__login'
-            link='https://www.facebook.com/'
-            text='Facebook으로 로그인'
-          />
+          <h2 className='facebook__login'>
+            <a href='https://www.facebook.com/'>
+              <span></span>
+              Facebook으로 로그인
+            </a>
+          </h2>
+          <p className='forget'>
+            <a
+              href='https://www.facebook.com/login/identify'
+              target='_blank'
+              rel='noreferrer'
+            >
+              비밀번호를 잊으셨나요?
+            </a>
+          </p>
         </form>
       </section>
     );

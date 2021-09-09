@@ -2,6 +2,22 @@
 @import '../../../../styles/mixin';
 
 @include desktop {
+  .content {
+    margin: 0 auto;
+    padding-bottom: 90px;
+    width: 1100px;
+    background: transparent;
+  }
+
+  div.product_result_wrap {
+    position: relative;
+  }
+
+  div.product_view_tab_wrap {
+    position: relative;
+    width: 1100px;
+  }
+
   div.product_list > dl > dd {
     margin-bottom: 40px;
 
@@ -17,6 +33,14 @@
 }
 
 @include desktopToDesktopLarge {
+  .content {
+    width: 96%;
+  }
+
+  div.product_view_tab_wrap {
+    width: 100%;
+  }
+
   div.product_list > dl > dd > ul {
     display: flex;
     flex-wrap: wrap;
@@ -28,6 +52,15 @@
 }
 
 @include mobileToDesktop {
+  .content {
+    width: 96%;
+    margin: 0 auto;
+  }
+
+  div.product_view_tab_wrap {
+    width: 100%;
+  }
+
   div.product_list > dl > dd {
     margin-bottom: 40px;
     width: 100%;

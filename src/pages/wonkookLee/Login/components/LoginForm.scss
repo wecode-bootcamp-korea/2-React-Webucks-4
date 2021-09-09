@@ -7,6 +7,15 @@
     text-align: center;
     background-color: $white-color;
 
+    .loginLogo {
+      position: relative;
+      margin: 37px 0 37px 0;
+      font-family: $font-family;
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
     form.auth {
       position: relative;
       margin: 0 auto;
@@ -33,6 +42,37 @@
           color: $hr-line;
           background-color: $white-color;
           transform: translate(-50%, -50%);
+        }
+      }
+
+      .facebook__login {
+        margin-top: 32px;
+        font-size: 14px;
+        font-weight: 600;
+
+        a {
+          color: $text-emphasize;
+        }
+
+        span {
+          display: inline-block;
+          position: relative;
+          margin-right: 10px;
+          top: 3px;
+          height: 15px;
+          width: 15px;
+          background-image: $facebook-logo;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+
+      p.forget {
+        margin: 21px 0;
+        font-size: 12px;
+
+        a {
+          color: $text-emphasize;
         }
       }
     }

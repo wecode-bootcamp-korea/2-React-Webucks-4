@@ -20,19 +20,7 @@ class List extends Component {
               </h2>
             </div>
           </div>
-          <div className='content'>
-            <div className='product_kind_wrap'></div>
-            <div className='product_result_wrap product_result_wrap01'>
-              <div className='product_view_tab_wrap'>
-                <dl className='product_view_tab product_view_tab01'>
-                  <dt className='dt1'></dt>
-                  <dd>
-                    <ProductList />
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </div>
+          <ProductList />
         </div>
         <Footer />
       </div>

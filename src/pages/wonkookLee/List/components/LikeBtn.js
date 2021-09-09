@@ -5,34 +5,19 @@ import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons';
 import './LikeBtn.scss';
 
 class LikeBtn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      liked: this.props.liked,
-    };
-  }
+  likeToggling = event => {
+    this.props.controlFavBeverages(event, this.props.linkId);
+  };
 
   render() {
     return (
-      <div id='like_bev_container'>
+      <div id='LikeBtn'>
         <input
           type='checkbox'
           name='like_bev'
           id='like_bev'
-          className={`like_bev_input ${this.state.liked ? 'liked' : ''}`}
-          onClick={() => {
-            this.setState(
-              {
-                liked: !this.state.liked,
-              },
-              () => {
-                this.props.controlFavBeverages(
-                  this.props.linkId,
-                  this.state.liked
-                );
-              }
-            );
-          }}
+          className={`like_bev_input ${this.props.liked ? 'liked' : ''}`}
+          onClick={this.likeToggling}
         />
         <FontAwesomeIcon className='far fa-heart login_icon' icon={farHeart} />
         <FontAwesomeIcon className='fas fa-heart login_icon' icon={fasHeart} />

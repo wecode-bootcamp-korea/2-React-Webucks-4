@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './CategoryHeader.scss';
 
 class CategoryHeader extends Component {
   render() {
     return (
       <dt className='ProductHeader'>
-        <a href='/list-wonkooklee'>{this.props.category}</a>
+        <Link to='/list-wonkooklee'>{this.props.category}</Link>
         <i>
           <img
             src='https://image.istarbucks.co.kr/common/img/menu/logo_decaf.png'
-            alt={this.props.category}
+            alt='카테고리'
           />
         </i>
         <span className='summary'>

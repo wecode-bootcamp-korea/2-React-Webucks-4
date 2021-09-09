@@ -7,31 +7,23 @@ class Comment extends Component {
     super();
     this.state = {
       invalidCommentLength: false,
-      comments: [
-        {
-          commentId: 1,
-          userId: 'coffee_lover',
-          userComment: '너무 맛있어요!',
-          liked: false,
-        },
-        {
-          commentId: 2,
-          userId: 'CHOCO7',
-          userComment: '오늘도 제주 비자림 콜드 브루를 마시러 제주도에 갑니다.',
-          liked: false,
-        },
-        {
-          commentId: 3,
-          userId: 'legend_dev',
-          userComment:
-            '진짜 제주 비자림 콜드 브루는 전설이다. 진짜 제주 비자림 콜드 브루는 전설이다. 진짜 제주 비자림 콜드 브루는 전설이다.',
-          liked: false,
-        },
-      ],
+      comments: [],
     };
   }
 
+  componentDidMount() {
+    fetch('/data/COMMENT_DATA.json')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          comments: data,
+        })
+      )
+      .catch(console.log);
+  }
+
   invalidCommentLength = () => {
+    const delayUI = 1500;
     this.setState({
       invalidCommentLength: true,
     });
@@ -39,20 +31,24 @@ class Comment extends Component {
       this.setState({
         invalidCommentLength: false,
       });
-    }, 1500);
+    }, delayUI);
   };
 
-  addComment = event => {
+  inputValidation = event => {
     if (event.key !== 'Enter') return;
     if (event.target.value.length < 10) {
       this.invalidCommentLength();
       return;
     }
+    this.addComment(event);
+  };
+
+  addComment = event => {
     const { comments } = this.state;
     this.setState({
       comments: [
         {
-          commentId: Math.floor(Math.random() * 1000) + 1,
+          commentId: Math.floor(Math.random() * 10000) + 1,
           userId: 'oneook',
           userComment: event.target.value,
         },
@@ -62,21 +58,18 @@ class Comment extends Component {
     event.target.value = '';
   };
 
-  removeComment = id => {
+  deleteThread = id => {
     const { comments } = this.state;
     this.setState({
       comments: [...comments].filter(cmt => cmt.commentId !== id),
     });
   };
 
-  toggleLikeComment = id => {
-    const { comments } = this.state;
+  toggleLiked = id => {
+    const comments = this.state.comments.slice();
     const matchIndex = comments.findIndex(cmt => cmt.commentId === id);
-    const toggleLiked = comments[matchIndex].liked;
-    comments[matchIndex].liked = !toggleLiked;
-    this.setState({
-      comments: comments,
-    });
+    comments[matchIndex].liked = !comments[matchIndex].liked;
+    this.setState({ comments: comments });
   };
 
   render() {
@@ -88,20 +81,24 @@ class Comment extends Component {
           </dt>
           <dd className='review_container'>
             <ul id='RvTarget'>
-              {this.state.comments.map(comment => {
-                const { liked, commentId, userId, userComment } = comment;
-                return (
-                  <ReviewThread
-                    liked={liked}
-                    key={commentId}
-                    commentId={commentId}
-                    userId={userId}
-                    userComment={userComment}
-                    deleteThread={this.removeComment}
-                    toggleLiked={this.toggleLikeComment}
-                  />
-                );
-              })}
+              {this.state.comments.length ? (
+                this.state.comments.map(comment => {
+                  const { liked, commentId, userId, userComment } = comment;
+                  return (
+                    <ReviewThread
+                      liked={liked}
+                      key={commentId}
+                      commentId={commentId}
+                      userId={userId}
+                      userComment={userComment}
+                      deleteThread={this.deleteThread}
+                      toggleLiked={this.toggleLiked}
+                    />
+                  );
+                })
+              ) : (
+                <p>코멘트가 없어요</p>
+              )}
             </ul>
           </dd>
         </dl>
@@ -113,7 +110,7 @@ class Comment extends Component {
         </div>
         <form action='submit' onSubmit={e => e.preventDefault()}>
           <input
-            onKeyPress={this.addComment}
+            onKeyPress={this.inputValidation}
             id='review_field'
             type='text'
             placeholder='리뷰를 입력해주세요'

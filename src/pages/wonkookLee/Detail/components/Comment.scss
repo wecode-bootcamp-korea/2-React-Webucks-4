@@ -51,7 +51,7 @@ section.review_wrap {
     color: #ffffff;
     background-color: #333;
     font-size: 12px;
-    opacity: 0;
+    visibility: hidden;
     z-index: 9000;
   }
 
@@ -73,6 +73,7 @@ section.review_wrap {
   @keyframes notValid {
     0% {
       opacity: 0;
+      visibility: visible;
     }
     10% {
       opacity: 1;
@@ -82,6 +83,7 @@ section.review_wrap {
     }
     100% {
       opacity: 0;
+      visibility: hidden;
     }
   }
 }

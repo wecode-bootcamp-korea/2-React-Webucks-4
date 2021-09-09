@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
-import { BsHeart, BsHeartFill } from 'react-icons/bs';
+import LikeHeart from '../../components/LikeHeart';
 import './DetailCoffeeInfo.scss';
 
 class DetailCoffeeInfo extends Component {
   constructor() {
     super();
     this.state = {
-      isActive: false,
+      fillHeart: false,
     };
   }
-
-  toggleActive = () => {
-    this.setState({
-      isActive: !this.state.isActive,
-    });
-  };
-
   render() {
+    const { name, engName, summary, nutritionFacts } = this.props;
     const {
       servingSize,
       kcal,
@@ -26,29 +20,15 @@ class DetailCoffeeInfo extends Component {
       sugars,
       caffeine,
       allergen,
-    } = this.props.nutritionFacts;
+    } = nutritionFacts;
     return (
       <div className='DetailCoffeeInfo'>
         <div className='menuNameBox'>
-          <p className='nameKOR'>{this.props.name}</p>
-          <p className='nameENG'>{this.props.engName}</p>
-          <i>
-            {this.state.isActive ? (
-              <BsHeartFill
-                onClick={this.toggleActive}
-                className='likeHeart active'
-                size='2em'
-              />
-            ) : (
-              <BsHeart
-                className='likeHeart'
-                onClick={this.toggleActive}
-                size='2em'
-              />
-            )}
-          </i>
+          <p className='nameKOR'>{name}</p>
+          <p className='nameENG'>{engName}</p>
+          <LikeHeart />
         </div>
-        <p className='explainCoffee'>{this.props.summary}</p>
+        <p className='explainCoffee'>{summary}</p>
         <div className='nutritionBox'>
           <span>제품 영양 정보</span>
           <span>{servingSize}</span>

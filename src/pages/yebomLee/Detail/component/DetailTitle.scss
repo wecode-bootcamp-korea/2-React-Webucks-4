@@ -6,12 +6,12 @@
   }
 
   .linktap {
+    display: flex;
     margin-bottom: 20px;
-    text-align: right;
+    justify-content: flex-end;
 
     a {
       color: #9f9e9a;
-      text-decoration: none;
       font-size: 15px;
     }
   }

@@ -2,20 +2,19 @@
 
 header {
   nav {
-    width: 80%;
-    margin: auto;
     display: flex;
     justify-content: space-between;
+    margin: auto;
+    width: 80%;
     background-color: #f6f5f0;
 
     .logo {
+      margin: 10px 20px;
       font-family: 'Dancing Script', cursive;
       font-size: 40px;
-      margin: 10px 20px;
     }
 
     ul {
-      list-style: none;
       display: flex;
       color: #9f9e9a;
       font-weight: bold;
@@ -26,7 +25,6 @@ header {
 
         .navLink {
           padding: 20px;
-          text-decoration: none;
           color: #b9b9b5;
         }
       }

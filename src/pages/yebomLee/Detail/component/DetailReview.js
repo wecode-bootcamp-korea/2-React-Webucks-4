@@ -1,36 +1,35 @@
 import React, { Component } from 'react';
+import LikeHeart from '../../components/LikeHeart';
+import { BsTrash } from 'react-icons/bs';
 import './DetailReview.scss';
 
 class DetailReview extends Component {
   constructor() {
     super();
     this.state = {
-      newReviewTxt: '',
-      reviewContents: [{ text: '' }],
+      comment: '',
+      commentsArr: [],
     };
   }
 
-  getReviewTxt = e => {
+  getComment = e => {
     this.setState({
-      newReviewTxt: e.target.value,
+      comment: e.target.value,
     });
   };
 
-  addReview = () => {
-    this.state.reviewContents.push({ text: this.state.newReviewTxt });
-
-    this.setState({
-      newReviewTxt: '',
-      reviewContents: this.state.reviewContents,
-    });
-  };
-
-  handleKeyPress = e => {
+  addComment = e => {
     if (e.key !== 'Enter') {
       return;
     }
     e.preventDefault();
-    this.addReview();
+    const commentobj = {
+      userName: 'user',
+      comment: this.state.comment,
+    };
+    this.setState({
+      commentsArr: [...this.state.commentsArr, commentobj],
+    });
     e.target.value = '';
   };
 
@@ -39,23 +38,23 @@ class DetailReview extends Component {
       <div className='DetailReview'>
         <p className='review'>리뷰</p>
         <ul className='userReview'>
-          <li>
-            <span>coffee_lover</span> 너무 맛있어요!
-          </li>
-          <li>
-            <span>CHOCO7</span> 오늘도 마시러 갑니다.
-          </li>
-          <li>
-            <span>legend_dev</span> 진짜 전설이다. 진짜 전설이다.
-          </li>
-          {this.state.reviewContents.map(thread => (
-            <li>{thread.text}</li>
-          ))}
+          {this.state.commentsArr.map(comment => {
+            return (
+              <li>
+                <span>{comment.userName}</span>
+                <span>{comment.comment}</span>
+                <b>
+                  <LikeHeart />
+                  <BsTrash />
+                </b>
+              </li>
+            );
+          })}
         </ul>
         <form>
           <input
-            onKeyPress={this.handleKeyPress}
-            onChange={this.getReviewTxt}
+            onKeyPress={this.addComment}
+            onChange={this.getComment}
             type='text'
             placeholder='리뷰를 입력해주세요.'
           />

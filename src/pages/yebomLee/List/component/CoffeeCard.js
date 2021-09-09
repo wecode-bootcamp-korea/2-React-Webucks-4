@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
+import LikeHeart from '../../components/LikeHeart';
 import './CoffeeCard.scss';
 
 class CoffeeCard extends Component {
   render() {
+    const { id, name, img } = this.props;
     return (
-      <li className='CoffeeCard' id={this.props.id}>
+      <li className='CoffeeCard' id={id}>
         <div className='fixImg'>
-          <img
-            className='coffeeImg'
-            alt={this.props.name}
-            src={this.props.img}
-          />
+          <img className='coffeeImg' alt={name} src={img} />
         </div>
-        <p className='coffeeName'>{this.props.name}</p>
+        <div className='coffeeName'>
+          {name} <LikeHeart />
+        </div>
       </li>
     );
   }

@@ -15,7 +15,7 @@ class Detail extends Component {
     return (
       <div className='Detail'>
         <Nav />
-        <main>
+        <main className='DetailMain'>
           <DetailTitle category={category} name={name} />
           <article>
             <DetailCoffeeImg imgUrl={imgUrl} name={name} />
@@ -30,9 +30,7 @@ class Detail extends Component {
             </div>
           </article>
         </main>
-        <footer>
-          <Footer />
-        </footer>
+        <Footer />
       </div>
     );
   }

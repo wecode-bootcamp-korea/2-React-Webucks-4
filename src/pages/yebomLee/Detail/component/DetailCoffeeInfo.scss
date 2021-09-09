@@ -1,7 +1,10 @@
+@import '../../components/LikeHeart.scss';
+
 @mixin flex-between {
   display: flex;
   justify-content: space-between;
 }
+
 .DetailCoffeeInfo {
   .menuNameBox {
     position: relative;
@@ -19,15 +22,17 @@
       text-align: left;
     }
 
+    .likeHeartFill {
+      position: absolute;
+      right: 0;
+      bottom: 30px;
+    }
+
     .likeHeart {
       position: absolute;
       right: 0;
       bottom: 30px;
       color: #d3d3d3;
-
-      &.active {
-        color: red;
-      }
     }
   }
 

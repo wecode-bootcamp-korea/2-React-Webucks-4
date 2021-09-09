@@ -1,0 +1,29 @@
+@import '../../../styles/variable';
+
+.LoginBtn {
+  .loginBtn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .loginBtnText {
+      color: white;
+      font-size: 20;
+      font-weight: 700;
+    }
+  }
+
+  .loginBtnDeactivate {
+    background-color: $deactivatedLoginBtnColor;
+  }
+
+  .loginBtnActivate {
+    background-color: $activatedLoginBtnColor;
+  }
+}

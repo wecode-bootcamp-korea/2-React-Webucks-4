@@ -1,0 +1,30 @@
+@import '../../../styles/variable';
+
+.TopsNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 1110px;
+  margin: 0 auto 30px;
+  background-color: $headerColor;
+
+  .logo {
+    width: 80px;
+    margin-left: 20px;
+  }
+
+  .navMenu {
+    .navMenuItems {
+      display: flex;
+      justify-content: space-between;
+      color: $heartAndNavColor;
+      font-size: 12px;
+      list-style: none;
+
+      .navMenuItem {
+        margin-right: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import '../../../styles/variable';
+
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  width: 400px;
+  margin-bottom: 150px;
+
+  .idForm {
+    height: 50px;
+    padding: 10px;
+    border: solid 3px $inputBorderColor;
+    border-radius: 5px;
+    font-size: 16px;
+
+    &::placeholder {
+      color: $inputBorderColor;
+    }
+  }
+
+  .passwordForm {
+    height: 50px;
+    padding: 10px;
+    border: solid 3px $inputBorderColor;
+    border-radius: 5px;
+    font-size: 16px;
+
+    &::placeholder {
+      color: $inputBorderColor;
+    }
+  }
+}

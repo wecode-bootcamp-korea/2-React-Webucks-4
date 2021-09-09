@@ -1,0 +1,26 @@
+.ReviewThread {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+
+  .contentBox {
+    .individualReviewBox {
+      margin-left: 10px;
+    }
+  }
+
+  .btnBox {
+    .btn {
+      margin-right: 20px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      .trashIcon {
+        font-size: 15px;
+        transition: all 0.3s;
+      }
+    }
+  }
+}

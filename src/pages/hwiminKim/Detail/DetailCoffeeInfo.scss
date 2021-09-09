@@ -1,0 +1,98 @@
+.DetailCoffeeInfo {
+  width: 575px;
+
+  .infoHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: solid 2px black;
+
+    .infoTitle {
+      margin-bottom: 5px;
+      font-weight: 700;
+      font-size: 24px;
+    }
+    .infoEngTitle {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .heartIcon {
+      color: lightgray;
+      font-size: 25px;
+    }
+
+    .iconColorRed {
+      color: red;
+      font-size: 25px;
+    }
+  }
+
+  .coffeeDescriptionBox {
+    margin-bottom: 30px;
+
+    .coffeeDescription {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+  }
+  .nutritionTable {
+    width: 100%;
+    margin-bottom: 30px;
+
+    .tableHead {
+      border-top: 1px solid black;
+      border-bottom: 1px solid lightgray;
+
+      .nutritionTitle {
+        padding-right: 145px;
+      }
+      .servingSize {
+        padding: 25px 20px;
+        font-size: 20px;
+      }
+    }
+    .tableBody {
+      padding: 30px;
+
+      td {
+        padding: 12px 0px;
+      }
+
+      .nutritionFactLeft {
+        padding-left: 10px;
+        padding-right: 60px;
+      }
+
+      .numberOfNutrition {
+        text-align: right;
+        padding-right: 10px;
+        padding-left: 60px;
+      }
+
+      .centerBorder {
+        border-right: lightgray dotted 2px;
+      }
+    }
+  }
+
+  .allergyCause {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    background-color: #efefef;
+
+    p {
+      margin-left: 15px;
+      font-weight: 700;
+    }
+  }
+
+  .emptyAllergyCause {
+    height: 90px;
+  }
+}

@@ -1,0 +1,44 @@
+.CoffeeCard {
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+
+    .flowbox {
+      width: 265px;
+      height: 275px;
+      overflow: hidden;
+
+      .cardImage {
+        width: 100%;
+        transition: all 1.2s;
+
+        &:hover {
+          transform: scale(1.2, 1.2);
+        }
+      }
+    }
+
+    .productTitleBox {
+      display: flex;
+      align-items: center;
+
+      a {
+        color: #353434;
+        font-size: 18px;
+      }
+      .heartIcon {
+        margin-left: 10px;
+        color: lightgray;
+        font-size: 18px;
+      }
+
+      .iconColorRed {
+        margin-left: 10px;
+        color: red;
+        font-size: 18px;
+      }
+    }
+  }
+}

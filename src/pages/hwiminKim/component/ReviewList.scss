@@ -1,0 +1,24 @@
+@import '../../../styles/variable';
+
+.ReviewList {
+  .reviewHeader {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px $heartAndNavColor;
+    font-size: 22px;
+  }
+
+  .items {
+    height: 50px;
+    overflow: auto;
+  }
+}
+.reviewInput {
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #efefef;
+}

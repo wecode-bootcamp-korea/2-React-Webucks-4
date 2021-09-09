@@ -1,0 +1,12 @@
+.FooterItem {
+  color: #d7d7d7;
+  font-size: 14px;
+
+  li {
+    margin-bottom: 10px;
+
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+}

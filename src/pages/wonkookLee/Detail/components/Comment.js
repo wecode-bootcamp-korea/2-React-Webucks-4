@@ -74,12 +74,12 @@ class Comment extends Component {
 
   render() {
     return (
-      <section className='review_wrap'>
+      <section className='reviewWrap'>
         <dl>
-          <dt className='review_tit'>
+          <dt className='reviewTit'>
             <h4>리뷰</h4>
           </dt>
-          <dd className='review_container'>
+          <dd className='reviewContainer'>
             <ul id='RvTarget'>
               {this.state.comments.length ? (
                 this.state.comments.map(comment => {
@@ -111,7 +111,7 @@ class Comment extends Component {
         <form action='submit' onSubmit={e => e.preventDefault()}>
           <input
             onKeyPress={this.inputValidation}
-            id='review_field'
+            id='reviewField'
             type='text'
             placeholder='리뷰를 입력해주세요'
             spellCheck='false'

@@ -11,13 +11,13 @@
     background-color: #ffffff;
   }
 
-  div.sub_tit_wrap {
+  div.subTitWrap {
     height: 98px;
     width: 100%;
     background-color: #ffffff;
   }
 
-  div.sub_tit_inner {
+  div.subTitInner {
     position: relative;
     margin: 0 auto;
     width: 1100px;
@@ -25,20 +25,20 @@
     padding-top: 30px;
   }
 
-  div.sub_tit_inner h2 {
+  div.subTitInner h2 {
     position: relative;
     height: 79px;
   }
 }
 
 @include desktopToDesktopLarge {
-  .sub_tit_wrap div.sub_tit_inner {
+  .subTitWrap div.subTitInner {
     width: 96%;
     margin: 0 auto;
     padding-top: 0;
   }
 
-  .sub_tit_wrap div.sub_tit_inner h2 {
+  .subTitWrap div.subTitInner h2 {
     padding-top: 20px;
   }
 }
@@ -48,14 +48,14 @@
     padding-top: 60px;
   }
 
-  .sub_tit_inner {
+  .subTitInner {
     width: 96%;
     margin: 0 auto;
     padding-top: 0;
     height: 91px;
   }
 
-  .sub_tit_inner h2 {
+  .subTitInner h2 {
     padding-top: 30px;
   }
 }

@@ -4,74 +4,74 @@ section.LoginBody {
   height: 100vh;
   width: 100vw;
   background-color: $body-bg;
-}
 
-article.Login {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 350px;
-  transform: translate(-50%, -50%);
+  article.Login {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    transform: translate(-50%, -50%);
 
-  section.signup {
-    margin-bottom: 10px;
-    padding: 25px 0;
-    height: 63px;
-    text-align: center;
+    section.signUp {
+      margin-bottom: 10px;
+      padding: 25px 0;
+      height: 63px;
+      text-align: center;
 
-    p {
+      p {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      a {
+        color: $sign-up-link;
+        font-weight: 600;
+      }
+    }
+  }
+
+  div.applink {
+    margin-top: 10p;
+    padding-top: 10px;
+    height: 105px;
+    width: 100%;
+
+    .appMention {
+      margin-bottom: 20px;
+      text-align: center;
       font-size: 14px;
       font-weight: 400;
     }
 
-    a {
-      color: $sign-up-link;
-      font-weight: 600;
+    .linkBtns {
+      text-align: center;
     }
-  }
-}
 
-div.applink {
-  margin-top: 10p;
-  padding-top: 10px;
-  height: 105px;
-  width: 100%;
-
-  .app__mention {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-  }
-
-  .link__btns {
-    text-align: center;
-  }
-
-  .link__btn {
-    display: inline-block;
-    height: 40px;
-    width: 134px;
-    border-radius: 5px;
-    background-color: #000;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    a {
+    .linkBtn {
       display: inline-block;
-      height: 100%;
-      width: 100%;
-      font-size: 0;
+      height: 40px;
+      width: 134px;
+      border-radius: 5px;
+      background-color: #000;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      a {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        font-size: 0;
+      }
     }
-  }
 
-  .appstore__btn {
-    background-image: $appstore-logo;
-    margin-right: 4px;
-  }
+    .appStoreBtn {
+      background-image: $appstore-logo;
+      margin-right: 4px;
+    }
 
-  .googleplay__btn {
-    background-image: $playstore-logo;
+    .googlePlayBtn {
+      background-image: $playstore-logo;
+    }
   }
 }

@@ -10,8 +10,8 @@ class List extends Component {
       <div id='wrap List'>
         <TopNav />
         <div id='container'>
-          <div className='sub_tit_wrap'>
-            <div className='sub_tit_inner'>
+          <div className='subTitWrap'>
+            <div className='subTitInner'>
               <h2>
                 <img
                   src='https://image.istarbucks.co.kr/common/img/menu/menu_tit1.jpg'

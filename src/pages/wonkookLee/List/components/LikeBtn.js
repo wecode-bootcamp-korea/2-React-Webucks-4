@@ -15,12 +15,12 @@ class LikeBtn extends Component {
         <input
           type='checkbox'
           name='like_bev'
-          id='like_bev'
-          className={`like_bev_input ${this.props.liked ? 'liked' : ''}`}
+          id='likeBev'
+          className={this.props.liked ? 'liked' : ''}
           onClick={this.likeToggling}
         />
-        <FontAwesomeIcon className='far fa-heart login_icon' icon={farHeart} />
-        <FontAwesomeIcon className='fas fa-heart login_icon' icon={fasHeart} />
+        <FontAwesomeIcon className='far fa-heart loginIcon' icon={farHeart} />
+        <FontAwesomeIcon className='fas fa-heart loginIcon' icon={fasHeart} />
       </div>
     );
   }

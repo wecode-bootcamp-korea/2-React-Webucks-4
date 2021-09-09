@@ -23,72 +23,67 @@ class ProdDesc extends Component {
               );
             })}
           </p>
-          <div className='like__btn'>
+          <div className='likeBtn'>
             <input type='checkbox' id='like' onClick={() => hasUserLiked()} />
-            <label className='btn-love' htmlFor='like' />
+            <label className='btnLove' htmlFor='like' />
           </div>
         </div>
-        <div className='m_view_slide'></div>
 
         <form action='post'>
           <fieldset>
             <legend className='hid'>제품 영양 정보</legend>
-            <div className='product_view_info'>
-              <div className='product_info_head'>
-                <p className='tit'>제품 영양 정보</p>
-                <div className='product_select_wrap2'>
-                  <div className='selectTxt2' id='product_info01'>
-                    {nutritionFacts?.servingSize}
-                  </div>
-                </div>
+            <div className='productInfoHead'>
+              <p className='tit'>제품 영양 정보</p>
+              <div className='productSelectWrap'>
+                <div className='selectTxt'>{nutritionFacts?.servingSize}</div>
               </div>
-
-              <div className='product_info_content'>
-                <ul>
-                  <li className='kcal'>
-                    <dl>
-                      <dt>1회 제공량 (kcal)</dt>
-                      <dd>340</dd>
-                    </dl>
-                  </li>
-                  <li className='kcal'>
-                    <dl>
-                      <dt>포화지방 (g)</dt>
-                      <dd>{nutritionFacts?.fat}</dd>
-                    </dl>
-                  </li>
-                  <li className='kcal'>
-                    <dl>
-                      <dt>단백질 (g)</dt>
-                      <dd>{nutritionFacts?.protein}</dd>
-                    </dl>
-                  </li>
-                </ul>
-                <ul>
-                  <li className='kcal'>
-                    <dl>
-                      <dt>나트륨 (mg)</dt>
-                      <dd>{nutritionFacts?.natrium}</dd>
-                    </dl>
-                  </li>
-                  <li className='kcal'>
-                    <dl>
-                      <dt>당류 (g)</dt>
-                      <dd>{nutritionFacts?.sugars}</dd>
-                    </dl>
-                  </li>
-                  <li className='kcal'>
-                    <dl>
-                      <dt>카페인 (mg)</dt>
-                      <dd>{nutritionFacts?.caffeine}</dd>
-                    </dl>
-                  </li>
-                </ul>
-              </div>
-              {nutritionFacts?.allergen ? (
-                <AlergenDesc allergen={nutritionFacts?.allergen} />
-              ) : null}
             </div>
+
+            <div className='productInfoContent'>
+              <ul>
+                <li>
+                  <dl>
+                    <dt>1회 제공량 (kcal)</dt>
+                    <dd>340</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>포화지방 (g)</dt>
+                    <dd>{nutritionFacts?.fat}</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>단백질 (g)</dt>
+                    <dd>{nutritionFacts?.protein}</dd>
+                  </dl>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <dl>
+                    <dt>나트륨 (mg)</dt>
+                    <dd>{nutritionFacts?.natrium}</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>당류 (g)</dt>
+                    <dd>{nutritionFacts?.sugars}</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>카페인 (mg)</dt>
+                    <dd>{nutritionFacts?.caffeine}</dd>
+                  </dl>
+                </li>
+              </ul>
+            </div>
+            {nutritionFacts?.allergen ? (
+              <AlergenDesc allergen={nutritionFacts?.allergen} />
+            ) : null}
           </fieldset>
         </form>
       </div>

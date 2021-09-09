@@ -8,13 +8,13 @@ class LikeBtn extends Component {
   render() {
     const { liked, commentId, toggleLiked } = this.props;
     return (
-      <span id='like_comment_container'>
+      <span id='likeCommentContainer'>
         <input
           type='checkbox'
           className={liked ? 'liked' : ''}
           onClick={() => toggleLiked(commentId)}
-          name='like_comment'
-          id='like_comment'
+          name='likeComment'
+          id='likeComment'
         />
         <FontAwesomeIcon className='far fa-heart' icon={farHeart} />
         <FontAwesomeIcon className='fas fa-heart' icon={fasHeart} />

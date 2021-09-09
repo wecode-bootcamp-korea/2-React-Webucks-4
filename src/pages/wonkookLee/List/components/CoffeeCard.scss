@@ -17,7 +17,7 @@
 
       img {
         height: auto;
-        width: 258px;
+        // width: 258px;
         max-width: 100%;
         vertical-align: top;
         transition: transform 1s;
@@ -88,6 +88,14 @@
         }
       }
     }
+  }
+}
+
+@include tabletToDesktop {
+  .menuDataSet {
+    margin: 0.66%;
+    width: 32%;
+    overflow: hidden;
   }
 }
 

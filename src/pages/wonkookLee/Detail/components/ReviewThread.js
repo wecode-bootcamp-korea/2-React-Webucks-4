@@ -7,7 +7,7 @@ class ReviewThread extends Component {
     const { liked, commentId, deleteThread, toggleLiked, userId, userComment } =
       this.props;
     return (
-      <li className='review_thread'>
+      <li className='reviewThread'>
         <LikeBtn
           liked={liked}
           commentId={commentId}

@@ -43,47 +43,47 @@ class ProductList extends Component {
   render() {
     return (
       <div className='content'>
-        <div className='product_result_wrap product_result_wrap01'>
-          <div className='product_view_tab_wrap'>
-            <dl className='product_view_tab product_view_tab01'>
-              <div className='product_list'>
-                <CategoryHeader category='콜드 브루 커피' />
-                <ul className='product_cold_brew'>
-                  {!this.state.isError &&
-                    this.state.coldBrews.map(beverage => {
-                      return (
-                        <CoffeeCard
-                          key={beverage.id}
-                          linkId={beverage.id}
-                          name={beverage.name}
-                          imgUrl={beverage.imgUrl}
-                          isNewProduct={beverage.isNewProduct}
-                          controlFavBeverages={this.controlFavBeverages}
-                          liked={this.state.favBeverages.includes(beverage.id)}
-                        />
-                      );
-                    })}
-                </ul>
-                <CategoryHeader category='브루드 커피' />
-                <ul className='product_brood'>
-                  {!this.state.isError &&
-                    this.state.breweds.map(beverage => {
-                      return (
-                        <CoffeeCard
-                          key={beverage.id}
-                          linkId={beverage.id}
-                          name={beverage.name}
-                          imgUrl={beverage.imgUrl}
-                          isNewProduct={beverage.isNewProduct}
-                          controlFavBeverages={this.controlFavBeverages}
-                          liked={this.state.favBeverages.includes(beverage.id)}
-                        />
-                      );
-                    })}
-                </ul>
-              </div>
-            </dl>
-          </div>
+        <div className='productResultWrap'>
+          <dl className='productViewTab'>
+            <div className='productList'>
+              <CategoryHeader category='콜드 브루' />
+              <ul>
+                {!this.state.isError &&
+                  this.state.coldBrews.map(beverage => {
+                    return (
+                      <CoffeeCard
+                        key={beverage.id}
+                        linkId={beverage.id}
+                        name={beverage.name}
+                        imgUrl={beverage.imgUrl}
+                        isNewProduct={beverage.isNewProduct}
+                        controlFavBeverages={this.controlFavBeverages}
+                        liked={this.state.favBeverages.includes(beverage.id)}
+                      />
+                    );
+                  })}
+              </ul>
+            </div>
+            <div className='productList'>
+              <CategoryHeader category='브루드 커피' />
+              <ul>
+                {!this.state.isError &&
+                  this.state.breweds.map(beverage => {
+                    return (
+                      <CoffeeCard
+                        key={beverage.id}
+                        linkId={beverage.id}
+                        name={beverage.name}
+                        imgUrl={beverage.imgUrl}
+                        isNewProduct={beverage.isNewProduct}
+                        controlFavBeverages={this.controlFavBeverages}
+                        liked={this.state.favBeverages.includes(beverage.id)}
+                      />
+                    );
+                  })}
+              </ul>
+            </div>
+          </dl>
         </div>
       </div>
     );

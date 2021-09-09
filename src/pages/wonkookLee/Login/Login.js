@@ -10,15 +10,15 @@ class Login extends Component {
       <section className='LoginBody'>
         <article className='Login'>
           <LoginForm onChange={this.handleChange} />
-          <section className='signup'>
+          <section className='signUp'>
             <p>
               계정이 없으신가요? <Link to='/list-wonkooklee'>가입하기</Link>
             </p>
           </section>
           <div className='applink'>
-            <div className='app__mention'>앱을 다운로드하세요.</div>
-            <div className='link__btns'>
-              <span className='link__btn appstore__btn'>
+            <div className='appMention'>앱을 다운로드하세요.</div>
+            <div className='linkBtns'>
+              <span className='linkBtn appStoreBtn'>
                 <a
                   href='https://apps.apple.com/us/app/starbucks/id331177714'
                   target='_blank'
@@ -27,7 +27,7 @@ class Login extends Component {
                   appstore
                 </a>
               </span>
-              <span className='link__btn googleplay__btn'>
+              <span className='linkBtn googlePlayBtn'>
                 <a
                   href='https://play.google.com/store/apps/details?id=com.starbucks.mobilecard&hl=en&gl=US'
                   target='_blank'

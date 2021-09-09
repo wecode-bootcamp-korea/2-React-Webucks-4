@@ -9,11 +9,11 @@ class ToggleVisibility extends Component {
       <>
         <input id='icon' type='checkbox' onClick={this.props.viewPassword} />
         <FontAwesomeIcon
-          className={`login_icon ${this.props.iconToggle ? 'hidden' : ''}`}
+          className={`loginIcon ${this.props.iconToggle ? 'hidden' : ''}`}
           icon={faEye}
         />
         <FontAwesomeIcon
-          className={`login_icon ${this.props.iconToggle ? '' : 'hidden'}`}
+          className={`loginIcon ${this.props.iconToggle ? '' : 'hidden'}`}
           icon={faEyeSlash}
         />
       </>

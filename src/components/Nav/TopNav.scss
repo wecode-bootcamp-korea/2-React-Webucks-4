@@ -2,11 +2,11 @@
 @import '../../styles/mixin';
 
 @include desktop {
-  .tablet_gnb_wrap {
+  .tabletGnbWrap {
     display: none;
   }
 
-  .sub_gnb_wrap {
+  .subGnbWrap {
     position: fixed;
     top: 0;
     height: 120px;
@@ -32,7 +32,7 @@
       }
     }
 
-    .sub_gnb_wrap_inner {
+    .subGnbWrapInner {
       position: relative;
       margin: 0 auto;
       height: 120px;
@@ -61,7 +61,7 @@
         }
       }
 
-      .btn_search {
+      .btnSearch {
         position: absolute;
         top: 9px;
         right: 54px;
@@ -71,7 +71,7 @@
     }
   }
 
-  .sub_gnb_nav {
+  .subGnbNav {
     position: fixed;
     top: 54px;
     left: 0;
@@ -79,7 +79,7 @@
     width: 100%;
     z-index: 12000;
 
-    .sub_gnb_nav_inner {
+    .subGnbNavInner {
       margin: 0 auto;
       padding-top: 10px;
       height: 66px;
@@ -96,27 +96,27 @@
           }
         }
 
-        li.gnb_nav01 {
+        li.gnbNav01 {
           width: 89px;
         }
 
-        li.gnb_nav02 {
+        li.gnbNav02 {
           width: 73px;
         }
 
-        li.gnb_nav03 {
+        li.gnbNav03 {
           width: 79px;
         }
 
-        li.gnb_nav04 {
+        li.gnbNav04 {
           width: 153px;
         }
 
-        li.gnb_nav05 {
+        li.gnbNav05 {
           width: 225px;
         }
 
-        li.gnb_nav06 {
+        li.gnbNav06 {
           width: 131px;
         }
       }
@@ -125,14 +125,14 @@
 }
 
 @include desktopToDesktopLarge {
-  div.tablet_gnb_wrap {
+  div.tabletGnbWrap {
     display: none;
   }
 
-  .sub_gnb_wrap {
+  .subGnbWrap {
     height: 120px;
 
-    div.sub_gnb_wrap_inner {
+    div.subGnbWrapInner {
       height: 120px;
       width: 100%;
 
@@ -148,10 +148,10 @@
     }
   }
 
-  nav.sub_gnb_nav {
+  nav.subGnbNav {
     width: 100%;
 
-    div.sub_gnb_nav_inner {
+    div.subGnbNavInner {
       height: 66px;
       width: 100%;
 
@@ -170,7 +170,7 @@
 }
 
 @include mobileToDesktop {
-  div.tablet_gnb_wrap {
+  div.tabletGnbWrap {
     background: #f6f5ef;
     border-bottom: 1px solid #e5e5e5;
     height: 69px;
@@ -198,7 +198,7 @@
     display: none;
   }
 
-  nav.tablet_gnb_sep {
+  nav.tabletGnbSep {
     float: right;
     height: 70px;
     width: 235px;

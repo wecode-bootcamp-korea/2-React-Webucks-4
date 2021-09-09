@@ -12,12 +12,12 @@
     cursor: pointer;
   }
 
-  #icon:hover + .login_icon,
-  #icon:hover + .login_icon + .login_icon {
+  #icon:hover + .loginIcon,
+  #icon:hover + .loginIcon + .loginIcon {
     opacity: 0.5;
   }
 
-  .login_icon {
+  .loginIcon {
     position: absolute;
     top: 57px;
     right: 10px;
@@ -30,7 +30,7 @@
     display: none;
   }
 
-  .btn_login:disabled {
+  .btnLogin:disabled {
     background-color: $btn-inactive;
     cursor: default;
   }

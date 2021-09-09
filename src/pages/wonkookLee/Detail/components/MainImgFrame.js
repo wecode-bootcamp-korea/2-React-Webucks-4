@@ -9,8 +9,8 @@ class MainImgFrame extends Component {
 
   render() {
     return (
-      <div className='product_view_pic'>
-        <div className='product_big_pic'>
+      <div className='productViewPic'>
+        <div className='productBigPic'>
           <div id='zoomFrame' className='zoomFrame'>
             <div id='zoomLens' className='zoomLens'></div>
             <img src={this.props.imgUrl} alt={this.props.name} />
@@ -23,7 +23,6 @@ class MainImgFrame extends Component {
             ></div>
           </div>
         </div>
-        <div className='product_thum_wrap'></div>
       </div>
     );
   }

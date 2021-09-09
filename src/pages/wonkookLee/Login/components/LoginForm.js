@@ -62,7 +62,7 @@ class LoginForm extends Component {
             placeholder='비밀번호'
           />
           <LoginBtn
-            className='btn_login'
+            className='btnLogin'
             type='submit'
             isValidId={isValidId}
             isValidPw={isValidPw}
@@ -77,7 +77,7 @@ class LoginForm extends Component {
             <hr />
             <span>또는</span>
           </div>
-          <h2 className='facebook__login'>
+          <h2 className='facebookLogin'>
             <a href='https://www.facebook.com/'>
               <span></span>
               Facebook으로 로그인

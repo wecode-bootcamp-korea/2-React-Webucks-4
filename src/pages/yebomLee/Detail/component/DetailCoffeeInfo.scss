@@ -1,9 +1,5 @@
 @import '../../components/LikeHeart.scss';
-
-@mixin flex-between {
-  display: flex;
-  justify-content: space-between;
-}
+@import '../../components/mixin.scss';
 
 .DetailCoffeeInfo {
   .menuNameBox {

@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
-@mixin flex-between {
-  display: flex;
-  justify-content: space-between;
-}
+@import '../components/mixin.scss';
 
 .Detail {
-  main {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 
+  main {
     article {
       @include flex-between();
 

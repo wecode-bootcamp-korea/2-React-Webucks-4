@@ -1,18 +1,9 @@
-@mixin vendorPrefix($property, $value) {
-  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-    #{$prefix}#{$property}: scale($value);
-  }
-}
-
-@mixin transition($property, $value) {
-  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-    #{$prefix}#{$property}: $value;
-  }
-}
+@import '../../components/mixin.scss';
 
 .CoffeeCard {
   padding-bottom: 30px;
   text-align: center;
+  margin: 0 5px 0 7px;
 
   .coffeeName {
     margin-bottom: 20px;
@@ -22,13 +13,13 @@
 
   .fixImg {
     margin-bottom: 20px;
-    width: 17vw;
-    height: 50vh;
+    width: 240px;
+    height: 250px;
     overflow: hidden;
 
     .coffeeImg {
-      width: 17vw;
-      height: 50vh;
+      width: 240px;
+      height: 250px;
       @include vendorPrefix(transform, 1);
       @include transition(transition, 0.3s);
 

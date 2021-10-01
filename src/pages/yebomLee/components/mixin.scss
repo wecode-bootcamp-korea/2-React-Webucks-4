@@ -1,0 +1,27 @@
+@mixin flexCenter($direction: row) {
+  display: flex;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin marginTandB($top, $bottom) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+@mixin vendorPrefix($property, $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}#{$property}: scale($value);
+  }
+}
+
+@mixin transition($property, $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}#{$property}: $value;
+  }
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}

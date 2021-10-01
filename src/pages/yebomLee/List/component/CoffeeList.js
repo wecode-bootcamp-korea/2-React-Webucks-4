@@ -10,6 +10,7 @@ class CoffeeList extends Component {
           return (
             <CoffeeCard
               key={beverages.id}
+              id={beverages.id}
               img={beverages.imgUrl}
               name={beverages.name}
             />

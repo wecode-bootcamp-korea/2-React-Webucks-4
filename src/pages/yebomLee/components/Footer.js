@@ -4,7 +4,7 @@ import './Footer.scss';
 class DetailFooter extends Component {
   render() {
     return (
-      <footer>
+      <footer className='footerList'>
         <div className='footerBox'>
           <ul>
             <h4 class='title'>COMPANY</h4>

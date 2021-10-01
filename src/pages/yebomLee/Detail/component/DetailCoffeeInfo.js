@@ -9,6 +9,13 @@ class DetailCoffeeInfo extends Component {
       fillHeart: false,
     };
   }
+
+  fillLikeHeart = () => {
+    this.setState({
+      fillHeart: !this.state.fillHeart,
+    });
+  };
+
   render() {
     const { name, engName, summary, nutritionFacts } = this.props;
     const {
@@ -26,7 +33,11 @@ class DetailCoffeeInfo extends Component {
         <div className='menuNameBox'>
           <p className='nameKOR'>{name}</p>
           <p className='nameENG'>{engName}</p>
-          <LikeHeart />
+          <LikeHeart
+            fillHeart={this.state.fillHeart}
+            fillLikeHeart={this.fillLikeHeart}
+            size={'2rem'}
+          />
         </div>
         <p className='explainCoffee'>{summary}</p>
         <div className='nutritionBox'>

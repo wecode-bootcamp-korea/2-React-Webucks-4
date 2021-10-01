@@ -29,8 +29,8 @@ class DetailReview extends Component {
     };
     this.setState({
       commentsArr: [...this.state.commentsArr, commentobj],
+      comment: '',
     });
-    e.target.value = '';
   };
 
   render() {
@@ -57,6 +57,7 @@ class DetailReview extends Component {
             onChange={this.getComment}
             type='text'
             placeholder='리뷰를 입력해주세요.'
+            value={this.state.comment}
           />
         </form>
       </div>

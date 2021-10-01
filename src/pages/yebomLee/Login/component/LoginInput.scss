@@ -1,13 +1,4 @@
-@mixin flexCenter($direction: row) {
-  display: flex;
-  justify-content: center;
-  flex-direction: $direction;
-}
-
-@mixin marginTandB($top, $bottom) {
-  margin-top: $top;
-  margin-bottom: $bottom;
-}
+@import '../../components/mixin.scss';
 
 .LoginInput {
   @include flexCenter(column);
@@ -27,7 +18,7 @@
   }
 
   .loginButton {
-    margin-top: 20px;
+    // margin-bottom: 20px;
     padding: 15px;
     color: white;
     background-color: #61aded;

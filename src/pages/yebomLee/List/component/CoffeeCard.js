@@ -3,6 +3,19 @@ import LikeHeart from '../../components/LikeHeart';
 import './CoffeeCard.scss';
 
 class CoffeeCard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fillHeart: false,
+    };
+  }
+
+  fillLikeHeart = () => {
+    this.setState({
+      fillHeart: !this.state.fillHeart,
+    });
+  };
+
   render() {
     const { id, name, img } = this.props;
     return (
@@ -11,7 +24,12 @@ class CoffeeCard extends Component {
           <img className='coffeeImg' alt={name} src={img} />
         </div>
         <div className='coffeeName'>
-          {name} <LikeHeart />
+          {name}{' '}
+          <LikeHeart
+            fillHeart={this.state.fillHeart}
+            fillLikeHeart={this.fillLikeHeart}
+            size={'1rem'}
+          />
         </div>
       </li>
     );

@@ -5,61 +5,101 @@ class LoginInput extends Component {
   constructor() {
     super();
     this.state = {
-      isVaildId: false,
-      isVaildPw: false,
+      id: '',
+      pw: '',
     };
   }
 
-  isVaildId = e => {
-    e.target.value.includes('@')
-      ? this.setState({ isVaildId: true })
-      : this.setState({ isVaildId: false });
+  getValue = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value }, this.isVaildInput);
   };
 
-  isVaildPw = e => {
-    e.target.value.length >= 5
-      ? this.setState({ isVaildPw: true })
-      : this.setState({ isVaildPw: false });
-  };
+  // getPwValue = e => {
+  //   this.setState({ pw: e.target.value });
+  // };
 
-  goToList = () => {
-    if (this.state.isVaildId && this.state.isVaildPw) {
-      this.props.history.push('/list-yebomlee');
-    }
+  isVaildInput = () => {
+    const { id, pw } = this.state;
+    const isValid = id.includes('@') && pw.length >= 5;
+    return isValid;
   };
+  // isVaildId = e => {
+  //   e.target.value.includes('@')
+  //     ? this.setState({ isVaildId: true })
+  //     : this.setState({ isVaildId: false });
+  // };
 
-  handleKeyPress = e => {
-    if (e.key !== 'Enter') {
-      return;
-    }
+  // isVaildPw = e => {
+  //   e.target.value.length >= 5
+  //     ? this.setState({ isVaildPw: true })
+  //     : this.setState({ isVaildPw: false });
+  // };
+
+  goToList = e => {
     e.preventDefault();
-    this.goToList();
+    if (this.state.id.includes('@') && this.state.pw.length >= 5) {
+      fetch('/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: this.state.id,
+          password: this.state.pw,
+        }),
+      })
+        .then(res => {
+          console.log(res);
+          return res;
+        })
+        .then(
+          result => console.log('결과: ', result),
+          this.props.history.push('/list-yebomlee')
+        );
+
+      // }
+    }
   };
+  // http: //52.79.143.176:8000/users/login
+  // http://52.79.143.176:8000/users/signup
+
+  // goToList = () => {
+  //   if (this.state.isVaildId && this.state.isVaildPw) {
+  //     this.props.history.push('/list-yebomlee');
+  //   }
+  // };
+
+  // handleKeyPress = e => {
+  //   if (e.key !== 'Enter') {
+  //     return;
+  //   }
+  //   e.preventDefault();
+  //   this.goToList();
+  // };
 
   render() {
+    console.log(this.state);
     return (
-      <form action='' className='LoginInput'>
+      <form action='' onSubmit={this.goToList} className='LoginInput'>
         <input
-          onChange={this.isVaildId}
-          onKeyPress={this.handleKeyPress}
+          onChange={this.getValue}
+          // onKeyPress={this.handleKeyPress}
           type='text'
           id='userId'
+          name='id'
           placeholder='전화번호, 사용자 이름 또는 이메일'
         />
         <input
-          onChange={this.isVaildPw}
-          onKeyPress={this.handleKeyPress}
+          onChange={this.getValue}
+          // onKeyPress={this.handleKeyPress}
           type='password'
           id='userPassword'
+          name='pw'
           placeholder='비밀번호'
         />
         <button
-          onClick={this.goToList}
-          className={
-            this.state.isVaildId && this.state.isVaildPw
-              ? 'loginButton active'
-              : 'loginButton'
-          }
+          className={this.isVaildInput() ? 'loginButton active' : 'loginButton'}
         >
           로그인
         </button>

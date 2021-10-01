@@ -1,7 +1,10 @@
 .DetailCoffeeImg {
+  display: flex;
+  justify-content: space-between;
+
   .coffeeImg {
     display: flex;
-    width: 35vw;
-    height: 70vh;
+    width: 450px;
+    height: 450px;
   }
 }

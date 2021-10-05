@@ -1,0 +1,26 @@
+.footerList {
+  margin-top: 70px;
+  color: #a8a8a8;
+  background-color: #333333;
+
+  .footerBox {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 15px;
+
+    ul {
+      .title {
+        padding-bottom: 15px;
+      }
+
+      li {
+        padding: 5px;
+      }
+    }
+  }
+}

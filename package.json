@@ -13,6 +13,7 @@
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
@@ -46,5 +47,6 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.3.2"
-  }
+  },
+  "proxy": "http://52.79.143.176:8000"
 }

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import './component/LoginInput.scss';
+
+.Login {
+  @include flexCenter();
+  background-color: #eeefef;
+
+  .loginBox {
+    @include flexCenter(column);
+    @include marginTandB(15vh, 20vh);
+    background-color: white;
+    border: {
+      width: 3px;
+      style: solid;
+      color: #dddddd;
+    }
+
+    .mainLogo {
+      align-self: center;
+      @include marginTandB(70px, 20px);
+      font: {
+        family: 'Dancing Script', cursive;
+        size: 70px;
+      }
+    }
+
+    .forgotPassword {
+      align-self: center;
+      margin-top: 100px;
+      margin-bottom: 50px;
+      color: #739ab4;
+      font-weight: bold;
+    }
+  }
+}
